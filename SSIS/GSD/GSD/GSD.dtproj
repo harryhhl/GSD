@@ -53,5 +53,10 @@
       <FullPath>SAR.dtsx</FullPath>
       <References />
     </DtsPackage>
+    <DtsPackage>
+      <Name>Customer_Mst.dtsx</Name>
+      <FullPath>Customer_Mst.dtsx</FullPath>
+      <References />
+    </DtsPackage>
   </DTSPackages>
 </Project>
