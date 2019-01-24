@@ -58,5 +58,10 @@
       <FullPath>Customer_Mst.dtsx</FullPath>
       <References />
     </DtsPackage>
+    <DtsPackage>
+      <Name>SPS_Fabric.dtsx</Name>
+      <FullPath>SPS_Fabric.dtsx</FullPath>
+      <References />
+    </DtsPackage>
   </DTSPackages>
 </Project>
