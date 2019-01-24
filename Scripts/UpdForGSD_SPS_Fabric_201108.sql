@@ -36,7 +36,7 @@ begin
 		Special_ACC varchar(5),
 		Body_Confirm varchar(1),
 		Trims_Confirm varchar(1),
-		Remarks varchar(80),
+		Remarks nvarchar(80),
 		CONSTRAINT [PK_SPS_Fabric] PRIMARY KEY NONCLUSTERED 
 		(
 			Projection_NO ASC,
@@ -73,7 +73,7 @@ begin
 		Special_ACC varchar(5),
 		Body_Confirm varchar(1),
 		Trims_Confirm varchar(1),
-		Remarks varchar(80),
+		Remarks nvarchar(80),
 		CONSTRAINT [PK_FSPS_Fabric_Tmp] PRIMARY KEY NONCLUSTERED 
 		(
 			Projection_NO ASC,
@@ -111,7 +111,7 @@ begin
 		Special_ACC varchar(5),
 		Body_Confirm varchar(1),
 		Trims_Confirm varchar(1),
-		Remarks varchar(80),
+		Remarks nvarchar(80),
 		History_DateTime datetime,
 		CONSTRAINT [PK_SPS_Fabric_Hist] PRIMARY KEY NONCLUSTERED 
 		(
@@ -126,4 +126,9 @@ begin
 end
 go
 
+
+print 'alter SPS_Fabric set column Remarks type to nvarchar(80)'
+alter table SPS_Fabric_Hist alter column Remarks nvarchar(80)
+alter table SPS_Fabric_Tmp alter column Remarks nvarchar(80)
+alter table SPS_Fabric alter column Remarks nvarchar(80)
 
