@@ -1,3 +1,11 @@
+/*
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SO_Plan
+SO_Plan_Tmp
+SO_Plan_Hist
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+
 --1.SO_Plan
 Print 'Update Table: [SO_Plan]'
 If Object_ID(N'SO_Plan',N'U') is Null 
@@ -100,19 +108,25 @@ End
 Else
 Begin
 	Print '==> Table [SO_Plan] is exists!'
-	print 'Add Column Style_Desc'
+
+	print 'check Column Style_Desc is exists'
 	if not exists(select * from syscolumns where name= 'Style_Desc' and id=object_id('SO_Plan'))
 	begin
+		print 'Add Column Style_Desc'
 		alter table SO_Plan add Style_Desc varchar(160)
 	end
-	
+
+	print 'check Column Commit_date is exists'
 	If Not Exists ( Select * From SysColumns Where name = 'Commit_date' and id = Object_id(N'[dbo].SO_Plan') )
 	Begin			
+		print 'Add Column Commit_date'		
 		Alter Table SO_Plan add Commit_date datetime null
 	End
 
+	print 'check Column OrderRemark is exists'
 	If Not Exists ( Select * From SysColumns Where name = 'OrderRemark' and id = Object_id(N'[dbo].SO_Plan') )
 	Begin
+		print 'Add Column OrderRemark'	
 		Alter Table SO_Plan add OrderRemark varchar(150) null
 	End	
 End
@@ -220,17 +234,25 @@ End
 Else
 Begin
 	Print '==> Table [SO_Plan_Hist] is exists!'
+	print 'check Column Style_Desc is exists'
 	if not exists(select * from syscolumns where name= 'Style_Desc' and id=object_id('SO_Plan_Hist'))
 	begin
+		print 'Add Column Style_Desc'
 		alter table SO_Plan_Hist add Style_Desc varchar(160)
 	end
 	--- add ZCommit_date & Order_Remark to table SO_Plan_Hist
+
+	print 'check Column Commit_date is exists'
 	If Not Exists ( Select * From SysColumns Where name = 'Commit_date' and id = Object_id(N'[dbo].SO_Plan_Hist') )
-	Begin		
+	Begin
+		print 'Add Column Commit_date'		
 		Alter Table SO_Plan_Hist add Commit_date datetime null
 	End
+
+	print 'check Column OrderRemark is exists'
 	If Not Exists ( Select * From SysColumns Where name = 'OrderRemark' and id = Object_id(N'[dbo].SO_Plan_Hist') )
 	Begin	
+		print 'Add Column OrderRemark'	
 		Alter Table SO_Plan_Hist add OrderRemark varchar(150) null
 	End
 End
@@ -337,18 +359,24 @@ End
 Else
 Begin
 	Print '==> Table [SO_Plan_Tmp] is exists!'
+	print 'check Column Style_Desc is exists'
 	if not exists(select * from syscolumns where name= 'Style_Desc' and id=object_id('SO_Plan_Tmp'))
 	begin
+		print 'Add Column Style_Desc'
 		alter table SO_Plan_Tmp add Style_Desc varchar(160)
 	end
+
+	print 'check Column Commit_date is exists'
 	If Not Exists ( Select * From SysColumns Where name = 'Commit_date' and id = Object_id(N'[dbo].SO_Plan_Tmp') )
 	Begin
-			
+		print 'Add Column Commit_date'	
 		Alter Table SO_Plan_Tmp add Commit_date datetime null
 	End
+
+	print 'check Column OrderRemark is exists'
 	If Not Exists ( Select * From SysColumns Where name = 'OrderRemark' and id = Object_id(N'[dbo].SO_Plan_Tmp') )
 	Begin
-			
+		print 'Add Column OrderRemark'		
 		Alter Table SO_Plan_Tmp add OrderRemark varchar(150) null
 	End	
 End
