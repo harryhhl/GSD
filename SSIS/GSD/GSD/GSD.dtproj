@@ -44,8 +44,13 @@
   </Configurations>
   <DTSPackages>
     <DtsPackage>
-      <Name>SO Plan.dtsx</Name>
-      <FullPath>SO Plan.dtsx</FullPath>
+      <Name>SO_Plan.dtsx</Name>
+      <FullPath>SO_Plan.dtsx</FullPath>
+      <References />
+    </DtsPackage>
+    <DtsPackage>
+      <Name>SAR.dtsx</Name>
+      <FullPath>SAR.dtsx</FullPath>
       <References />
     </DtsPackage>
   </DTSPackages>
