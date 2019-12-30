@@ -1,0 +1,3149 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/15/2015 2:13:00 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="CIMAISD82423A"
+  DTS:CreatorName="TSTCSCDOMAIN\lwhfhuang"
+  DTS:DTSID="{FD92EDBB-C80A-4216-9DAF-ADBCF9F30CCB}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3008.28"
+  DTS:LocaleID="2052"
+  DTS:ObjectName="ZQTM_RM"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="2"
+  DTS:VersionBuild="117"
+  DTS:VersionGUID="{6DA7DFF9-0813-4069-967C-A7BC275722DE}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[GSDDB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{BDFD734F-2906-4E8C-9210-85B22DF2BECC}"
+      DTS:ObjectName="GSDDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=10.3.1.53;User ID=cbif_etl;Initial Catalog=GSDDB;Provider=SQLNCLI11;Persist Security Info=True;Auto Translate=False;">
+          <EncryptedData
+            Type="http://www.w3.org/2001/04/xmlenc#Element"
+            Salt="Yznq0Tu8dQ=="
+            IV="vqjQFhZ2Il8=" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            <EncryptionMethod
+              Algorithm="http://www.w3.org/2001/04/xmlenc#tripledes-cbc" />
+            <CipherData>
+              <CipherValue>vqjQFhZ2Il9CqujrE+8YludBo9U65kca4FDXTbzof81EG4gC9nXBj9Sm7GWj9/UW6aqMoYV0vUB7ktXv4Qa5kYU/ZjBKs+5akW6AwlwsVp3ojVTBOzGLMbAxTz4nLxSrBqnDvgZp8plie3J8maGoe85qI9+IAZzRk27f6e92Wtg=</CipherValue>
+            </CipherData>
+          </EncryptedData>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[GSDDB_Hist]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{0ccd6b40-58ae-4264-8f98-a6a00771355c}"
+      DTS:ObjectName="GSDDB_Hist">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=10.3.1.53;User ID=cbif_etl;Initial Catalog=GSDDB;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <EncryptedData
+            Type="http://www.w3.org/2001/04/xmlenc#Element"
+            Salt="LeDZmeZFLQ=="
+            IV="ub5RC5fTCQU=" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            <EncryptionMethod
+              Algorithm="http://www.w3.org/2001/04/xmlenc#tripledes-cbc" />
+            <CipherData>
+              <CipherValue>ub5RC5fTCQXrB+XMTPU7pHkQGVy/cCXDtOsDjefS9I0HXjS901fr5Ky3KUyA+vtJ8iSYqH8Gz24l3CKMKX0TAHOXtG0PCHHV8V327X7Zh9egZsR6ZnJbcR1hNTn/Bbo/RAuNfsZJRtST2vYwwN7grRNvBvWBQxbr6PpT2G0RiDY=</CipherValue>
+            </CipherData>
+          </EncryptedData>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Insert Into ZQTN_RM"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{0D45128B-8E82-4622-8006-E1488266D32C}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="2057"
+      DTS:ObjectName="Insert Into ZQTN_RM"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server v9; (C) 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          BLOBTempStoragePath=""
+          bufferTempStoragePath=""
+          engineThreads="5"
+          version="1">
+          <components>
+            <component
+              refId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              localeId="2057"
+              name="Insert ZQTN_RM"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[ZQTN_RM]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destinaton. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">0</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[GSDDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[GSDDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].Columns[BUKRS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="BUKRS"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].ExternalColumns[BUKRS]"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[BUKRS]"
+                      name="BUKRS" />
+                    <inputColumn
+                      refId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].Columns[VBELN]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="VBELN"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].ExternalColumns[VBELN]"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[VBELN]"
+                      name="VBELN" />
+                    <inputColumn
+                      refId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].Columns[RBELN]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="RBELN"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].ExternalColumns[RBELN]"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[RBELN]"
+                      name="RBELN" />
+                    <inputColumn
+                      refId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].Columns[RPOSN]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="6"
+                      cachedName="RPOSN"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].ExternalColumns[RPOSN]"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[RPOSN]"
+                      name="RPOSN" />
+                    <inputColumn
+                      refId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].Columns[MATNR]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="18"
+                      cachedName="MATNR"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].ExternalColumns[MATNR]"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[MATNR]"
+                      name="MATNR" />
+                    <inputColumn
+                      refId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].Columns[MAKTX]"
+                      cachedDataType="nText"
+                      cachedName="MAKTX"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].ExternalColumns[MAKTX]"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[MAKTX]"
+                      name="MAKTX" />
+                    <inputColumn
+                      refId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].Columns[MENGE]"
+                      cachedDataType="numeric"
+                      cachedName="MENGE"
+                      cachedPrecision="18"
+                      cachedScale="3"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].ExternalColumns[MENGE]"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[MENGE]"
+                      name="MENGE" />
+                    <inputColumn
+                      refId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].Columns[MEINS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="MEINS"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].ExternalColumns[MEINS]"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[MEINS]"
+                      name="MEINS" />
+                    <inputColumn
+                      refId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].Columns[WASTAGE]"
+                      cachedDataType="numeric"
+                      cachedName="WASTAGE"
+                      cachedPrecision="18"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].ExternalColumns[WASTAGE]"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[WASTAGE]"
+                      name="WASTAGE" />
+                    <inputColumn
+                      refId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].Columns[KBETR]"
+                      cachedDataType="numeric"
+                      cachedName="KBETR"
+                      cachedPrecision="18"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].ExternalColumns[KBETR]"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[KBETR]"
+                      name="KBETR" />
+                    <inputColumn
+                      refId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].Columns[NETWR]"
+                      cachedDataType="numeric"
+                      cachedName="NETWR"
+                      cachedPrecision="18"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].ExternalColumns[NETWR]"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[NETWR]"
+                      name="NETWR" />
+                    <inputColumn
+                      refId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].Columns[WAERS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="WAERS"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].ExternalColumns[WAERS]"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[WAERS]"
+                      name="WAERS" />
+                    <inputColumn
+                      refId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].Columns[SEL]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="SEL"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].ExternalColumns[SEL]"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[SEL]"
+                      name="SEL" />
+                    <inputColumn
+                      refId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].Columns[ZMOD]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="ZMOD"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].ExternalColumns[ZMOD]"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[ZMOD]"
+                      name="ZMOD" />
+                    <inputColumn
+                      refId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].Columns[ZNEW]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="ZNEW"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].ExternalColumns[ZNEW]"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[ZNEW]"
+                      name="ZNEW" />
+                    <inputColumn
+                      refId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].Columns[ZOLD]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="ZOLD"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].ExternalColumns[ZOLD]"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[ZOLD]"
+                      name="ZOLD" />
+                    <inputColumn
+                      refId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].Columns[ZMAT]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="ZMAT"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].ExternalColumns[ZMAT]"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[ZMAT]"
+                      name="ZMAT" />
+                    <inputColumn
+                      refId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].Columns[FLAG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="FLAG"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].ExternalColumns[FLAG]"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[FLAG]"
+                      name="FLAG" />
+                    <inputColumn
+                      refId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].Columns[ZYARN_TYPE]"
+                      cachedDataType="i4"
+                      cachedName="ZYARN_TYPE"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].ExternalColumns[ZYARN_TYPE]"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[ZYARN_TYPE]" />
+                    <inputColumn
+                      refId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].Columns[ZSUPPLIER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="ZSUPPLIER"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].ExternalColumns[ZSUPPLIER]"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[ZSUPPLIER]" />
+                    <inputColumn
+                      refId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].Columns[ZYARN_ACTICLE_NO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ZYARN_ACTICLE_NO"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].ExternalColumns[ZYARN_ACTICLE_NO]"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[ZYARN_ACTICLE_NO]" />
+                    <inputColumn
+                      refId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].Columns[ZYARN_REMARKS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="ZYARN_REMARKS"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].ExternalColumns[ZYARN_REMARKS]"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[ZYARN_REMARKS]" />
+                    <inputColumn
+                      refId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].Columns[ZYARN_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ZYARN_ID"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].ExternalColumns[ZYARN_ID]"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[ZYARN_ID]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].ExternalColumns[BUKRS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="BUKRS" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].ExternalColumns[VBELN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="VBELN" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].ExternalColumns[RBELN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="RBELN" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].ExternalColumns[RPOSN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="6"
+                      name="RPOSN" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].ExternalColumns[MATNR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="18"
+                      name="MATNR" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].ExternalColumns[MAKTX]"
+                      dataType="nText"
+                      name="MAKTX" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].ExternalColumns[MENGE]"
+                      dataType="numeric"
+                      name="MENGE"
+                      precision="18"
+                      scale="3" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].ExternalColumns[MEINS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="MEINS" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].ExternalColumns[WASTAGE]"
+                      dataType="numeric"
+                      name="WASTAGE"
+                      precision="18"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].ExternalColumns[KBETR]"
+                      dataType="numeric"
+                      name="KBETR"
+                      precision="18"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].ExternalColumns[NETWR]"
+                      dataType="numeric"
+                      name="NETWR"
+                      precision="18"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].ExternalColumns[WAERS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="WAERS" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].ExternalColumns[SEL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="SEL" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].ExternalColumns[ZMOD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="ZMOD" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].ExternalColumns[ZNEW]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="ZNEW" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].ExternalColumns[ZOLD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="ZOLD" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].ExternalColumns[ZMAT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="ZMAT" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].ExternalColumns[FLAG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="FLAG" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].ExternalColumns[ZYARN_TYPE]"
+                      dataType="i4"
+                      name="ZYARN_TYPE" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].ExternalColumns[ZSUPPLIER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="ZSUPPLIER" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].ExternalColumns[ZYARN_ACTICLE_NO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ZYARN_ACTICLE_NO" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].ExternalColumns[ZYARN_REMARKS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="ZYARN_REMARKS" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input].ExternalColumns[ZYARN_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ZYARN_ID" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              localeId="2057"
+              name="SELECT FROM ZQTN_RM_Tmp"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[ZQTN_RM_Tmp]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">936</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[GSDDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[GSDDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[BUKRS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].ExternalColumns[BUKRS]"
+                      length="4"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[BUKRS]"
+                      name="BUKRS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[VBELN]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].ExternalColumns[VBELN]"
+                      length="10"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[VBELN]"
+                      name="VBELN"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[RBELN]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].ExternalColumns[RBELN]"
+                      length="10"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[RBELN]"
+                      name="RBELN"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[RPOSN]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].ExternalColumns[RPOSN]"
+                      length="6"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[RPOSN]"
+                      name="RPOSN"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[MATNR]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].ExternalColumns[MATNR]"
+                      length="18"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[MATNR]"
+                      name="MATNR"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[MAKTX]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].ExternalColumns[MAKTX]"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[MAKTX]"
+                      name="MAKTX"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[MENGE]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].ExternalColumns[MENGE]"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[MENGE]"
+                      name="MENGE"
+                      precision="18"
+                      scale="3"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[MEINS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].ExternalColumns[MEINS]"
+                      length="3"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[MEINS]"
+                      name="MEINS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[WASTAGE]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].ExternalColumns[WASTAGE]"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[WASTAGE]"
+                      name="WASTAGE"
+                      precision="18"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[KBETR]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].ExternalColumns[KBETR]"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[KBETR]"
+                      name="KBETR"
+                      precision="18"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[NETWR]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].ExternalColumns[NETWR]"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[NETWR]"
+                      name="NETWR"
+                      precision="18"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[WAERS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].ExternalColumns[WAERS]"
+                      length="5"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[WAERS]"
+                      name="WAERS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[SEL]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].ExternalColumns[SEL]"
+                      length="1"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[SEL]"
+                      name="SEL"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[ZMOD]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].ExternalColumns[ZMOD]"
+                      length="1"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[ZMOD]"
+                      name="ZMOD"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[ZNEW]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].ExternalColumns[ZNEW]"
+                      length="1"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[ZNEW]"
+                      name="ZNEW"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[ZOLD]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].ExternalColumns[ZOLD]"
+                      length="1"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[ZOLD]"
+                      name="ZOLD"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[ZMAT]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].ExternalColumns[ZMAT]"
+                      length="1"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[ZMAT]"
+                      name="ZMAT"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[FLAG]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].ExternalColumns[FLAG]"
+                      length="1"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[FLAG]"
+                      name="FLAG"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[ZYARN_TYPE]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].ExternalColumns[ZYARN_TYPE]"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[ZYARN_TYPE]"
+                      name="ZYARN_TYPE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[ZSUPPLIER]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].ExternalColumns[ZSUPPLIER]"
+                      length="30"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[ZSUPPLIER]"
+                      name="ZSUPPLIER"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[ZYARN_ACTICLE_NO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].ExternalColumns[ZYARN_ACTICLE_NO]"
+                      length="50"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[ZYARN_ACTICLE_NO]"
+                      name="ZYARN_ACTICLE_NO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[ZYARN_REMARKS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].ExternalColumns[ZYARN_REMARKS]"
+                      length="200"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[ZYARN_REMARKS]"
+                      name="ZYARN_REMARKS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[ZYARN_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].ExternalColumns[ZYARN_ID]"
+                      length="50"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].Columns[ZYARN_ID]"
+                      name="ZYARN_ID"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].ExternalColumns[BUKRS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="BUKRS" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].ExternalColumns[VBELN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="VBELN" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].ExternalColumns[RBELN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="RBELN" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].ExternalColumns[RPOSN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="6"
+                      name="RPOSN" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].ExternalColumns[MATNR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="18"
+                      name="MATNR" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].ExternalColumns[MAKTX]"
+                      dataType="nText"
+                      name="MAKTX" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].ExternalColumns[MENGE]"
+                      dataType="numeric"
+                      name="MENGE"
+                      precision="18"
+                      scale="3" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].ExternalColumns[MEINS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="MEINS" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].ExternalColumns[WASTAGE]"
+                      dataType="numeric"
+                      name="WASTAGE"
+                      precision="18"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].ExternalColumns[KBETR]"
+                      dataType="numeric"
+                      name="KBETR"
+                      precision="18"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].ExternalColumns[NETWR]"
+                      dataType="numeric"
+                      name="NETWR"
+                      precision="18"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].ExternalColumns[WAERS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="WAERS" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].ExternalColumns[SEL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="SEL" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].ExternalColumns[ZMOD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="ZMOD" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].ExternalColumns[ZNEW]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="ZNEW" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].ExternalColumns[ZOLD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="ZOLD" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].ExternalColumns[ZMAT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="ZMAT" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].ExternalColumns[FLAG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="FLAG" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].ExternalColumns[ZYARN_TYPE]"
+                      dataType="i4"
+                      name="ZYARN_TYPE" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].ExternalColumns[ZSUPPLIER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="ZSUPPLIER" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].ExternalColumns[ZYARN_ACTICLE_NO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ZYARN_ACTICLE_NO" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].ExternalColumns[ZYARN_REMARKS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="ZYARN_REMARKS" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output].ExternalColumns[ZYARN_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ZYARN_ID" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Error Output].Columns[BUKRS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Error Output].Columns[BUKRS]"
+                      name="BUKRS" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Error Output].Columns[VBELN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Error Output].Columns[VBELN]"
+                      name="VBELN" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Error Output].Columns[RBELN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Error Output].Columns[RBELN]"
+                      name="RBELN" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Error Output].Columns[RPOSN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="6"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Error Output].Columns[RPOSN]"
+                      name="RPOSN" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Error Output].Columns[MATNR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="18"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Error Output].Columns[MATNR]"
+                      name="MATNR" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Error Output].Columns[MAKTX]"
+                      dataType="nText"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Error Output].Columns[MAKTX]"
+                      name="MAKTX" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Error Output].Columns[MENGE]"
+                      dataType="numeric"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Error Output].Columns[MENGE]"
+                      name="MENGE"
+                      precision="18"
+                      scale="3" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Error Output].Columns[MEINS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Error Output].Columns[MEINS]"
+                      name="MEINS" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Error Output].Columns[WASTAGE]"
+                      dataType="numeric"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Error Output].Columns[WASTAGE]"
+                      name="WASTAGE"
+                      precision="18"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Error Output].Columns[KBETR]"
+                      dataType="numeric"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Error Output].Columns[KBETR]"
+                      name="KBETR"
+                      precision="18"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Error Output].Columns[NETWR]"
+                      dataType="numeric"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Error Output].Columns[NETWR]"
+                      name="NETWR"
+                      precision="18"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Error Output].Columns[WAERS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Error Output].Columns[WAERS]"
+                      name="WAERS" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Error Output].Columns[SEL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Error Output].Columns[SEL]"
+                      name="SEL" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Error Output].Columns[ZMOD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Error Output].Columns[ZMOD]"
+                      name="ZMOD" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Error Output].Columns[ZNEW]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Error Output].Columns[ZNEW]"
+                      name="ZNEW" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Error Output].Columns[ZOLD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Error Output].Columns[ZOLD]"
+                      name="ZOLD" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Error Output].Columns[ZMAT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Error Output].Columns[ZMAT]"
+                      name="ZMAT" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Error Output].Columns[FLAG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Error Output].Columns[FLAG]"
+                      name="FLAG" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Error Output].Columns[ZYARN_TYPE]"
+                      dataType="i4"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Error Output].Columns[ZYARN_TYPE]"
+                      name="ZYARN_TYPE" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Error Output].Columns[ZSUPPLIER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Error Output].Columns[ZSUPPLIER]"
+                      name="ZSUPPLIER" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Error Output].Columns[ZYARN_ACTICLE_NO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Error Output].Columns[ZYARN_ACTICLE_NO]"
+                      name="ZYARN_ACTICLE_NO" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Error Output].Columns[ZYARN_REMARKS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Error Output].Columns[ZYARN_REMARKS]"
+                      name="ZYARN_REMARKS" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Error Output].Columns[ZYARN_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Error Output].Columns[ZYARN_ID]"
+                      name="ZYARN_ID" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Insert Into ZQTN_RM.Paths[OLE DB Source Output]"
+              endId="Package\Insert Into ZQTN_RM\Insert ZQTN_RM.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Insert Into ZQTN_RM\SELECT FROM ZQTN_RM_Tmp.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Insert Into ZQTN_RM_Hist"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{1E810C3D-ACB1-4867-A40D-2E8070E4105A}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="2057"
+      DTS:ObjectName="Insert Into ZQTN_RM_Hist"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server v9; (C) 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          BLOBTempStoragePath=""
+          bufferTempStoragePath=""
+          engineThreads="5"
+          version="1">
+          <components>
+            <component
+              refId="Package\Insert Into ZQTN_RM_Hist\add History_DateTime"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Updates column values using expressions"
+              name="add History_DateTime"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Insert Into ZQTN_RM_Hist\add History_DateTime.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Insert Into ZQTN_RM_Hist\add History_DateTime.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Insert Into ZQTN_RM_Hist\add History_DateTime.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\add History_DateTime.Outputs[Derived Column Output].Columns[Histoty_DateTime]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\add History_DateTime.Outputs[Derived Column Output].Columns[Histoty_DateTime]"
+                      name="Histoty_DateTime"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Insert Into ZQTN_RM_Hist\add History_DateTime.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Insert Into ZQTN_RM_Hist\add History_DateTime.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\add History_DateTime.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\add History_DateTime.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\add History_DateTime.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\add History_DateTime.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="getData from ZQTN_RM"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[ZQTN_RM]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">936</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[GSDDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[GSDDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[BUKRS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].ExternalColumns[BUKRS]"
+                      length="4"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[BUKRS]"
+                      name="BUKRS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[VBELN]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].ExternalColumns[VBELN]"
+                      length="10"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[VBELN]"
+                      name="VBELN"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[RBELN]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].ExternalColumns[RBELN]"
+                      length="10"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[RBELN]"
+                      name="RBELN"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[RPOSN]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].ExternalColumns[RPOSN]"
+                      length="6"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[RPOSN]"
+                      name="RPOSN"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[MATNR]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].ExternalColumns[MATNR]"
+                      length="18"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[MATNR]"
+                      name="MATNR"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[MAKTX]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].ExternalColumns[MAKTX]"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[MAKTX]"
+                      name="MAKTX"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[MENGE]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].ExternalColumns[MENGE]"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[MENGE]"
+                      name="MENGE"
+                      precision="18"
+                      scale="3"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[MEINS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].ExternalColumns[MEINS]"
+                      length="3"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[MEINS]"
+                      name="MEINS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[WASTAGE]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].ExternalColumns[WASTAGE]"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[WASTAGE]"
+                      name="WASTAGE"
+                      precision="18"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[KBETR]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].ExternalColumns[KBETR]"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[KBETR]"
+                      name="KBETR"
+                      precision="18"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[NETWR]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].ExternalColumns[NETWR]"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[NETWR]"
+                      name="NETWR"
+                      precision="18"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[WAERS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].ExternalColumns[WAERS]"
+                      length="5"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[WAERS]"
+                      name="WAERS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[SEL]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].ExternalColumns[SEL]"
+                      length="1"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[SEL]"
+                      name="SEL"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[ZMOD]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].ExternalColumns[ZMOD]"
+                      length="1"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[ZMOD]"
+                      name="ZMOD"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[ZNEW]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].ExternalColumns[ZNEW]"
+                      length="1"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[ZNEW]"
+                      name="ZNEW"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[ZOLD]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].ExternalColumns[ZOLD]"
+                      length="1"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[ZOLD]"
+                      name="ZOLD"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[ZMAT]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].ExternalColumns[ZMAT]"
+                      length="1"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[ZMAT]"
+                      name="ZMAT"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[FLAG]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].ExternalColumns[FLAG]"
+                      length="1"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[FLAG]"
+                      name="FLAG"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[ZYARN_TYPE]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].ExternalColumns[ZYARN_TYPE]"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[ZYARN_TYPE]"
+                      name="ZYARN_TYPE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[ZSUPPLIER]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].ExternalColumns[ZSUPPLIER]"
+                      length="30"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[ZSUPPLIER]"
+                      name="ZSUPPLIER"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[ZYARN_ACTICLE_NO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].ExternalColumns[ZYARN_ACTICLE_NO]"
+                      length="50"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[ZYARN_ACTICLE_NO]"
+                      name="ZYARN_ACTICLE_NO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[ZYARN_REMARKS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].ExternalColumns[ZYARN_REMARKS]"
+                      length="200"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[ZYARN_REMARKS]"
+                      name="ZYARN_REMARKS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[ZYARN_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].ExternalColumns[ZYARN_ID]"
+                      length="50"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[ZYARN_ID]"
+                      name="ZYARN_ID"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].ExternalColumns[BUKRS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="BUKRS" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].ExternalColumns[VBELN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="VBELN" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].ExternalColumns[RBELN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="RBELN" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].ExternalColumns[RPOSN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="6"
+                      name="RPOSN" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].ExternalColumns[MATNR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="18"
+                      name="MATNR" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].ExternalColumns[MAKTX]"
+                      dataType="nText"
+                      name="MAKTX" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].ExternalColumns[MENGE]"
+                      dataType="numeric"
+                      name="MENGE"
+                      precision="18"
+                      scale="3" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].ExternalColumns[MEINS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="MEINS" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].ExternalColumns[WASTAGE]"
+                      dataType="numeric"
+                      name="WASTAGE"
+                      precision="18"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].ExternalColumns[KBETR]"
+                      dataType="numeric"
+                      name="KBETR"
+                      precision="18"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].ExternalColumns[NETWR]"
+                      dataType="numeric"
+                      name="NETWR"
+                      precision="18"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].ExternalColumns[WAERS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="WAERS" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].ExternalColumns[SEL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="SEL" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].ExternalColumns[ZMOD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="ZMOD" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].ExternalColumns[ZNEW]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="ZNEW" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].ExternalColumns[ZOLD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="ZOLD" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].ExternalColumns[ZMAT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="ZMAT" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].ExternalColumns[FLAG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="FLAG" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].ExternalColumns[ZYARN_TYPE]"
+                      dataType="i4"
+                      name="ZYARN_TYPE" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].ExternalColumns[ZSUPPLIER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="ZSUPPLIER" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].ExternalColumns[ZYARN_ACTICLE_NO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ZYARN_ACTICLE_NO" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].ExternalColumns[ZYARN_REMARKS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="ZYARN_REMARKS" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].ExternalColumns[ZYARN_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ZYARN_ID" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Error Output].Columns[BUKRS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Error Output].Columns[BUKRS]"
+                      name="BUKRS" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Error Output].Columns[VBELN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Error Output].Columns[VBELN]"
+                      name="VBELN" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Error Output].Columns[RBELN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Error Output].Columns[RBELN]"
+                      name="RBELN" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Error Output].Columns[RPOSN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="6"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Error Output].Columns[RPOSN]"
+                      name="RPOSN" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Error Output].Columns[MATNR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="18"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Error Output].Columns[MATNR]"
+                      name="MATNR" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Error Output].Columns[MAKTX]"
+                      dataType="nText"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Error Output].Columns[MAKTX]"
+                      name="MAKTX" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Error Output].Columns[MENGE]"
+                      dataType="numeric"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Error Output].Columns[MENGE]"
+                      name="MENGE"
+                      precision="18"
+                      scale="3" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Error Output].Columns[MEINS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Error Output].Columns[MEINS]"
+                      name="MEINS" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Error Output].Columns[WASTAGE]"
+                      dataType="numeric"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Error Output].Columns[WASTAGE]"
+                      name="WASTAGE"
+                      precision="18"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Error Output].Columns[KBETR]"
+                      dataType="numeric"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Error Output].Columns[KBETR]"
+                      name="KBETR"
+                      precision="18"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Error Output].Columns[NETWR]"
+                      dataType="numeric"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Error Output].Columns[NETWR]"
+                      name="NETWR"
+                      precision="18"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Error Output].Columns[WAERS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Error Output].Columns[WAERS]"
+                      name="WAERS" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Error Output].Columns[SEL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Error Output].Columns[SEL]"
+                      name="SEL" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Error Output].Columns[ZMOD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Error Output].Columns[ZMOD]"
+                      name="ZMOD" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Error Output].Columns[ZNEW]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Error Output].Columns[ZNEW]"
+                      name="ZNEW" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Error Output].Columns[ZOLD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Error Output].Columns[ZOLD]"
+                      name="ZOLD" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Error Output].Columns[ZMAT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Error Output].Columns[ZMAT]"
+                      name="ZMAT" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Error Output].Columns[FLAG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Error Output].Columns[FLAG]"
+                      name="FLAG" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Error Output].Columns[ZYARN_TYPE]"
+                      dataType="i4"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Error Output].Columns[ZYARN_TYPE]"
+                      name="ZYARN_TYPE" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Error Output].Columns[ZSUPPLIER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Error Output].Columns[ZSUPPLIER]"
+                      name="ZSUPPLIER" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Error Output].Columns[ZYARN_ACTICLE_NO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Error Output].Columns[ZYARN_ACTICLE_NO]"
+                      name="ZYARN_ACTICLE_NO" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Error Output].Columns[ZYARN_REMARKS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Error Output].Columns[ZYARN_REMARKS]"
+                      name="ZYARN_REMARKS" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Error Output].Columns[ZYARN_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Error Output].Columns[ZYARN_ID]"
+                      name="ZYARN_ID" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              localeId="2057"
+              name="Insert ZQTN_RM_Hist"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[ZQTN_RM_Hist]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destinaton. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">0</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[GSDDB_Hist]"
+                  connectionManagerRefId="Package.ConnectionManagers[GSDDB_Hist]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].Columns[BUKRS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="BUKRS"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].ExternalColumns[BUKRS]"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[BUKRS]" />
+                    <inputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].Columns[VBELN]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="VBELN"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].ExternalColumns[VBELN]"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[VBELN]" />
+                    <inputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].Columns[RBELN]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="RBELN"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].ExternalColumns[RBELN]"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[RBELN]" />
+                    <inputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].Columns[RPOSN]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="6"
+                      cachedName="RPOSN"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].ExternalColumns[RPOSN]"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[RPOSN]" />
+                    <inputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].Columns[MATNR]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="18"
+                      cachedName="MATNR"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].ExternalColumns[MATNR]"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[MATNR]" />
+                    <inputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].Columns[MAKTX]"
+                      cachedDataType="nText"
+                      cachedName="MAKTX"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].ExternalColumns[MAKTX]"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[MAKTX]" />
+                    <inputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].Columns[MENGE]"
+                      cachedDataType="numeric"
+                      cachedName="MENGE"
+                      cachedPrecision="18"
+                      cachedScale="3"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].ExternalColumns[MENGE]"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[MENGE]" />
+                    <inputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].Columns[MEINS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="MEINS"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].ExternalColumns[MEINS]"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[MEINS]" />
+                    <inputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].Columns[WASTAGE]"
+                      cachedDataType="numeric"
+                      cachedName="WASTAGE"
+                      cachedPrecision="18"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].ExternalColumns[WASTAGE]"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[WASTAGE]" />
+                    <inputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].Columns[KBETR]"
+                      cachedDataType="numeric"
+                      cachedName="KBETR"
+                      cachedPrecision="18"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].ExternalColumns[KBETR]"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[KBETR]" />
+                    <inputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].Columns[NETWR]"
+                      cachedDataType="numeric"
+                      cachedName="NETWR"
+                      cachedPrecision="18"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].ExternalColumns[NETWR]"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[NETWR]" />
+                    <inputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].Columns[WAERS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="WAERS"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].ExternalColumns[WAERS]"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[WAERS]" />
+                    <inputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].Columns[SEL]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="SEL"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].ExternalColumns[SEL]"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[SEL]" />
+                    <inputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].Columns[ZMOD]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="ZMOD"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].ExternalColumns[ZMOD]"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[ZMOD]" />
+                    <inputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].Columns[ZNEW]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="ZNEW"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].ExternalColumns[ZNEW]"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[ZNEW]" />
+                    <inputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].Columns[ZOLD]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="ZOLD"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].ExternalColumns[ZOLD]"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[ZOLD]" />
+                    <inputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].Columns[ZMAT]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="ZMAT"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].ExternalColumns[ZMAT]"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[ZMAT]" />
+                    <inputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].Columns[FLAG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="FLAG"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].ExternalColumns[FLAG]"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[FLAG]" />
+                    <inputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].Columns[Histoty_DateTime]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Histoty_DateTime"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].ExternalColumns[History_DateTime]"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\add History_DateTime.Outputs[Derived Column Output].Columns[Histoty_DateTime]" />
+                    <inputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].Columns[ZYARN_TYPE]"
+                      cachedDataType="i4"
+                      cachedName="ZYARN_TYPE"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].ExternalColumns[ZYARN_TYPE]"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[ZYARN_TYPE]" />
+                    <inputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].Columns[ZSUPPLIER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="ZSUPPLIER"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].ExternalColumns[ZSUPPLIER]"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[ZSUPPLIER]" />
+                    <inputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].Columns[ZYARN_ACTICLE_NO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ZYARN_ACTICLE_NO"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].ExternalColumns[ZYARN_ACTICLE_NO]"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[ZYARN_ACTICLE_NO]" />
+                    <inputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].Columns[ZYARN_REMARKS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="ZYARN_REMARKS"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].ExternalColumns[ZYARN_REMARKS]"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[ZYARN_REMARKS]" />
+                    <inputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].Columns[ZYARN_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ZYARN_ID"
+                      externalMetadataColumnId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].ExternalColumns[ZYARN_ID]"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output].Columns[ZYARN_ID]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].ExternalColumns[BUKRS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="BUKRS" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].ExternalColumns[VBELN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="VBELN" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].ExternalColumns[RBELN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="RBELN" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].ExternalColumns[RPOSN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="6"
+                      name="RPOSN" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].ExternalColumns[MATNR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="18"
+                      name="MATNR" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].ExternalColumns[MAKTX]"
+                      dataType="nText"
+                      name="MAKTX" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].ExternalColumns[MENGE]"
+                      dataType="numeric"
+                      name="MENGE"
+                      precision="18"
+                      scale="3" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].ExternalColumns[MEINS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="MEINS" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].ExternalColumns[WASTAGE]"
+                      dataType="numeric"
+                      name="WASTAGE"
+                      precision="18"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].ExternalColumns[KBETR]"
+                      dataType="numeric"
+                      name="KBETR"
+                      precision="18"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].ExternalColumns[NETWR]"
+                      dataType="numeric"
+                      name="NETWR"
+                      precision="18"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].ExternalColumns[WAERS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="WAERS" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].ExternalColumns[SEL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="SEL" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].ExternalColumns[ZMOD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="ZMOD" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].ExternalColumns[ZNEW]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="ZNEW" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].ExternalColumns[ZOLD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="ZOLD" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].ExternalColumns[ZMAT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="ZMAT" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].ExternalColumns[FLAG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="FLAG" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].ExternalColumns[History_DateTime]"
+                      dataType="dbTimeStamp"
+                      name="History_DateTime" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].ExternalColumns[ZYARN_TYPE]"
+                      dataType="i4"
+                      name="ZYARN_TYPE" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].ExternalColumns[ZSUPPLIER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="ZSUPPLIER" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].ExternalColumns[ZYARN_ACTICLE_NO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="ZYARN_ACTICLE_NO" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].ExternalColumns[ZYARN_REMARKS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="ZYARN_REMARKS" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input].ExternalColumns[ZYARN_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="7"
+                      name="ZYARN_ID" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Insert Into ZQTN_RM_Hist.Paths[Derived Column Output]"
+              endId="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Insert Into ZQTN_RM_Hist\add History_DateTime.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Insert Into ZQTN_RM_Hist.Paths[OLE DB Source Output]"
+              endId="Package\Insert Into ZQTN_RM_Hist\add History_DateTime.Inputs[Derived Column Input]"
+              name="OLE DB Source Output"
+              startId="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Script Task"
+      DTS:CreationName="Microsoft.ScriptTask"
+      DTS:Description="Script Task"
+      DTS:DTSID="{555A7FD4-3965-40AE-A93A-9FF9EC27907A}"
+      DTS:ExecutableType="Microsoft.ScriptTask"
+      DTS:LocaleID="2057"
+      DTS:ObjectName="Script Task"
+      DTS:ThreadHint="0">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:DTSID="{CF89E927-F611-4120-98C8-4722E81CF5F5}"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="errmsg">
+          <DTS:VariableValue
+            DTS:DataType="8"
+            xml:space="preserve"></DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:ObjectData>
+        <ScriptProject
+          Name="ScriptTask_b09b62cced5a425094f9d17ee7e6ebcf"
+          VSTAMajorVersion="14"
+          VSTAMinorVersion="0"
+          Language="VisualBasic"
+          ReadOnlyVariables="$Project::SAP_Client,$Project::SAP_Host,$Project::SAP_Name,$Project::SAP_Password,$Project::SAP_SysNum,$Project::SAP_User,$Project::Sql_Connection"
+          ReadWriteVariables="errmsg">
+          <ProjectItem
+            Name="ScriptMain.vb"
+            Encoding="UTF8"><![CDATA[' Microsoft SQL Server Integration Services Script Task
+' Write scripts using Microsoft Visual Basic
+' The ScriptMain class is the entry point of the Script Task.
+
+Imports System
+Imports System.Data
+Imports System.Math
+Imports Microsoft.SqlServer.Dts.Runtime
+Imports Microsoft.Adapter.SAP
+Imports SAP.Middleware.Connector
+Imports System.Data.SqlClient
+
+<Microsoft.SqlServer.Dts.Tasks.ScriptTask.SSISScriptTaskEntryPointAttribute> _
+<System.CLSCompliantAttribute(False)> _
+Partial Public Class ScriptMain
+	Inherits Microsoft.SqlServer.Dts.Tasks.ScriptTask.VSTARTScriptObjectModelBase
+
+	Enum ScriptResults
+		Success = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Success
+		Failure = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Failure
+	End Enum
+
+	' The execution engine calls this method when the task executes.
+	' To access the object model, use the Dts object. Connections, variables, events,
+	' and logging features are available as static members of the Dts class.
+	' Before returning from this method, set the value of Dts.TaskResult to indicate success or failure.
+	' 
+	' To open Code and Text Editor Help, press F1.
+	' To open Object Browser, press Ctrl+Alt+J.
+
+    Public Sub Main()
+        '~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        ' Purpose       : Create ETL to download CEN SO data (ZSD_SPS_FABRIC) into SQL
+
+        ' Date          : 15 May 2015
+        ' Author        : John
+        '
+        '--------------------------------------------------------
+        ' 15 May 2015      John       the first version
+        ' 20 May 2015      John       改变了分隔符，由原来的";",变为"|"
+        '   the latest update: 2015-05-20 09:45
+        '~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Dim _parameters As RfcConfigParameters = New RfcConfigParameters()
+        _parameters.Add(RfcConfigParameters.Name, Dts.Variables("$Project::SAP_Name").Value.ToString())
+        _parameters.Add(RfcConfigParameters.User, Dts.Variables("$Project::SAP_User").Value.ToString())
+        _parameters.Add(RfcConfigParameters.Password, Dts.Variables("$Project::SAP_Password").GetSensitiveValue().ToString())
+        _parameters.Add(RfcConfigParameters.Client, Dts.Variables("$Project::SAP_Client").Value.ToString())
+        _parameters.Add(RfcConfigParameters.Language, "EN")
+        _parameters.Add(RfcConfigParameters.AppServerHost, Dts.Variables("$Project::SAP_Host").Value.ToString())
+        _parameters.Add(RfcConfigParameters.SystemNumber, Dts.Variables("$Project::SAP_SysNum").Value.ToString())
+
+        Dim _destination As RfcDestination = RfcDestinationManager.GetDestination(_parameters)
+        Dim _sapRfcRepository As RfcRepository = _destination.Repository
+
+        Dim _rfcReadTable As IRfcFunction = _sapRfcRepository.CreateFunction("RFC_READ_TABLE")
+
+
+        _rfcReadTable.SetValue("QUERY_TABLE", "ZQTN_RM")
+        '一般情况用";"分割，由于SAP的表中有数据包含分号，所以只能用"|"分割，否则会出现错误
+        _rfcReadTable.SetValue("DELIMITER", Chr(31))
+        Dim fieldsTable As IRfcTable = _rfcReadTable.GetTable("FIELDS")
+        fieldsTable.Append()
+        fieldsTable.SetValue("FIELDNAME", "BUKRS")
+        fieldsTable.Append()
+        fieldsTable.SetValue("FIELDNAME", "VBELN")
+        fieldsTable.Append()
+        fieldsTable.SetValue("FIELDNAME", "RBELN")
+        fieldsTable.Append()
+        fieldsTable.SetValue("FIELDNAME", "RPOSN")
+        fieldsTable.Append()
+        fieldsTable.SetValue("FIELDNAME", "MATNR")
+        fieldsTable.Append()
+        fieldsTable.SetValue("FIELDNAME", "MAKTX")
+        fieldsTable.Append()
+        fieldsTable.SetValue("FIELDNAME", "MENGE")
+        fieldsTable.Append()
+        fieldsTable.SetValue("FIELDNAME", "MEINS")
+        fieldsTable.Append()
+        fieldsTable.SetValue("FIELDNAME", "WASTAGE")
+        fieldsTable.Append()
+        fieldsTable.SetValue("FIELDNAME", "KBETR")
+        fieldsTable.Append()
+        fieldsTable.SetValue("FIELDNAME", "NETWR")
+        fieldsTable.Append()
+        fieldsTable.SetValue("FIELDNAME", "WAERS")
+        fieldsTable.Append()
+        fieldsTable.SetValue("FIELDNAME", "SEL")
+        fieldsTable.Append()
+        fieldsTable.SetValue("FIELDNAME", "ZMOD")
+        fieldsTable.Append()
+        fieldsTable.SetValue("FIELDNAME", "ZNEW")
+        fieldsTable.Append()
+        fieldsTable.SetValue("FIELDNAME", "ZOLD")
+        fieldsTable.Append()
+        fieldsTable.SetValue("FIELDNAME", "ZMAT")
+        fieldsTable.Append()
+        fieldsTable.SetValue("FIELDNAME", "FLAG")
+        fieldsTable.Append()
+        fieldsTable.SetValue("FIELDNAME", "ZYARN_TYPE")
+        fieldsTable.Append()
+        fieldsTable.SetValue("FIELDNAME", "ZSUPPLIER")
+        fieldsTable.Append()
+        fieldsTable.SetValue("FIELDNAME", "ZYARN_ACTICLE_NO")
+        fieldsTable.Append()
+        fieldsTable.SetValue("FIELDNAME", "ZYARN_REMARKS")
+        fieldsTable.Append()
+        fieldsTable.SetValue("FIELDNAME", "ZYARN_ID")
+        Try
+            _rfcReadTable.Invoke(_destination)
+        Catch ex As Exception
+            Throw
+        End Try
+
+        Dim dataTable As IRfcTable = _rfcReadTable.GetTable("DATA")
+
+        Dim _paraArray(22) As SqlParameter
+        Dim data As String
+
+        For Each _dataRow As IRfcStructure In dataTable
+            With _dataRow
+                data = _dataRow.GetString("WA")
+                Dim columns() As String = Split(data, Chr(31))
+                Try
+                    _paraArray(0) = New SqlParameter("BUKRS", columns(0))
+                    _paraArray(1) = New SqlParameter("VBELN", columns(1))
+                    _paraArray(2) = New SqlParameter("RBELN", columns(2))
+                    _paraArray(3) = New SqlParameter("RPOSN", columns(3))
+                    _paraArray(4) = New SqlParameter("MATNR", columns(4))
+                    _paraArray(5) = New SqlParameter("MAKTX", columns(5))
+                    Try
+                        _paraArray(6) = New SqlParameter("MENGE", Format(CDbl(columns(6)), "0.000"))
+                    Catch ex As Exception
+                        If (columns(6).Trim().Length = 0) Then
+                            _paraArray(6) = New SqlParameter("MENGE", 0)
+                        Else
+                            Throw ex
+                        End If
+                    End Try
+                    _paraArray(7) = New SqlParameter("MEINS", columns(7))
+                    _paraArray(8) = New SqlParameter("WASTAGE", columns(8))
+                    Try
+                        _paraArray(9) = New SqlParameter("KBETR", Format(CDbl(columns(9)), "0.00"))
+                    Catch ex As Exception
+                        If (columns(9).Trim().Length = 0) Then
+                            _paraArray(9) = New SqlParameter("KBETR", 0)
+                        Else
+                            Throw ex
+                        End If
+                    End Try
+                    Try
+                        _paraArray(10) = New SqlParameter("NETWR", Format(CDbl(columns(10)), "0.00"))
+                    Catch ex As Exception
+                        If (columns(10).Trim().Length = 0) Then
+                            _paraArray(10) = New SqlParameter("NETWR", 0)
+                        Else
+                            Throw ex
+                        End If
+                    End Try
+                    _paraArray(11) = New SqlParameter("WAERS", columns(11))
+                    _paraArray(12) = New SqlParameter("SEL", columns(12))
+                    _paraArray(13) = New SqlParameter("ZMOD", columns(13))
+                    _paraArray(14) = New SqlParameter("ZNEW", columns(14))
+                    _paraArray(15) = New SqlParameter("ZOLD", columns(15))
+                    _paraArray(16) = New SqlParameter("ZMAT", columns(16))
+                    _paraArray(17) = New SqlParameter("FLAG", columns(17))
+                    _paraArray(18) = New SqlParameter("ZYARN_TYPE", columns(18))
+                    _paraArray(19) = New SqlParameter("ZSUPPLIER", columns(19))
+                    _paraArray(20) = New SqlParameter("ZYARN_ACTICLE_NO", columns(20))
+                    _paraArray(21) = New SqlParameter("ZYARN_REMARKS", columns(21))
+                    _paraArray(22) = New SqlParameter("ZYARN_ID", columns(22))
+                Catch
+                    Dts.Events.FireError(0, "Script Task Error", _
+                        data, _
+                        String.Empty, 0)
+                    Continue For
+                End Try
+                columns = Nothing
+            End With
+            Call InsertTmpTable("p_Ins_ZQTN_RM_Tmp", _paraArray)
+            _paraArray.Clear(_paraArray, 0, 23)
+        Next
+        Dts.TaskResult = ScriptResults.Success
+
+    End Sub
+
+    Private Function InsertTmpTable(ByVal p_SPName As String, ByVal p_ParaArray() As SqlParameter) As Boolean
+        Dim _result As Boolean = False
+
+        Dim _connStr As String
+        Try
+
+            _connStr = Dts.Variables("$Project::Sql_Connection").Value.ToString()
+
+
+            Using _connection As New SqlConnection(_connStr)
+
+                _connection.Open()
+
+                Using _command As New SqlCommand(p_SPName, _connection)
+
+                    _command.CommandType = CommandType.StoredProcedure
+
+                    For Each _para As SqlParameter In p_ParaArray
+                        _command.Parameters.Add(_para)
+                    Next
+
+                    _command.ExecuteNonQuery()
+
+                End Using
+
+            End Using
+            _result = True
+        Catch ex As Exception
+            _result = False
+            Throw
+        End Try
+
+        Return _result
+    End Function
+
+End Class]]></ProjectItem>
+          <ProjectItem
+            Name="ScriptTask_b09b62cced5a425094f9d17ee7e6ebcf.vbproj"
+            Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="utf-16"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2460374a-6c98-4983-bfd4-409efdd89071}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>My Project</AppDesignerFolder>
+    <RootNamespace>ScriptTask_b09b62cced5a425094f9d17ee7e6ebcf</RootNamespace>
+    <AssemblyName>ScriptTask_b09b62cced5a425094f9d17ee7e6ebcf</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionStrict>On</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.SqlServer.ManagedDTS, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.ScriptTask, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="System">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="sapnco_utils">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="sapnco">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="My Project\" />
+  </ItemGroup>
+  <!-- Include the build rules for a VB project.-->
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
+        <ProjectProperties HostName="ScriptTask" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="vb" TemplatesPath="" DebugInfoExeName="" DebugInfoCommandLine="" DebugInfoWorkingDir="" IconImageList="" />
+        <Host Name="ScriptTask" IconIndex=""></Host>
+        <ProjectClient>
+          <HostIdentifier>SSIS_ST130</HostIdentifier>
+        </ProjectClient>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <ItemGroup>
+    <Compile Include="ScriptMain.vb" />
+  </ItemGroup>
+</Project>]]></ProjectItem>
+          <ProjectItem
+            Name="Project"
+            Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
+	<msb:PropertyGroup>
+		<msb:CodeName>ScriptTask_b09b62cced5a425094f9d17ee7e6ebcf</msb:CodeName>
+		<msb:Language>msBuild</msb:Language>
+		<msb:DisplayName>ScriptTask_b09b62cced5a425094f9d17ee7e6ebcf</msb:DisplayName>
+		<msb:ProjectId>{6A808DE1-AD17-46CA-B69A-2E5C0621FFCE}</msb:ProjectId>
+	</msb:PropertyGroup>
+	<msb:ItemGroup>
+		<msb:Project Include="ScriptTask_b09b62cced5a425094f9d17ee7e6ebcf.vbproj"/>
+		<msb:File Include="ScriptMain.vb"/>
+	</msb:ItemGroup>
+</c:Project>]]></ProjectItem>
+          <BinaryItem
+            Name="ScriptTask_b09b62cced5a425094f9d17ee7e6ebcf.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAD3XlVsAAAAAAAAAAOAAIiALAVAAACQAAAAGAAAAAAAA5kIA
+AAAgAAAAYAAAAAAAEAAgAAAAAgAABAAAAAAAAAAEAAAAAAAAAACgAAAAAgAAAAAAAAMAQIUAABAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAJRCAABPAAAAAGAAADADAAAAAAAAAAAAAAAAAAAA
+AAAAAIAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAA7CIAAAAgAAAAJAAAAAIA
+AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAADADAAAAYAAAAAQAAAAmAAAAAAAAAAAAAAAAAABAAABA
+LnJlbG9jAAAMAAAAAIAAAAACAAAAKgAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAADI
+QgAAAAAAAEgAAAACAAUAfCkAABgZAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4CKA8AAAoqHgIoEAAACiqmcxEAAAqAAQAABHMSAAAKgAIA
+AARzEwAACoADAAAEcxQAAAqABAAABCoufgEAAARvFQAACioufgIAAARvFgAACioufgMAAARvFwAA
+CioufgQAAARvGAAACioeAigZAAAKKgAAGzAGAJ4GAAABAAARcxoAAAolcgEAAHACKBsAAApvHAAA
+CnILAABwbx0AAApvHgAACm8fAAAKbyAAAAolcjEAAHACKBsAAApvHAAACnI7AABwbx0AAApvHgAA
+Cm8fAAAKbyAAAAolcmEAAHACKBsAAApvHAAACnJvAABwbx0AAApvIQAACm8fAAAKbyAAAAolcp0A
+AHACKBsAAApvHAAACnKrAABwbx0AAApvHgAACm8fAAAKbyAAAAolctUAAHBy3wAAcG8gAAAKJXLl
+AABwAigbAAAKbxwAAApy8wAAcG8dAAAKbx4AAApvHwAACm8gAAAKJXIZAQBwAigbAAAKbxwAAApy
+JQEAcG8dAAAKbx4AAApvHwAACm8gAAAKKCIAAAoKBm8jAAAKck8BAHBvJAAACgsHcm0BAHByhQEA
+cG8lAAAKB3KVAQBwHx9vJgAACgdyqQEAcG8nAAAKJW8oAAAKJXK3AQBwcssBAHBvJQAACiVvKAAA
+CiVytwEAcHLXAQBwbyUAAAolbygAAAolcrcBAHBy4wEAcG8lAAAKJW8oAAAKJXK3AQBwcu8BAHBv
+JQAACiVvKAAACiVytwEAcHL7AQBwbyUAAAolbygAAAolcrcBAHByBwIAcG8lAAAKJW8oAAAKJXK3
+AQBwchMCAHBvJQAACiVvKAAACiVytwEAcHIfAgBwbyUAAAolbygAAAolcrcBAHByKwIAcG8lAAAK
+JW8oAAAKJXK3AQBwcjsCAHBvJQAACiVvKAAACiVytwEAcHJHAgBwbyUAAAolbygAAAolcrcBAHBy
+UwIAcG8lAAAKJW8oAAAKJXK3AQBwcl8CAHBvJQAACiVvKAAACiVytwEAcHJnAgBwbyUAAAolbygA
+AAolcrcBAHBycQIAcG8lAAAKJW8oAAAKJXK3AQBwcnsCAHBvJQAACiVvKAAACiVytwEAcHKFAgBw
+byUAAAolbygAAAolcrcBAHByjwIAcG8lAAAKJW8oAAAKJXK3AQBwcpkCAHBvJQAACiVvKAAACiVy
+twEAcHKvAgBwbyUAAAolbygAAAolcrcBAHBywwIAcG8lAAAKJW8oAAAKJXK3AQBwcuUCAHBvJQAA
+CiVvKAAACnK3AQBwcgEDAHBvJQAACgcGbykAAAreCiUoKgAAChMF/hoHchMDAHBvJwAACgwfF40c
+AAABDQhvKwAAChMGOPoCAAARBm8sAAAKch0DAHBvLQAAChMEEQRyIwMAcBUWKC4AAAoTBwkWcssB
+AHARBxaacy8AAAqiCRdy1wEAcBEHF5pzLwAACqIJGHLjAQBwEQcYmnMvAAAKogkZcu8BAHARBxma
+cy8AAAqiCRpy+wEAcBEHGppzLwAACqIJG3IHAgBwEQcbmnMvAAAKogkcchMCAHARBxyaKDAAAAqM
+MAAAAXInAwBwKDEAAApzLwAACqLeNyUoKgAAChMIEQccmm8yAAAKbzMAAAotFQkcchMCAHAWjDIA
+AAFzLwAACqIrAxEIeig0AAAK3gAJHXIfAgBwEQcdmnMvAAAKogkecisCAHARBx6acy8AAAqiCR8J
+cjsCAHARBx8JmigwAAAKjDAAAAFyMwMAcCgxAAAKcy8AAAqi3jklKCoAAAoTCREHHwmabzIAAApv
+MwAACi0WCR8JcjsCAHAWjDIAAAFzLwAACqIrAxEJeig0AAAK3gAACR8KckcCAHARBx8KmigwAAAK
+jDAAAAFyMwMAcCgxAAAKcy8AAAqi3jklKCoAAAoTChEHHwqabzIAAApvMwAACi0WCR8KckcCAHAW
+jDIAAAFzLwAACqIrAxEKeig0AAAK3gAJHwtyUwIAcBEHHwuacy8AAAqiCR8Mcl8CAHARBx8MmnMv
+AAAKogkfDXJnAgBwEQcfDZpzLwAACqIJHw5ycQIAcBEHHw6acy8AAAqiCR8PcnsCAHARBx8PmnMv
+AAAKogkfEHKFAgBwEQcfEJpzLwAACqIJHxFyjwIAcBEHHxGacy8AAAqiCR8ScpkCAHARBx8SmnMv
+AAAKogkfE3KvAgBwEQcfE5pzLwAACqIJHxRywwIAcBEHHxSacy8AAAqiCR8VcuUCAHARBx8VmnMv
+AAAKogkfFnIBAwBwEQcfFppzLwAACqLeKygqAAAKAigbAAAKbzUAAAoWcj0DAHARBH42AAAKFm83
+AAAKJig0AAAK3hsUEwcUJgJyYQMAcAkoCgAABiYJFh8XKDgAAAoRBm85AAAKOvr8///eDBEGLAcR
+Bm86AAAK3AIoGwAAChZvOwAACioAAEGUAAAAAAAASQMAAAkAAABSAwAACgAAAB0AAAEAAAAABgQA
+ACcAAAAtBAAANwAAAB0AAAEAAAAAhgQAACkAAACvBAAAOQAAAB0AAAEAAAAA6QQAACkAAAASBQAA
+OQAAAB0AAAEAAAAAoAMAAJECAAAxBgAAKwAAAB0AAAECAAAAcAMAABUDAACFBgAADAAAAAAAAAAb
+MAIAmgAAAAIAABEWCgIoGwAACm8cAAAKcoUDAHBvHQAACm8eAAAKbx8AAAoLB3M8AAAKDAhvPQAA
+CgMIcz4AAAoNCRpvPwAACgQTBBYTBSsbEQQRBZoTBglvQAAAChEGb0EAAAomEQUX1hMFEQURBI5p
+Mt0Jb0IAAAom3goJLAYJbzoAAArc3goILAYIbzoAAArcFwreDCUoKgAAChMHFgr+GgYqAAABKAAA
+AgA3ADtyAAoAAAAAAgApAFV+AAoAAAAAAAACAIqMAAwdAAABNgIDKEMAAAooRAAACioeAihFAAAK
+Ki7QBgAAAihGAAAKKh4CKB8AAAoqAAATMAEAFAAAAAMAABECjAgAABstCCgBAAArCisCAgoGKiID
+/hUIAAAbKh4CKEgAAAoqAAAAEzACACgAAAAEAAARAntJAAAKb0oAAAoKBowLAAAbLRIoAgAAKwoC
+e0kAAAoGb0sAAAoGKkoCKEgAAAoCc0wAAAp9SQAACioAQlNKQgEAAQAAAAAADAAAAHY0LjAuMzAz
+MTkAAAAABQBsAAAAnAcAACN+AAAICAAAwAkAACNTdHJpbmdzAAAAAMgRAAC4AwAAI1VTAIAVAAAQ
+AAAAI0dVSUQAAACQFQAAiAMAACNCbG9iAAAAAAAAAAIAAAFXHaIJCQ4AAAD6ATMAFgAAAQAAADsA
+AAAIAAAACAAAABMAAAAFAAAATAAAAAIAAAAqAAAABAAAAAIAAAAFAAAABQAAAAsAAAABAAAABwAA
+AAMAAAADAAAAAgAAAAAACAUBAAAAAAAGAFEDKggGAKkDKggGAJQCawcPAEoIAAAGAAUDMQQKAH0C
+iQYKAFMC8gQKAKgC8gQOADsCugcOAOwGfgcGAB4DawcOANUCAwgOAO0C7wAGAPcIQQUOAMsGugcO
+ADYD7wAGAAQCQQUGAMEC5AcOAA8AtgQKAGgCVwUSAIcDjQQGAHEDQQUSAB8CjQQGAF4EQQUWAJ0F
+UgcWAOAFUgcWAGQBUgcaANAGHQkGAPwFQQUGADkA1AAWABECUgcaANIFHQkaAAkBHQkGAE0FQQUW
+ALMIUgcSAOAEjQQeAF0I0QEeAIYB0QEGAE0A1AAWAHMGUgcWAKwJUgcWAKEGUgcOAL8AAwgGAAEA
+1AAOAGcI7wAOABsB7wAOAHYIAwgGAJ0BQQUGAFcEQQUGAEcAQQUSALMGjQQGAIcJQQUGACEHgggG
+AI8BQQUaAPUBswAaALsFHQkGAJUIKggGAKQBQQUGADsHQQUAAAAAWgAAAAAAAQABAAAAAACPBVIJ
+JQABAAEAAAAAAOoGUgkpAAEAAgAAARAA/ghSCTkAAQADAAEAAAB0BQUEXQAFAAgABQEAAKwHAAA5
+AAUACwAFAQAAHgAAADkABQASAAIBAADXCAAAiQAGABQAMQA8Bs4BMQATBtYBMQAnBt4BMQBVBuYB
+IQBICYMBBgarAO4BVoDHCPEBVoAJAvEBUCAAAAAABhhFBwYAAQBYIAAAAAAGGEUHBgABAGAgAAAA
+ABEYSwcAAQEAiiAAAAAAEwjdBvUBAQCWIAAAAAATCH8F+gEBAKIgAAAAABMIxwb/AQEAriAAAAAA
+EwicBwQCAQC6IAAAAAAGGEUHBgABAMQgAAAAAAYAegUGAAEABCgAAAAAAQBuAQkCAQDUKAAAAADG
+Am8IVwEDAOIoAAAAAMYCUQH8AAQA6igAAAAAgwABAhECBAD2KAAAAADGAksEgwAEAAApAAAAABEA
+mAAWAgQAICkAAAAAAQCEAB4CBQApKQAAAAAGGEUHBgAGADQpAAAAAAMIOAFKAAYAaCkAAAAABhhF
+BwYABgAAAAEAyAEAAAIAgQkAAAEACwYAAAEASAEAAAEASAEJAEUHAQARAEUHBgAZAEUHCgApAEUH
+EAAxAEUHFQBBAEUHGwBZAEUHBgBhAEUHBgBpAEUHBgCBAEUHIQCRAEUHKQChAEUHEACpAEUHBgCx
+AEUHKQBJAEUHBgBRAEUHBgAMAEUHBgAUAEUHBgAcAEUHBgAkAEUHBgAMADgBSgAUADgBSgAcADgB
+SgAkADgBSgC5AEUHBgAZAUUHBgC5AM8IbAAhAVkIcgApATgFeAAxAccDfwBxAEsEgwAsAAUBjwAx
+AdsDfwBBAawFlwDJAJ0JnwBJAe0FpQBRAfwDFQBRAfwDqwBRAX0BsQDZABQBBgDRAF0BtwBZAREH
+vQA0AC0HywA8ADMJSgBRAVQE2wBpAQgJ4ADhAEUH6wB5AZsB8QBpAfAI9gCJAUgFgwCJAWME/ABZ
+Af8GAAEhAeUIBAGJAboJCgGZAfUGDQGhAQ0GFgGpAT8JHwGxAUsCBgAhAQ4JAQABAUUHEAABAVIF
+BgAJAUUHNgEJAfEBPgEJAaQIRQHBAQUBSwEJAY0J/ADJAe0DUgFxAG8IVwFxAFEB/ACJALYBXAHZ
+ASkBbAFxAEUHBgBMAEgJgwFUAMcDSgBUANEDmgFUAEUHBgAIABwAxAEIACAAyQEpAGMAQgMuAAsA
+PwIuABMASAIuABsAZwIuACMAcAJAADsAyQFAADMAuAJDACsAwQJDADMAuAJJAGMAUwNjACsAwQJj
+ADMAuAJpAGMAZwOAADsAyQGDAEMAyQGDAEsAyQGDACsAwQKJAGMAdAOgADsAyQGjAGsAyQGjAHMA
+2gLAADsAyQHDADMAuALDAFMA4ALgADsAyQHjADMAuALjAFsA2gJgATMAuAJgATsAyQGAATMAuAKA
+ATsAyQGgATMAuAKgATsAyQHAATMAuALAATsAyQHgATsAyQEAAjsAyQEgAjsAyQEgAjMAuAJAAjsA
+yQFgAjsAyQFgAjMAuAJPACMBZAF3AQQAAQAHAAUAAADsBiYCAACRBSsCAADLBjACAACuBzUCAAA8
+AToCAgAEAAMAAgAFAAUAAgAGAAcAAgAHAAkAAgASAAsALgA1ADwAQwCHAMMA1ABpAXwBiwGSAQSA
+AAAAAAAAAAAAAAAAAAAAAAUEAAAEAAAAAAAAAAAAAACgAcsAAAAAAAQAAAAAAAAAAAAAAKABQQUA
+AAAACgAAAAAAAAAAAAAAqQHvAAAAAAANAAAAAAAAAAAAAACyAW4EAAAAAAMAAAAAACoAAAAAALsB
+BgYAAAAABAAAAAAAAAAAAAAAoAGzAAAAAAANAAAAAAAAAAAAAACyAWMAAAAAAAYABAAHAAQACAAF
+AAAAEAAOAIIAAAAQAB8AggAAAAAAIQCCAI8AcgGPAJUBAAAAAABJRW51bWVyYWJsZWAxAENvbnRl
+eHRWYWx1ZWAxAFRocmVhZFNhZmVPYmplY3RQcm92aWRlcmAxAElFbnVtZXJhdG9yYDEASW50MzIA
+RGljdGlvbmFyeWAyADxNb2R1bGU+AE1pY3Jvc29mdC5TcWxTZXJ2ZXIuTWFuYWdlZERUUwBUAERp
+c3Bvc2VfX0luc3RhbmNlX18AQ3JlYXRlX19JbnN0YW5jZV9fAHZhbHVlX18AU3lzdGVtLkRhdGEA
+UHJvamVjdERhdGEAbXNjb3JsaWIAU3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMATWljcm9zb2Z0
+LlZpc3VhbEJhc2ljAEFkZABTcWxDb21tYW5kAEFwcGVuZABDb21wYXJlTWV0aG9kAENyZWF0ZUlu
+c3RhbmNlAGdldF9HZXRJbnN0YW5jZQBpbnN0YW5jZQBHZXRIYXNoQ29kZQBJbnZva2UASVJmY1Rh
+YmxlAEluc2VydFRtcFRhYmxlAEdldFRhYmxlAFZhcmlhYmxlAElEaXNwb3NhYmxlAFRvRG91Ymxl
+AFJ1bnRpbWVUeXBlSGFuZGxlAEdldFR5cGVGcm9tSGFuZGxlAHBfU1BOYW1lAE1pY3Jvc29mdC5T
+cWxTZXJ2ZXIuRHRzLlJ1bnRpbWUAc2V0X0NvbW1hbmRUeXBlAEdldFR5cGUARmFpbHVyZQBJUmZj
+U3RydWN0dXJlAFZTVEFSVFNjcmlwdE9iamVjdE1vZGVsQmFzZQBBcHBsaWNhdGlvbkJhc2UARGlz
+cG9zZQBFZGl0b3JCcm93c2FibGVTdGF0ZQBIZWxwS2V5d29yZEF0dHJpYnV0ZQBHZW5lcmF0ZWRD
+b2RlQXR0cmlidXRlAERlYnVnZ2FibGVBdHRyaWJ1dGUARWRpdG9yQnJvd3NhYmxlQXR0cmlidXRl
+AENvbVZpc2libGVBdHRyaWJ1dGUAU3RhbmRhcmRNb2R1bGVBdHRyaWJ1dGUASGlkZU1vZHVsZU5h
+bWVBdHRyaWJ1dGUAVGFyZ2V0RnJhbWV3b3JrQXR0cmlidXRlAERlYnVnZ2VySGlkZGVuQXR0cmli
+dXRlAE15R3JvdXBDb2xsZWN0aW9uQXR0cmlidXRlAENvbXBpbGF0aW9uUmVsYXhhdGlvbnNBdHRy
+aWJ1dGUAQ0xTQ29tcGxpYW50QXR0cmlidXRlAFNTSVNTY3JpcHRUYXNrRW50cnlQb2ludEF0dHJp
+YnV0ZQBSdW50aW1lQ29tcGF0aWJpbGl0eUF0dHJpYnV0ZQBnZXRfVmFsdWUAc2V0X1ZhbHVlAEdl
+dFNlbnNpdGl2ZVZhbHVlAEdldE9iamVjdFZhbHVlAFNldFZhbHVlAFNjcmlwdFRhc2tfYjA5YjYy
+Y2NlZDVhNDI1MDk0ZjlkMTdlZTdlNmViY2YAU3lzdGVtLlJ1bnRpbWUuVmVyc2lvbmluZwBUb1N0
+cmluZwBHZXRTdHJpbmcATWF0aABnZXRfTGVuZ3RoAE1pY3Jvc29mdC5TcWxTZXJ2ZXIuU2NyaXB0
+VGFzawBNaWNyb3NvZnQuU3FsU2VydmVyLkR0cy5UYXNrcy5TY3JpcHRUYXNrAE1pY3Jvc29mdC5W
+aXN1YWxCYXNpYy5NeVNlcnZpY2VzLkludGVybmFsAFNjcmlwdE9iamVjdE1vZGVsAFN5c3RlbS5D
+b21wb25lbnRNb2RlbABTY3JpcHRUYXNrX2IwOWI2MmNjZWQ1YTQyNTA5NGY5ZDE3ZWU3ZTZlYmNm
+LmRsbABnZXRfSXRlbQBTeXN0ZW0AVHJpbQBFbnVtAE9wZW4AU3lzdGVtLkNvbXBvbmVudE1vZGVs
+LkRlc2lnbgBTY3JpcHRNYWluAGdldF9BcHBsaWNhdGlvbgBNeUFwcGxpY2F0aW9uAFJmY0Rlc3Rp
+bmF0aW9uAEdldERlc3RpbmF0aW9uAFNxbFBhcmFtZXRlckNvbGxlY3Rpb24AU3FsQ29ubmVjdGlv
+bgBJUmZjRnVuY3Rpb24AQ3JlYXRlRnVuY3Rpb24ARXhjZXB0aW9uAHNhcG5jbwBDbGVhcgBtX0Fw
+cE9iamVjdFByb3ZpZGVyAG1fVXNlck9iamVjdFByb3ZpZGVyAG1fQ29tcHV0ZXJPYmplY3RQcm92
+aWRlcgBtX015V2ViU2VydmljZXNPYmplY3RQcm92aWRlcgBSZmNEZXN0aW5hdGlvbk1hbmFnZXIA
+U3lzdGVtLkNvZGVEb20uQ29tcGlsZXIASVJmY0RhdGFDb250YWluZXIARXZlbnRzT2JqZWN0V3Jh
+cHBlcgBnZXRfVXNlcgBTcWxQYXJhbWV0ZXIAZ2V0X0NvbXB1dGVyAE15Q29tcHV0ZXIARmlyZUVy
+cm9yAENsZWFyUHJvamVjdEVycm9yAFNldFByb2plY3RFcnJvcgBJRW51bWVyYXRvcgBHZXRFbnVt
+ZXJhdG9yAEFjdGl2YXRvcgAuY3RvcgAuY2N0b3IAU0FQLk1pZGRsZXdhcmUuQ29ubmVjdG9yAFN5
+c3RlbS5EaWFnbm9zdGljcwBNaWNyb3NvZnQuVmlzdWFsQmFzaWMuRGV2aWNlcwBnZXRfV2ViU2Vy
+dmljZXMATXlXZWJTZXJ2aWNlcwBNaWNyb3NvZnQuVmlzdWFsQmFzaWMuQXBwbGljYXRpb25TZXJ2
+aWNlcwBTeXN0ZW0uUnVudGltZS5JbnRlcm9wU2VydmljZXMATWljcm9zb2Z0LlZpc3VhbEJhc2lj
+LkNvbXBpbGVyU2VydmljZXMAU3lzdGVtLlJ1bnRpbWUuQ29tcGlsZXJTZXJ2aWNlcwBEZWJ1Z2dp
+bmdNb2RlcwBnZXRfVmFyaWFibGVzAFN0cmluZ3MARXF1YWxzAENvbnZlcnNpb25zAFN5c3RlbS5D
+b2xsZWN0aW9ucwBSdW50aW1lSGVscGVycwBnZXRfUGFyYW1ldGVycwBSZmNDb25maWdQYXJhbWV0
+ZXJzAFN1Y2Nlc3MAZ2V0X0R0cwBTY3JpcHRSZXN1bHRzAGdldF9FdmVudHMARm9ybWF0AE9iamVj
+dABNeVByb2plY3QAU3BsaXQAc2V0X1Rhc2tSZXN1bHQAU3lzdGVtLkRhdGEuU3FsQ2xpZW50AGdl
+dF9DdXJyZW50AE1vdmVOZXh0AG1fQ29udGV4dABTY3JpcHRUYXNrX2IwOWI2MmNjZWQ1YTQyNTA5
+NGY5ZDE3ZWU3ZTZlYmNmLk15AHBfUGFyYUFycmF5AEV4ZWN1dGVOb25RdWVyeQBnZXRfUmVwb3Np
+dG9yeQBSZmNSZXBvc2l0b3J5AEVtcHR5AAAJTgBBAE0ARQAAJSQAUAByAG8AagBlAGMAdAA6ADoA
+UwBBAFAAXwBOAGEAbQBlAAAJVQBTAEUAUgAAJSQAUAByAG8AagBlAGMAdAA6ADoAUwBBAFAAXwBV
+AHMAZQByAAANUABBAFMAUwBXAEQAAC0kAFAAcgBvAGoAZQBjAHQAOgA6AFMAQQBQAF8AUABhAHMA
+cwB3AG8AcgBkAAANQwBMAEkARQBOAFQAACkkAFAAcgBvAGoAZQBjAHQAOgA6AFMAQQBQAF8AQwBs
+AGkAZQBuAHQAAAlMAEEATgBHAAAFRQBOAAANQQBTAEgATwBTAFQAACUkAFAAcgBvAGoAZQBjAHQA
+OgA6AFMAQQBQAF8ASABvAHMAdAAAC1MAWQBTAE4AUgAAKSQAUAByAG8AagBlAGMAdAA6ADoAUwBB
+AFAAXwBTAHkAcwBOAHUAbQAAHVIARgBDAF8AUgBFAEEARABfAFQAQQBCAEwARQAAF1EAVQBFAFIA
+WQBfAFQAQQBCAEwARQAAD1oAUQBUAE4AXwBSAE0AABNEAEUATABJAE0ASQBUAEUAUgAADUYASQBF
+AEwARABTAAATRgBJAEUATABEAE4AQQBNAEUAAAtCAFUASwBSAFMAAAtWAEIARQBMAE4AAAtSAEIA
+RQBMAE4AAAtSAFAATwBTAE4AAAtNAEEAVABOAFIAAAtNAEEASwBUAFgAAAtNAEUATgBHAEUAAAtN
+AEUASQBOAFMAAA9XAEEAUwBUAEEARwBFAAALSwBCAEUAVABSAAALTgBFAFQAVwBSAAALVwBBAEUA
+UgBTAAAHUwBFAEwAAAlaAE0ATwBEAAAJWgBOAEUAVwAACVoATwBMAEQAAAlaAE0AQQBUAAAJRgBM
+AEEARwAAFVoAWQBBAFIATgBfAFQAWQBQAEUAABNaAFMAVQBQAFAATABJAEUAUgAAIVoAWQBBAFIA
+TgBfAEEAQwBUAEkAQwBMAEUAXwBOAE8AABtaAFkAQQBSAE4AXwBSAEUATQBBAFIASwBTAAARWgBZ
+AEEAUgBOAF8ASQBEAAAJRABBAFQAQQAABVcAQQAAAx8AAQswAC4AMAAwADAAAAkwAC4AMAAwAAAj
+UwBjAHIAaQBwAHQAIABUAGEAcwBrACAARQByAHIAbwByAAAjcABfAEkAbgBzAF8AWgBRAFQATgBf
+AFIATQBfAFQAbQBwAAAxJABQAHIAbwBqAGUAYwB0ADoAOgBTAHEAbABfAEMAbwBuAG4AZQBjAHQA
+aQBvAG4AAADMMLEw99iKRqRX8DclZLtnAAQgAQEIAyAAAQUgAQEREQQgAQEOBSACAQ4OBSABAREd
+ByAEAQ4ODg4EIAEBAgYVEhwBEgwGFRIcARIIBhUSHAESPQYVEhwBEhgEIAATABwHCxJlEmkSbR0S
+cQ4SdRUSeQESfR0OEnUSdRJ1BSAAEoCRBSAAEoCVBiABEoCZHAMgABwDIAAOBxUSgJ0CDg4HIAIB
+EwATAQcAARJlEoCNBSAAEoClBSABEmkOBSACAQ4DBSABEm0OBSABARJlBQABARJ1BxUSgLEBEn0I
+IAAVEnkBEwAGFRJ5ARJ9BCABDg4KAAQdDg4OCBGAuQUgAgEOHAQAAQ0OBQACDhwOAyAACAMAAAEF
+IAASgM0CBg4IIAUCCA4ODggIAAMBEoDRCAgDIAACEgcIAg4SgIESgIUdEnEIEnESdQcgAgEOEoCB
+BiABARGA3QUgABKA4QYgARJxEnEEAAEcHAQgAQIcBwABEkURgOkEBwEeAAIeAAUQAQAeAAQKAR4A
+BAcBEwAGFRIcARMABwYVEk0BEwAGFRJNARMAAhMABAoBEwAFIAEBEwAIt3pcVhk04IkIsD9ffxHV
+CjoIiYRdzYCAzJEIUENtylx/fSMEAAAAAAQBAAAABwYVEhwBEgwHBhUSHAESCAcGFRIcARI9BwYV
+EhwBEhgCBggDBhEgBAAAEgwEAAASCAQAABI9BAAAEhgHIAICDh0ScQQgABJFBxABAR4AHgAHMAEB
+ARAeAAQIABIMBAgAEggECAASPQQIABIYBCgAEwAIAQAIAAAAAAAeAQABAFQCFldyYXBOb25FeGNl
+cHRpb25UaHJvd3MBCAEAAgAAAAAARwEAGi5ORVRGcmFtZXdvcmssVmVyc2lvbj12NC4wAQBUDhRG
+cmFtZXdvcmtEaXNwbGF5TmFtZRAuTkVUIEZyYW1ld29yayA0CAEAAQAAAAAAGAEACk15VGVtcGxh
+dGUIMTEuMC4wLjAAAAUBAAAAAGEBADRTeXN0ZW0uV2ViLlNlcnZpY2VzLlByb3RvY29scy5Tb2Fw
+SHR0cENsaWVudFByb3RvY29sEkNyZWF0ZV9fSW5zdGFuY2VfXxNEaXNwb3NlX19JbnN0YW5jZV9f
+AAAAEAEAC015LkNvbXB1dGVyAAATAQAOTXkuQXBwbGljYXRpb24AAAwBAAdNeS5Vc2VyAAATAQAO
+TXkuV2ViU2VydmljZXMAALxCAAAAAAAAAAAAANZCAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAADI
+QgAAAAAAAAAAAAAAAF9Db3JEbGxNYWluAG1zY29yZWUuZGxsAAAAAAD/JQAgABAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAEAAA
+ABgAAIAAAAAAAAAAAAAAAAAAAAEAAQAAADAAAIAAAAAAAAAAAAAAAAAAAAEAAAAAAEgAAABYYAAA
+1AIAAAAAAAAAAAAA1AI0AAAAVgBTAF8AVgBFAFIAUwBJAE8ATgBfAEkATgBGAE8AAAAAAL0E7/4A
+AAEAAAAAAAAAAAAAAAAAAAAAAD8AAAAAAAAABAAAAAIAAAAAAAAAAAAAAAAAAABEAAAAAQBWAGEA
+cgBGAGkAbABlAEkAbgBmAG8AAAAAACQABAAAAFQAcgBhAG4AcwBsAGEAdABpAG8AbgAAAAAAAACw
+BDQCAAABAFMAdAByAGkAbgBnAEYAaQBsAGUASQBuAGYAbwAAABACAAABADAAMAAwADAAMAA0AGIA
+MAAAACwAAgABAEYAaQBsAGUARABlAHMAYwByAGkAcAB0AGkAbwBuAAAAAAAgAAAAMAAIAAEARgBp
+AGwAZQBWAGUAcgBzAGkAbwBuAAAAAAAwAC4AMAAuADAALgAwAAAAgAAwAAEASQBuAHQAZQByAG4A
+YQBsAE4AYQBtAGUAAABTAGMAcgBpAHAAdABUAGEAcwBrAF8AYgAwADkAYgA2ADIAYwBjAGUAZAA1
+AGEANAAyADUAMAA5ADQAZgA5AGQAMQA3AGUAZQA3AGUANgBlAGIAYwBmAC4AZABsAGwAAAAoAAIA
+AQBMAGUAZwBhAGwAQwBvAHAAeQByAGkAZwBoAHQAAAAgAAAAiAAwAAEATwByAGkAZwBpAG4AYQBs
+AEYAaQBsAGUAbgBhAG0AZQAAAFMAYwByAGkAcAB0AFQAYQBzAGsAXwBiADAAOQBiADYAMgBjAGMA
+ZQBkADUAYQA0ADIANQAwADkANABmADkAZAAxADcAZQBlADcAZQA2AGUAYgBjAGYALgBkAGwAbAAA
+ADQACAABAFAAcgBvAGQAdQBjAHQAVgBlAHIAcwBpAG8AbgAAADAALgAwAC4AMAAuADAAAAA4AAgA
+AQBBAHMAcwBlAG0AYgBsAHkAIABWAGUAcgBzAGkAbwBuAAAAMAAuADAALgAwAC4AMAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAwAAADoMgAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
+        </ScriptProject>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate Table ZQTN_RM"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{E70A8054-DF65-4C8D-9A46-F40B7BB51E19}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="2057"
+      DTS:ObjectName="Truncate Table ZQTN_RM"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{BDFD734F-2906-4E8C-9210-85B22DF2BECC}"
+          SQLTask:SqlStatementSource="Truncate Table ZQTN_RM" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate Table ZQTN_RM_Tmp"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Truncate Table ZQTN_RM"
+      DTS:DTSID="{CB9F3296-28FD-4C01-842A-F3E24C9F88D5}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="2057"
+      DTS:ObjectName="Truncate Table ZQTN_RM_Tmp"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{BDFD734F-2906-4E8C-9210-85B22DF2BECC}"
+          SQLTask:SqlStatementSource="Truncate Table ZQTN_RM_Tmp" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{6D9B5413-1A00-4B18-96D0-9D78B495E0DD}"
+      DTS:From="Package\Truncate Table ZQTN_RM_Tmp"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Script Task" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{1C23DB5F-6593-4FFE-89A3-FCC25A3CC3D5}"
+      DTS:From="Package\Script Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Insert Into ZQTN_RM_Hist" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{493D24E7-A513-4FB0-8AFD-8F8D1698B4F5}"
+      DTS:From="Package\Insert Into ZQTN_RM_Hist"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Truncate Table ZQTN_RM" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{DA2CC438-FB1D-40DD-90A3-8D3211EE3EA6}"
+      DTS:From="Package\Truncate Table ZQTN_RM"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Insert Into ZQTN_RM" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="237,44"
+          Id="Package\Insert Into ZQTN_RM"
+          TopLeft="5.5,394.896226415094" />
+        <NodeLayout
+          Size="237,44"
+          Id="Package\Insert Into ZQTN_RM_Hist"
+          TopLeft="5.5,209.198113207547" />
+        <NodeLayout
+          Size="237,44"
+          Id="Package\Script Task"
+          TopLeft="5.5,106.330188679245" />
+        <NodeLayout
+          Size="237,44"
+          Id="Package\Truncate Table ZQTN_RM"
+          TopLeft="5.5,300.216981132075" />
+        <NodeLayout
+          Size="237,44"
+          Id="Package\Truncate Table ZQTN_RM_Tmp"
+          TopLeft="5.5,5.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="123.801886792453,49.4245283018868">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,56.9056603773585"
+              Start="0,0"
+              End="0,49.4056603773585">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.4056603773585" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="123.801886792453,150.254716981132">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,58.9433962264151"
+              Start="0,0"
+              End="0,51.4433962264151">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.4433962264151" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="123.801886792453,253.122641509434">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47.0943396226415"
+              Start="0,0"
+              End="0,39.5943396226415">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.5943396226415" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="123.801886792453,344.141509433962">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50.754716981132"
+              Start="0,0"
+              End="0,43.254716981132">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.254716981132" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Insert Into ZQTN_RM_Hist">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="181,42"
+          Id="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist"
+          TopLeft="11,209.5" />
+        <NodeLayout
+          Size="192,42"
+          Id="Package\Insert Into ZQTN_RM_Hist\getData from ZQTN_RM"
+          TopLeft="5.50000000000001,5.5" />
+        <NodeLayout
+          Size="184,42"
+          Id="Package\Insert Into ZQTN_RM_Hist\add History_DateTime"
+          TopLeft="9.50000000000003,107.5" />
+        <EdgeLayout
+          Id="Package\Insert Into ZQTN_RM_Hist.Paths[Derived Column Output]"
+          TopLeft="101.5,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Insert Into ZQTN_RM_Hist.Paths[OLE DB Source Output]"
+          TopLeft="101.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Insert Into ZQTN_RM_Hist\Insert ZQTN_RM_Hist">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

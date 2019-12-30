@@ -1,0 +1,2574 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/7/2010 10:45:00 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="CSCISD3033"
+  DTS:CreatorName="TSTCSCDOMAIN\lwyfhuang2"
+  DTS:DTSID="{924A57A2-A643-413D-8AB2-5E576F188294}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3008.28"
+  DTS:LocaleID="2057"
+  DTS:ObjectName="SD_Ship"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="2"
+  DTS:VersionBuild="20110177"
+  DTS:VersionGUID="{C3B7728C-0CEC-47A0-9750-E4E347577354}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[GSDDB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{C7661CCC-4C9F-462A-B619-B86290205E40}"
+      DTS:ObjectName="GSDDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=tstdev04;User ID=cbif_etl;Initial Catalog=GSDDB;Provider=SQLOLEDB.1;Persist Security Info=True;Application Name=SSIS-SD_Ship_214-{C7661CCC-4C9F-462A-B619-B86290205E40}GSDDB;">
+          <EncryptedData
+            Type="http://www.w3.org/2001/04/xmlenc#Element"
+            Salt="tVGaqL6Zdg=="
+            IV="pffJ+H49Af4=" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            <EncryptionMethod
+              Algorithm="http://www.w3.org/2001/04/xmlenc#tripledes-cbc" />
+            <CipherData>
+              <CipherValue>pffJ+H49Af79zPXA2HtXNm6/GyoIdP5+mjytda5rOQgPLcgaUp2jH3mCiyktMHZmFJS+AE4W5WME7H5JaNWmQ5uenHzfZIwHn5yRjoScSZJyRLnQ0yM7UW9ZfPFn5Fg5Ddax6w+/LPOHuSkTu0GO5KGh/xn38H2Nh+hQ2spwsjs=</CipherValue>
+            </CipherData>
+          </EncryptedData>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[GSDDB_Hist]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{f4cf0463-ac39-4c13-be47-2862f2f1b6af}"
+      DTS:ObjectName="GSDDB_Hist">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=tstdev04;User ID=cbif_etl;Initial Catalog=GSDDB;Provider=SQLOLEDB.1;Persist Security Info=True;Application Name=SSIS-SD_Ship_214-{C7661CCC-4C9F-462A-B619-B86290205E40}GSDDB;">
+          <EncryptedData
+            Type="http://www.w3.org/2001/04/xmlenc#Element"
+            Salt="ULOAG4kSrg=="
+            IV="f89v7wiZ5WA=" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            <EncryptionMethod
+              Algorithm="http://www.w3.org/2001/04/xmlenc#tripledes-cbc" />
+            <CipherData>
+              <CipherValue>f89v7wiZ5WA1w8yuPVYP/fmnVCZ4UJMYnPWcl307GUtYGKwjm+M8upY6Uahh5ob1F6SeGmWeIO2zTpyCjui9GG3u0lety9HzrUiFWyTqNKC4HdBhCEeaFy7h4Hjg5Cy9khyPSipVlWXdUtgNkr1mns136E5+mrdSLB0bDn6mXPU=</CipherValue>
+            </CipherData>
+          </EncryptedData>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{02191793-BACD-431A-A0C7-EFD00FF5284B}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="invoice_dateF">
+      <DTS:VariableValue
+        DTS:DataType="7">12/30/2010 8:58:37 AM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{9C55612F-676B-457F-8F0C-58BE5F3F8C97}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="invoice_dateT">
+      <DTS:VariableValue
+        DTS:DataType="7">12/30/2010 8:59:06 AM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{456516A6-C3C8-4CAF-8726-C71CB5963445}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="RFC_NAME">
+      <DTS:VariableValue
+        DTS:DataType="8">ZSD_SHIP_DOWNLOAD</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{62A9B139-893B-4B1C-8748-4950F9F6C9B3}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Sales_Org">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{B6817613-84A4-4295-A821-4A54ED4B4B69}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Sales_Org_DS">
+      <DTS:VariableValue
+        DTS:DataSubType="ManagedSerializable"
+        DTS:DataType="13">
+        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+          <SOAP-ENV:Body>
+            <xsd:anyType
+              id="ref-1"></xsd:anyType>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      </DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{8B34C838-1400-4D47-A870-471278322DEB}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SO">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:LoggingOptions>
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">1,7,OnError</DTS:Property>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\COPY TO SD_SHIP"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{F42DC868-F78E-428C-8A7A-1292CA7D0DE3}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="COPY TO SD_SHIP"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server v9; (C) 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          BLOBTempStoragePath=""
+          bufferTempStoragePath=""
+          engineThreads="5"
+          version="1">
+          <components>
+            <component
+              refId="Package\COPY TO SD_SHIP\COPY TO SD_SHIP 1"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="COPY TO SD_SHIP 1"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[SD_Ship]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destinaton. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">0</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\COPY TO SD_SHIP\COPY TO SD_SHIP 1.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[GSDDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[GSDDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\COPY TO SD_SHIP\COPY TO SD_SHIP 1.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\COPY TO SD_SHIP\COPY TO SD_SHIP 1.Inputs[OLE DB Destination Input].Columns[CO_Code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="CO_Code"
+                      externalMetadataColumnId="Package\COPY TO SD_SHIP\COPY TO SD_SHIP 1.Inputs[OLE DB Destination Input].ExternalColumns[CO_Code]"
+                      lineageId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[CO_Code]" />
+                    <inputColumn
+                      refId="Package\COPY TO SD_SHIP\COPY TO SD_SHIP 1.Inputs[OLE DB Destination Input].Columns[SO_NO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="SO_NO"
+                      externalMetadataColumnId="Package\COPY TO SD_SHIP\COPY TO SD_SHIP 1.Inputs[OLE DB Destination Input].ExternalColumns[SO_NO]"
+                      lineageId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[SO_NO]" />
+                    <inputColumn
+                      refId="Package\COPY TO SD_SHIP\COPY TO SD_SHIP 1.Inputs[OLE DB Destination Input].Columns[SO_Item_NO]"
+                      cachedDataType="i4"
+                      cachedName="SO_Item_NO"
+                      externalMetadataColumnId="Package\COPY TO SD_SHIP\COPY TO SD_SHIP 1.Inputs[OLE DB Destination Input].ExternalColumns[SO_Item_NO]"
+                      lineageId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[SO_Item_NO]" />
+                    <inputColumn
+                      refId="Package\COPY TO SD_SHIP\COPY TO SD_SHIP 1.Inputs[OLE DB Destination Input].Columns[Invoice_No]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Invoice_No"
+                      externalMetadataColumnId="Package\COPY TO SD_SHIP\COPY TO SD_SHIP 1.Inputs[OLE DB Destination Input].ExternalColumns[Invoice_No]"
+                      lineageId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[Invoice_No]" />
+                    <inputColumn
+                      refId="Package\COPY TO SD_SHIP\COPY TO SD_SHIP 1.Inputs[OLE DB Destination Input].Columns[Invoice_Date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Invoice_Date"
+                      externalMetadataColumnId="Package\COPY TO SD_SHIP\COPY TO SD_SHIP 1.Inputs[OLE DB Destination Input].ExternalColumns[Invoice_Date]"
+                      lineageId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[Invoice_Date]" />
+                    <inputColumn
+                      refId="Package\COPY TO SD_SHIP\COPY TO SD_SHIP 1.Inputs[OLE DB Destination Input].Columns[Invoice_Qty]"
+                      cachedDataType="numeric"
+                      cachedName="Invoice_Qty"
+                      cachedPrecision="18"
+                      cachedScale="3"
+                      externalMetadataColumnId="Package\COPY TO SD_SHIP\COPY TO SD_SHIP 1.Inputs[OLE DB Destination Input].ExternalColumns[Invoice_Qty]"
+                      lineageId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[Invoice_Qty]" />
+                    <inputColumn
+                      refId="Package\COPY TO SD_SHIP\COPY TO SD_SHIP 1.Inputs[OLE DB Destination Input].Columns[UOM]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="UOM"
+                      externalMetadataColumnId="Package\COPY TO SD_SHIP\COPY TO SD_SHIP 1.Inputs[OLE DB Destination Input].ExternalColumns[UOM]"
+                      lineageId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[UOM]" />
+                    <inputColumn
+                      refId="Package\COPY TO SD_SHIP\COPY TO SD_SHIP 1.Inputs[OLE DB Destination Input].Columns[Invoice_AMT]"
+                      cachedDataType="numeric"
+                      cachedName="Invoice_AMT"
+                      cachedPrecision="18"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\COPY TO SD_SHIP\COPY TO SD_SHIP 1.Inputs[OLE DB Destination Input].ExternalColumns[Invoice_AMT]"
+                      lineageId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[Invoice_AMT]" />
+                    <inputColumn
+                      refId="Package\COPY TO SD_SHIP\COPY TO SD_SHIP 1.Inputs[OLE DB Destination Input].Columns[Invoice_Currency]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="Invoice_Currency"
+                      externalMetadataColumnId="Package\COPY TO SD_SHIP\COPY TO SD_SHIP 1.Inputs[OLE DB Destination Input].ExternalColumns[Invoice_Currency]"
+                      lineageId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[Invoice_Currency]" />
+                    <inputColumn
+                      refId="Package\COPY TO SD_SHIP\COPY TO SD_SHIP 1.Inputs[OLE DB Destination Input].Columns[Invoice_AMT_HKD]"
+                      cachedDataType="numeric"
+                      cachedName="Invoice_AMT_HKD"
+                      cachedPrecision="18"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\COPY TO SD_SHIP\COPY TO SD_SHIP 1.Inputs[OLE DB Destination Input].ExternalColumns[Invoice_AMT_HKD]"
+                      lineageId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[Invoice_AMT_HKD]" />
+                    <inputColumn
+                      refId="Package\COPY TO SD_SHIP\COPY TO SD_SHIP 1.Inputs[OLE DB Destination Input].Columns[Amount_FI]"
+                      cachedDataType="numeric"
+                      cachedName="Amount_FI"
+                      cachedPrecision="18"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\COPY TO SD_SHIP\COPY TO SD_SHIP 1.Inputs[OLE DB Destination Input].ExternalColumns[Amount_FI]"
+                      lineageId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[Amount_FI]" />
+                    <inputColumn
+                      refId="Package\COPY TO SD_SHIP\COPY TO SD_SHIP 1.Inputs[OLE DB Destination Input].Columns[Amount_Local]"
+                      cachedDataType="numeric"
+                      cachedName="Amount_Local"
+                      cachedPrecision="18"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\COPY TO SD_SHIP\COPY TO SD_SHIP 1.Inputs[OLE DB Destination Input].ExternalColumns[Amount_Local]"
+                      lineageId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[Amount_Local]" />
+                    <inputColumn
+                      refId="Package\COPY TO SD_SHIP\COPY TO SD_SHIP 1.Inputs[OLE DB Destination Input].Columns[FI_Doc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="FI_Doc"
+                      externalMetadataColumnId="Package\COPY TO SD_SHIP\COPY TO SD_SHIP 1.Inputs[OLE DB Destination Input].ExternalColumns[FI_Doc]"
+                      lineageId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[FI_Doc]" />
+                    <inputColumn
+                      refId="Package\COPY TO SD_SHIP\COPY TO SD_SHIP 1.Inputs[OLE DB Destination Input].Columns[GrossAmount]"
+                      cachedDataType="numeric"
+                      cachedName="GrossAmount"
+                      cachedPrecision="18"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\COPY TO SD_SHIP\COPY TO SD_SHIP 1.Inputs[OLE DB Destination Input].ExternalColumns[GrossAmount]"
+                      lineageId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[GrossAmount]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\COPY TO SD_SHIP\COPY TO SD_SHIP 1.Inputs[OLE DB Destination Input].ExternalColumns[CO_Code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="CO_Code" />
+                    <externalMetadataColumn
+                      refId="Package\COPY TO SD_SHIP\COPY TO SD_SHIP 1.Inputs[OLE DB Destination Input].ExternalColumns[SO_NO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="SO_NO" />
+                    <externalMetadataColumn
+                      refId="Package\COPY TO SD_SHIP\COPY TO SD_SHIP 1.Inputs[OLE DB Destination Input].ExternalColumns[SO_Item_NO]"
+                      dataType="i4"
+                      name="SO_Item_NO" />
+                    <externalMetadataColumn
+                      refId="Package\COPY TO SD_SHIP\COPY TO SD_SHIP 1.Inputs[OLE DB Destination Input].ExternalColumns[Invoice_No]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Invoice_No" />
+                    <externalMetadataColumn
+                      refId="Package\COPY TO SD_SHIP\COPY TO SD_SHIP 1.Inputs[OLE DB Destination Input].ExternalColumns[Invoice_Date]"
+                      dataType="dbTimeStamp"
+                      name="Invoice_Date" />
+                    <externalMetadataColumn
+                      refId="Package\COPY TO SD_SHIP\COPY TO SD_SHIP 1.Inputs[OLE DB Destination Input].ExternalColumns[Invoice_Qty]"
+                      dataType="numeric"
+                      name="Invoice_Qty"
+                      precision="18"
+                      scale="3" />
+                    <externalMetadataColumn
+                      refId="Package\COPY TO SD_SHIP\COPY TO SD_SHIP 1.Inputs[OLE DB Destination Input].ExternalColumns[UOM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="UOM" />
+                    <externalMetadataColumn
+                      refId="Package\COPY TO SD_SHIP\COPY TO SD_SHIP 1.Inputs[OLE DB Destination Input].ExternalColumns[Invoice_AMT]"
+                      dataType="numeric"
+                      name="Invoice_AMT"
+                      precision="18"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\COPY TO SD_SHIP\COPY TO SD_SHIP 1.Inputs[OLE DB Destination Input].ExternalColumns[Invoice_Currency]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="Invoice_Currency" />
+                    <externalMetadataColumn
+                      refId="Package\COPY TO SD_SHIP\COPY TO SD_SHIP 1.Inputs[OLE DB Destination Input].ExternalColumns[Invoice_AMT_HKD]"
+                      dataType="numeric"
+                      name="Invoice_AMT_HKD"
+                      precision="18"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\COPY TO SD_SHIP\COPY TO SD_SHIP 1.Inputs[OLE DB Destination Input].ExternalColumns[Amount_FI]"
+                      dataType="numeric"
+                      name="Amount_FI"
+                      precision="18"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\COPY TO SD_SHIP\COPY TO SD_SHIP 1.Inputs[OLE DB Destination Input].ExternalColumns[Amount_Local]"
+                      dataType="numeric"
+                      name="Amount_Local"
+                      precision="18"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\COPY TO SD_SHIP\COPY TO SD_SHIP 1.Inputs[OLE DB Destination Input].ExternalColumns[FI_Doc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="FI_Doc" />
+                    <externalMetadataColumn
+                      refId="Package\COPY TO SD_SHIP\COPY TO SD_SHIP 1.Inputs[OLE DB Destination Input].ExternalColumns[GrossAmount]"
+                      dataType="numeric"
+                      name="GrossAmount"
+                      precision="18"
+                      scale="2" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\COPY TO SD_SHIP\COPY TO SD_SHIP 1.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\COPY TO SD_SHIP\COPY TO SD_SHIP 1.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP\COPY TO SD_SHIP 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\COPY TO SD_SHIP\COPY TO SD_SHIP 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP\COPY TO SD_SHIP 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\COPY TO SD_SHIP\COPY TO SD_SHIP 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="SELECT SD_SHIP_TMP"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[SD_Ship_Tmp]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[GSDDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[GSDDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[CO_Code]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].ExternalColumns[CO_Code]"
+                      length="4"
+                      lineageId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[CO_Code]"
+                      name="CO_Code"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[SO_NO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].ExternalColumns[SO_NO]"
+                      length="10"
+                      lineageId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[SO_NO]"
+                      name="SO_NO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[SO_Item_NO]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].ExternalColumns[SO_Item_NO]"
+                      lineageId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[SO_Item_NO]"
+                      name="SO_Item_NO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[Invoice_No]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].ExternalColumns[Invoice_No]"
+                      length="10"
+                      lineageId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[Invoice_No]"
+                      name="Invoice_No"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[Invoice_Date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].ExternalColumns[Invoice_Date]"
+                      lineageId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[Invoice_Date]"
+                      name="Invoice_Date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[Invoice_Qty]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].ExternalColumns[Invoice_Qty]"
+                      lineageId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[Invoice_Qty]"
+                      name="Invoice_Qty"
+                      precision="18"
+                      scale="3"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[UOM]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].ExternalColumns[UOM]"
+                      length="3"
+                      lineageId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[UOM]"
+                      name="UOM"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[Invoice_AMT]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].ExternalColumns[Invoice_AMT]"
+                      lineageId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[Invoice_AMT]"
+                      name="Invoice_AMT"
+                      precision="18"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[Invoice_Currency]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].ExternalColumns[Invoice_Currency]"
+                      length="5"
+                      lineageId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[Invoice_Currency]"
+                      name="Invoice_Currency"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[Invoice_AMT_HKD]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].ExternalColumns[Invoice_AMT_HKD]"
+                      lineageId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[Invoice_AMT_HKD]"
+                      name="Invoice_AMT_HKD"
+                      precision="18"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[Amount_FI]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].ExternalColumns[Amount_FI]"
+                      lineageId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[Amount_FI]"
+                      name="Amount_FI"
+                      precision="18"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[Amount_Local]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].ExternalColumns[Amount_Local]"
+                      lineageId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[Amount_Local]"
+                      name="Amount_Local"
+                      precision="18"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[FI_Doc]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].ExternalColumns[FI_Doc]"
+                      length="10"
+                      lineageId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[FI_Doc]"
+                      name="FI_Doc"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[GrossAmount]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].ExternalColumns[GrossAmount]"
+                      lineageId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[GrossAmount]"
+                      name="GrossAmount"
+                      precision="18"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].ExternalColumns[CO_Code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="CO_Code" />
+                    <externalMetadataColumn
+                      refId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].ExternalColumns[SO_NO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="SO_NO" />
+                    <externalMetadataColumn
+                      refId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].ExternalColumns[SO_Item_NO]"
+                      dataType="i4"
+                      name="SO_Item_NO" />
+                    <externalMetadataColumn
+                      refId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].ExternalColumns[Invoice_No]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Invoice_No" />
+                    <externalMetadataColumn
+                      refId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].ExternalColumns[Invoice_Date]"
+                      dataType="dbTimeStamp"
+                      name="Invoice_Date" />
+                    <externalMetadataColumn
+                      refId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].ExternalColumns[Invoice_Qty]"
+                      dataType="numeric"
+                      name="Invoice_Qty"
+                      precision="18"
+                      scale="3" />
+                    <externalMetadataColumn
+                      refId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].ExternalColumns[UOM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="UOM" />
+                    <externalMetadataColumn
+                      refId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].ExternalColumns[Invoice_AMT]"
+                      dataType="numeric"
+                      name="Invoice_AMT"
+                      precision="18"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].ExternalColumns[Invoice_Currency]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="Invoice_Currency" />
+                    <externalMetadataColumn
+                      refId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].ExternalColumns[Invoice_AMT_HKD]"
+                      dataType="numeric"
+                      name="Invoice_AMT_HKD"
+                      precision="18"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].ExternalColumns[Amount_FI]"
+                      dataType="numeric"
+                      name="Amount_FI"
+                      precision="18"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].ExternalColumns[Amount_Local]"
+                      dataType="numeric"
+                      name="Amount_Local"
+                      precision="18"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].ExternalColumns[FI_Doc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="FI_Doc" />
+                    <externalMetadataColumn
+                      refId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output].ExternalColumns[GrossAmount]"
+                      dataType="numeric"
+                      name="GrossAmount"
+                      precision="18"
+                      scale="2" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Error Output].Columns[CO_Code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Error Output].Columns[CO_Code]"
+                      name="CO_Code" />
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Error Output].Columns[SO_NO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Error Output].Columns[SO_NO]"
+                      name="SO_NO" />
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Error Output].Columns[SO_Item_NO]"
+                      dataType="i4"
+                      lineageId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Error Output].Columns[SO_Item_NO]"
+                      name="SO_Item_NO" />
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Error Output].Columns[Invoice_No]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Error Output].Columns[Invoice_No]"
+                      name="Invoice_No" />
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Error Output].Columns[Invoice_Date]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Error Output].Columns[Invoice_Date]"
+                      name="Invoice_Date" />
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Error Output].Columns[Invoice_Qty]"
+                      dataType="numeric"
+                      lineageId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Error Output].Columns[Invoice_Qty]"
+                      name="Invoice_Qty"
+                      precision="18"
+                      scale="3" />
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Error Output].Columns[UOM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      lineageId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Error Output].Columns[UOM]"
+                      name="UOM" />
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Error Output].Columns[Invoice_AMT]"
+                      dataType="numeric"
+                      lineageId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Error Output].Columns[Invoice_AMT]"
+                      name="Invoice_AMT"
+                      precision="18"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Error Output].Columns[Invoice_Currency]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      lineageId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Error Output].Columns[Invoice_Currency]"
+                      name="Invoice_Currency" />
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Error Output].Columns[Invoice_AMT_HKD]"
+                      dataType="numeric"
+                      lineageId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Error Output].Columns[Invoice_AMT_HKD]"
+                      name="Invoice_AMT_HKD"
+                      precision="18"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Error Output].Columns[Amount_FI]"
+                      dataType="numeric"
+                      lineageId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Error Output].Columns[Amount_FI]"
+                      name="Amount_FI"
+                      precision="18"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Error Output].Columns[Amount_Local]"
+                      dataType="numeric"
+                      lineageId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Error Output].Columns[Amount_Local]"
+                      name="Amount_Local"
+                      precision="18"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Error Output].Columns[FI_Doc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Error Output].Columns[FI_Doc]"
+                      name="FI_Doc" />
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Error Output].Columns[GrossAmount]"
+                      dataType="numeric"
+                      lineageId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Error Output].Columns[GrossAmount]"
+                      name="GrossAmount"
+                      precision="18"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\COPY TO SD_SHIP.Paths[OLE DB Source Output]"
+              endId="Package\COPY TO SD_SHIP\COPY TO SD_SHIP 1.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\COPY TO SD_SHIP_HIST"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{D2957855-1762-49E9-9980-456E47D78F65}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="COPY TO SD_SHIP_HIST"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server v9; (C) 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          BLOBTempStoragePath=""
+          bufferTempStoragePath=""
+          engineThreads="5"
+          version="1">
+          <components>
+            <component
+              refId="Package\COPY TO SD_SHIP_HIST\COPY TO SD_SHIP_HIST"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="COPY TO SD_SHIP_HIST"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[SD_Ship_Hist]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destinaton. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">0</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\COPY TO SD_SHIP_HIST\COPY TO SD_SHIP_HIST.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[GSDDB_Hist]"
+                  connectionManagerRefId="Package.ConnectionManagers[GSDDB_Hist]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\COPY TO SD_SHIP_HIST\COPY TO SD_SHIP_HIST.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\COPY TO SD_SHIP_HIST.Inputs[OLE DB Destination Input].Columns[CO_Code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="CO_Code"
+                      externalMetadataColumnId="Package\COPY TO SD_SHIP_HIST\COPY TO SD_SHIP_HIST.Inputs[OLE DB Destination Input].ExternalColumns[CO_Code]"
+                      lineageId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[CO_Code]" />
+                    <inputColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\COPY TO SD_SHIP_HIST.Inputs[OLE DB Destination Input].Columns[SO_NO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="SO_NO"
+                      externalMetadataColumnId="Package\COPY TO SD_SHIP_HIST\COPY TO SD_SHIP_HIST.Inputs[OLE DB Destination Input].ExternalColumns[SO_NO]"
+                      lineageId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[SO_NO]" />
+                    <inputColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\COPY TO SD_SHIP_HIST.Inputs[OLE DB Destination Input].Columns[SO_Item_NO]"
+                      cachedDataType="i4"
+                      cachedName="SO_Item_NO"
+                      externalMetadataColumnId="Package\COPY TO SD_SHIP_HIST\COPY TO SD_SHIP_HIST.Inputs[OLE DB Destination Input].ExternalColumns[SO_Item_NO]"
+                      lineageId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[SO_Item_NO]" />
+                    <inputColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\COPY TO SD_SHIP_HIST.Inputs[OLE DB Destination Input].Columns[Invoice_No]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Invoice_No"
+                      externalMetadataColumnId="Package\COPY TO SD_SHIP_HIST\COPY TO SD_SHIP_HIST.Inputs[OLE DB Destination Input].ExternalColumns[Invoice_No]"
+                      lineageId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[Invoice_No]" />
+                    <inputColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\COPY TO SD_SHIP_HIST.Inputs[OLE DB Destination Input].Columns[Invoice_Date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Invoice_Date"
+                      externalMetadataColumnId="Package\COPY TO SD_SHIP_HIST\COPY TO SD_SHIP_HIST.Inputs[OLE DB Destination Input].ExternalColumns[Invoice_Date]"
+                      lineageId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[Invoice_Date]" />
+                    <inputColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\COPY TO SD_SHIP_HIST.Inputs[OLE DB Destination Input].Columns[Invoice_Qty]"
+                      cachedDataType="numeric"
+                      cachedName="Invoice_Qty"
+                      cachedPrecision="18"
+                      cachedScale="3"
+                      externalMetadataColumnId="Package\COPY TO SD_SHIP_HIST\COPY TO SD_SHIP_HIST.Inputs[OLE DB Destination Input].ExternalColumns[Invoice_Qty]"
+                      lineageId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[Invoice_Qty]" />
+                    <inputColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\COPY TO SD_SHIP_HIST.Inputs[OLE DB Destination Input].Columns[UOM]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="UOM"
+                      externalMetadataColumnId="Package\COPY TO SD_SHIP_HIST\COPY TO SD_SHIP_HIST.Inputs[OLE DB Destination Input].ExternalColumns[UOM]"
+                      lineageId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[UOM]" />
+                    <inputColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\COPY TO SD_SHIP_HIST.Inputs[OLE DB Destination Input].Columns[Invoice_AMT]"
+                      cachedDataType="numeric"
+                      cachedName="Invoice_AMT"
+                      cachedPrecision="18"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\COPY TO SD_SHIP_HIST\COPY TO SD_SHIP_HIST.Inputs[OLE DB Destination Input].ExternalColumns[Invoice_AMT]"
+                      lineageId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[Invoice_AMT]" />
+                    <inputColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\COPY TO SD_SHIP_HIST.Inputs[OLE DB Destination Input].Columns[Invoice_Currency]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="Invoice_Currency"
+                      externalMetadataColumnId="Package\COPY TO SD_SHIP_HIST\COPY TO SD_SHIP_HIST.Inputs[OLE DB Destination Input].ExternalColumns[Invoice_Currency]"
+                      lineageId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[Invoice_Currency]" />
+                    <inputColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\COPY TO SD_SHIP_HIST.Inputs[OLE DB Destination Input].Columns[Invoice_AMT_HKD]"
+                      cachedDataType="numeric"
+                      cachedName="Invoice_AMT_HKD"
+                      cachedPrecision="18"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\COPY TO SD_SHIP_HIST\COPY TO SD_SHIP_HIST.Inputs[OLE DB Destination Input].ExternalColumns[Invoice_AMT_HKD]"
+                      lineageId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[Invoice_AMT_HKD]" />
+                    <inputColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\COPY TO SD_SHIP_HIST.Inputs[OLE DB Destination Input].Columns[HistoryDateTime]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="HistoryDateTime"
+                      externalMetadataColumnId="Package\COPY TO SD_SHIP_HIST\COPY TO SD_SHIP_HIST.Inputs[OLE DB Destination Input].ExternalColumns[History_DateTime]"
+                      lineageId="Package\COPY TO SD_SHIP_HIST\Derived Column.Outputs[Derived Column Output].Columns[HistoryDateTime]" />
+                    <inputColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\COPY TO SD_SHIP_HIST.Inputs[OLE DB Destination Input].Columns[Amount_FI]"
+                      cachedDataType="numeric"
+                      cachedName="Amount_FI"
+                      cachedPrecision="18"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\COPY TO SD_SHIP_HIST\COPY TO SD_SHIP_HIST.Inputs[OLE DB Destination Input].ExternalColumns[Amount_FI]"
+                      lineageId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[Amount_FI]" />
+                    <inputColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\COPY TO SD_SHIP_HIST.Inputs[OLE DB Destination Input].Columns[Amount_Local]"
+                      cachedDataType="numeric"
+                      cachedName="Amount_Local"
+                      cachedPrecision="18"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\COPY TO SD_SHIP_HIST\COPY TO SD_SHIP_HIST.Inputs[OLE DB Destination Input].ExternalColumns[Amount_Local]"
+                      lineageId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[Amount_Local]" />
+                    <inputColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\COPY TO SD_SHIP_HIST.Inputs[OLE DB Destination Input].Columns[FI_Doc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="FI_Doc"
+                      externalMetadataColumnId="Package\COPY TO SD_SHIP_HIST\COPY TO SD_SHIP_HIST.Inputs[OLE DB Destination Input].ExternalColumns[FI_Doc]"
+                      lineageId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[FI_Doc]" />
+                    <inputColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\COPY TO SD_SHIP_HIST.Inputs[OLE DB Destination Input].Columns[GrossAmount]"
+                      cachedDataType="numeric"
+                      cachedName="GrossAmount"
+                      cachedPrecision="18"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\COPY TO SD_SHIP_HIST\COPY TO SD_SHIP_HIST.Inputs[OLE DB Destination Input].ExternalColumns[GrossAmount]"
+                      lineageId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[GrossAmount]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\COPY TO SD_SHIP_HIST.Inputs[OLE DB Destination Input].ExternalColumns[CO_Code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="CO_Code" />
+                    <externalMetadataColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\COPY TO SD_SHIP_HIST.Inputs[OLE DB Destination Input].ExternalColumns[SO_NO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="SO_NO" />
+                    <externalMetadataColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\COPY TO SD_SHIP_HIST.Inputs[OLE DB Destination Input].ExternalColumns[SO_Item_NO]"
+                      dataType="i4"
+                      name="SO_Item_NO" />
+                    <externalMetadataColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\COPY TO SD_SHIP_HIST.Inputs[OLE DB Destination Input].ExternalColumns[Invoice_No]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Invoice_No" />
+                    <externalMetadataColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\COPY TO SD_SHIP_HIST.Inputs[OLE DB Destination Input].ExternalColumns[Invoice_Date]"
+                      dataType="dbTimeStamp"
+                      name="Invoice_Date" />
+                    <externalMetadataColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\COPY TO SD_SHIP_HIST.Inputs[OLE DB Destination Input].ExternalColumns[Invoice_Qty]"
+                      dataType="numeric"
+                      name="Invoice_Qty"
+                      precision="18"
+                      scale="3" />
+                    <externalMetadataColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\COPY TO SD_SHIP_HIST.Inputs[OLE DB Destination Input].ExternalColumns[UOM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="UOM" />
+                    <externalMetadataColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\COPY TO SD_SHIP_HIST.Inputs[OLE DB Destination Input].ExternalColumns[Invoice_AMT]"
+                      dataType="numeric"
+                      name="Invoice_AMT"
+                      precision="18"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\COPY TO SD_SHIP_HIST.Inputs[OLE DB Destination Input].ExternalColumns[Invoice_Currency]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="Invoice_Currency" />
+                    <externalMetadataColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\COPY TO SD_SHIP_HIST.Inputs[OLE DB Destination Input].ExternalColumns[Invoice_AMT_HKD]"
+                      dataType="numeric"
+                      name="Invoice_AMT_HKD"
+                      precision="18"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\COPY TO SD_SHIP_HIST.Inputs[OLE DB Destination Input].ExternalColumns[History_DateTime]"
+                      dataType="dbTimeStamp"
+                      name="History_DateTime" />
+                    <externalMetadataColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\COPY TO SD_SHIP_HIST.Inputs[OLE DB Destination Input].ExternalColumns[Amount_FI]"
+                      dataType="numeric"
+                      name="Amount_FI"
+                      precision="18"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\COPY TO SD_SHIP_HIST.Inputs[OLE DB Destination Input].ExternalColumns[Amount_Local]"
+                      dataType="numeric"
+                      name="Amount_Local"
+                      precision="18"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\COPY TO SD_SHIP_HIST.Inputs[OLE DB Destination Input].ExternalColumns[FI_Doc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="FI_Doc" />
+                    <externalMetadataColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\COPY TO SD_SHIP_HIST.Inputs[OLE DB Destination Input].ExternalColumns[GrossAmount]"
+                      dataType="numeric"
+                      name="GrossAmount"
+                      precision="18"
+                      scale="2" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\COPY TO SD_SHIP_HIST\COPY TO SD_SHIP_HIST.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\COPY TO SD_SHIP_HIST\COPY TO SD_SHIP_HIST.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\COPY TO SD_SHIP_HIST.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\COPY TO SD_SHIP_HIST\COPY TO SD_SHIP_HIST.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\COPY TO SD_SHIP_HIST.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\COPY TO SD_SHIP_HIST\COPY TO SD_SHIP_HIST.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\COPY TO SD_SHIP_HIST\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Updates column values using expressions"
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\COPY TO SD_SHIP_HIST\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\COPY TO SD_SHIP_HIST\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\COPY TO SD_SHIP_HIST\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\Derived Column.Outputs[Derived Column Output].Columns[HistoryDateTime]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\COPY TO SD_SHIP_HIST\Derived Column.Outputs[Derived Column Output].Columns[HistoryDateTime]"
+                      name="HistoryDateTime"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\COPY TO SD_SHIP_HIST\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\COPY TO SD_SHIP_HIST\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\COPY TO SD_SHIP_HIST\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\COPY TO SD_SHIP_HIST\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Select TABLE SD_SHIP_TMP"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[SD_Ship_Tmp]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[GSDDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[GSDDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[CO_Code]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].ExternalColumns[CO_Code]"
+                      length="4"
+                      lineageId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[CO_Code]"
+                      name="CO_Code"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[SO_NO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].ExternalColumns[SO_NO]"
+                      length="10"
+                      lineageId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[SO_NO]"
+                      name="SO_NO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[SO_Item_NO]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].ExternalColumns[SO_Item_NO]"
+                      lineageId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[SO_Item_NO]"
+                      name="SO_Item_NO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[Invoice_No]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].ExternalColumns[Invoice_No]"
+                      length="10"
+                      lineageId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[Invoice_No]"
+                      name="Invoice_No"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[Invoice_Date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].ExternalColumns[Invoice_Date]"
+                      lineageId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[Invoice_Date]"
+                      name="Invoice_Date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[Invoice_Qty]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].ExternalColumns[Invoice_Qty]"
+                      lineageId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[Invoice_Qty]"
+                      name="Invoice_Qty"
+                      precision="18"
+                      scale="3"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[UOM]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].ExternalColumns[UOM]"
+                      length="3"
+                      lineageId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[UOM]"
+                      name="UOM"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[Invoice_AMT]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].ExternalColumns[Invoice_AMT]"
+                      lineageId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[Invoice_AMT]"
+                      name="Invoice_AMT"
+                      precision="18"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[Invoice_Currency]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].ExternalColumns[Invoice_Currency]"
+                      length="5"
+                      lineageId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[Invoice_Currency]"
+                      name="Invoice_Currency"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[Invoice_AMT_HKD]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].ExternalColumns[Invoice_AMT_HKD]"
+                      lineageId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[Invoice_AMT_HKD]"
+                      name="Invoice_AMT_HKD"
+                      precision="18"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[Amount_FI]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].ExternalColumns[Amount_FI]"
+                      lineageId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[Amount_FI]"
+                      name="Amount_FI"
+                      precision="18"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[Amount_Local]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].ExternalColumns[Amount_Local]"
+                      lineageId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[Amount_Local]"
+                      name="Amount_Local"
+                      precision="18"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[FI_Doc]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].ExternalColumns[FI_Doc]"
+                      length="10"
+                      lineageId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[FI_Doc]"
+                      name="FI_Doc"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[GrossAmount]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].ExternalColumns[GrossAmount]"
+                      lineageId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].Columns[GrossAmount]"
+                      name="GrossAmount"
+                      precision="18"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].ExternalColumns[CO_Code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="CO_Code" />
+                    <externalMetadataColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].ExternalColumns[SO_NO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="SO_NO" />
+                    <externalMetadataColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].ExternalColumns[SO_Item_NO]"
+                      dataType="i4"
+                      name="SO_Item_NO" />
+                    <externalMetadataColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].ExternalColumns[Invoice_No]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Invoice_No" />
+                    <externalMetadataColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].ExternalColumns[Invoice_Date]"
+                      dataType="dbTimeStamp"
+                      name="Invoice_Date" />
+                    <externalMetadataColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].ExternalColumns[Invoice_Qty]"
+                      dataType="numeric"
+                      name="Invoice_Qty"
+                      precision="18"
+                      scale="3" />
+                    <externalMetadataColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].ExternalColumns[UOM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="UOM" />
+                    <externalMetadataColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].ExternalColumns[Invoice_AMT]"
+                      dataType="numeric"
+                      name="Invoice_AMT"
+                      precision="18"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].ExternalColumns[Invoice_Currency]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="Invoice_Currency" />
+                    <externalMetadataColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].ExternalColumns[Invoice_AMT_HKD]"
+                      dataType="numeric"
+                      name="Invoice_AMT_HKD"
+                      precision="18"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].ExternalColumns[Amount_FI]"
+                      dataType="numeric"
+                      name="Amount_FI"
+                      precision="18"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].ExternalColumns[Amount_Local]"
+                      dataType="numeric"
+                      name="Amount_Local"
+                      precision="18"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].ExternalColumns[FI_Doc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="FI_Doc" />
+                    <externalMetadataColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output].ExternalColumns[GrossAmount]"
+                      dataType="numeric"
+                      name="GrossAmount"
+                      precision="18"
+                      scale="2" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Error Output].Columns[CO_Code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Error Output].Columns[CO_Code]"
+                      name="CO_Code" />
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Error Output].Columns[SO_NO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Error Output].Columns[SO_NO]"
+                      name="SO_NO" />
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Error Output].Columns[SO_Item_NO]"
+                      dataType="i4"
+                      lineageId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Error Output].Columns[SO_Item_NO]"
+                      name="SO_Item_NO" />
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Error Output].Columns[Invoice_No]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Error Output].Columns[Invoice_No]"
+                      name="Invoice_No" />
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Error Output].Columns[Invoice_Date]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Error Output].Columns[Invoice_Date]"
+                      name="Invoice_Date" />
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Error Output].Columns[Invoice_Qty]"
+                      dataType="numeric"
+                      lineageId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Error Output].Columns[Invoice_Qty]"
+                      name="Invoice_Qty"
+                      precision="18"
+                      scale="3" />
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Error Output].Columns[UOM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      lineageId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Error Output].Columns[UOM]"
+                      name="UOM" />
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Error Output].Columns[Invoice_AMT]"
+                      dataType="numeric"
+                      lineageId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Error Output].Columns[Invoice_AMT]"
+                      name="Invoice_AMT"
+                      precision="18"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Error Output].Columns[Invoice_Currency]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      lineageId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Error Output].Columns[Invoice_Currency]"
+                      name="Invoice_Currency" />
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Error Output].Columns[Invoice_AMT_HKD]"
+                      dataType="numeric"
+                      lineageId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Error Output].Columns[Invoice_AMT_HKD]"
+                      name="Invoice_AMT_HKD"
+                      precision="18"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Error Output].Columns[Amount_FI]"
+                      dataType="numeric"
+                      lineageId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Error Output].Columns[Amount_FI]"
+                      name="Amount_FI"
+                      precision="18"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Error Output].Columns[Amount_Local]"
+                      dataType="numeric"
+                      lineageId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Error Output].Columns[Amount_Local]"
+                      name="Amount_Local"
+                      precision="18"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Error Output].Columns[FI_Doc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Error Output].Columns[FI_Doc]"
+                      name="FI_Doc" />
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Error Output].Columns[GrossAmount]"
+                      dataType="numeric"
+                      lineageId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Error Output].Columns[GrossAmount]"
+                      name="GrossAmount"
+                      precision="18"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\COPY TO SD_SHIP_HIST.Paths[Derived Column Output]"
+              endId="Package\COPY TO SD_SHIP_HIST\COPY TO SD_SHIP_HIST.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\COPY TO SD_SHIP_HIST\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\COPY TO SD_SHIP_HIST.Paths[OLE DB Source Output]"
+              endId="Package\COPY TO SD_SHIP_HIST\Derived Column.Inputs[Derived Column Input]"
+              name="OLE DB Source Output"
+              startId="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Exec ZSD_SHIP_DOWNLOAD"
+      DTS:CreationName="Microsoft.ScriptTask"
+      DTS:Description="Script Task"
+      DTS:DTSID="{AA2F6E0C-F6F7-4D27-98C6-800662C8293E}"
+      DTS:ExecutableType="Microsoft.ScriptTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Exec ZSD_SHIP_DOWNLOAD"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ScriptProject
+          Name="ScriptTask_59cf687362864a96b8708de4737ceb91"
+          VSTAMajorVersion="14"
+          VSTAMinorVersion="0"
+          Language="VisualBasic"
+          ReadOnlyVariables="User::RFC_NAME,User::Sales_Org,User::Sales_Org_DS,User::SO,$Project::SAP_Client,$Project::SAP_Host,$Project::SAP_Name,$Project::SAP_Password,$Project::SAP_SysNum,$Project::SAP_User,$Project::Sql_Connection"
+          ReadWriteVariables="invoice_dateF,invoice_dateT">
+          <ProjectItem
+            Name="ScriptMain.vb"
+            Encoding="UTF8"><![CDATA[' Microsoft SQL Server Integration Services Script Task
+' Write scripts using Microsoft Visual Basic
+' The ScriptMain class is the entry point of the Script Task.
+
+Imports System
+Imports System.Data
+Imports System.Math
+Imports Microsoft.SqlServer.Dts.Runtime
+Imports SAP.Middleware.Connector
+Imports System.Data.SqlClient
+
+<Microsoft.SqlServer.Dts.Tasks.ScriptTask.SSISScriptTaskEntryPointAttribute> _
+<System.CLSCompliantAttribute(False)> _
+Partial Public Class ScriptMain
+	Inherits Microsoft.SqlServer.Dts.Tasks.ScriptTask.VSTARTScriptObjectModelBase
+
+	Enum ScriptResults
+		Success = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Success
+		Failure = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Failure
+	End Enum
+
+    ' The execution engine calls this method when the task executes.
+    ' To access the object model, use the Dts object. Connections, variables, events,
+    ' and logging features are available as static members of the Dts class.
+    ' Before returning from this method, set the value of Dts.TaskResult to indicate success or failure.
+    ' 
+    ' To open Code and Text Editor Help, press F1.
+    ' To open Object Browser, press Ctrl+Alt+J.
+
+    Public Sub Main()
+        '~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        ' Purpose       : Create ETL to download CEN SO data (ZSD_SHIP_DATA) into SQL
+        '                   a.RFC() : ZSD_SHIP_DOWNLOAD()
+        '                   b.	Selection : 	Requested Delivery Date = System Month to System Month + 5
+        '                   c.	Selection : Sales Org. = 8011
+        ' Date          : 09 Dec 2010
+        ' Author        : Peak
+        '
+        '--------------------------------------------------------
+        ' 09 Dec 2010      Peak       the first version
+        ' 16 Aug 2017      Harry      change dateto to 1231
+        ' 07 Jun 2018      Kai        re-write sql connector program, using sql connector 3.0
+        ' 31 Oct 2018      Harry      add new field GrossAmount
+        '
+        '
+
+        Dim _parameters As RfcConfigParameters = New RfcConfigParameters()
+        _parameters.Add(RfcConfigParameters.Name, Dts.Variables("$Project::SAP_Name").Value.ToString())
+        _parameters.Add(RfcConfigParameters.User, Dts.Variables("$Project::SAP_User").Value.ToString())
+        _parameters.Add(RfcConfigParameters.Password, Dts.Variables("$Project::SAP_Password").GetSensitiveValue().ToString())
+        _parameters.Add(RfcConfigParameters.Client, Dts.Variables("$Project::SAP_Client").Value.ToString())
+        _parameters.Add(RfcConfigParameters.Language, "EN")
+        _parameters.Add(RfcConfigParameters.AppServerHost, Dts.Variables("$Project::SAP_Host").Value.ToString())
+        _parameters.Add(RfcConfigParameters.SystemNumber, Dts.Variables("$Project::SAP_SysNum").Value.ToString())
+
+        Dim _destination As RfcDestination = RfcDestinationManager.GetDestination(_parameters)
+        Dim _sapRfcRepository As RfcRepository = _destination.Repository
+
+
+        Dim _dateTo As Date = DateTime.Today()
+        Dim _dateFrom As Date = DateTime.Today.AddYears(-1)
+        Dim _days As String = DateTime.DaysInMonth(Year(_dateTo), Month(_dateTo)).ToString()
+
+        Dim _dateFromStr2 As String = String.Format("{0:yyyyMMdd}", _dateFrom).Substring(0, 4) & "0101"
+        Dim _dateToStr2 As String = String.Format("{0:yyyyMMdd}", _dateTo).Substring(0, 4) & "1231"
+
+        Dim _dateFromStr As String = CStr(CDbl(DateTime.Today.Year.ToString) - 1) + ".01.01"
+        Dim _dateToStr As String = CStr(CDbl(DateTime.Today.Year.ToString)) + ".12.31"
+
+        Dim _rfcFunction As IRfcFunction = _sapRfcRepository.CreateFunction(Dts.Variables("RFC_NAME").Value.ToString())
+        Dim _rfcReadTable As IRfcFunction = _sapRfcRepository.CreateFunction("RFC_READ_TABLE")
+
+        _rfcFunction.SetValue("SALES_ORG", Dts.Variables("Sales_Org").Value.ToString())
+        _rfcFunction.SetValue("SO_NO", Dts.Variables("SO").Value.ToString())
+        _rfcFunction.SetValue("INVOICE_DATE_FROM", Convert.ToDateTime(_dateFromStr))
+        _rfcFunction.SetValue("INVOICE_DATE_TO", Convert.ToDateTime(_dateToStr))
+
+        Try
+            System.Diagnostics.Debug.WriteLine(Dts.Variables("Sales_Org").Value.ToString())
+            _rfcFunction.Invoke(_destination)
+        Catch ex As Exception
+            System.Diagnostics.Debug.WriteLine(ex.ToString())
+            Throw
+        End Try
+
+        _rfcReadTable.SetValue("QUERY_TABLE", "ZSD_SHIP_DATA")
+        _rfcReadTable.SetValue("DELIMITER", "|")
+        Dim fieldsTable As IRfcTable = _rfcReadTable.GetTable("FIELDS")
+        fieldsTable.Append()
+        fieldsTable.SetValue("FIELDNAME", "COMPANY_CODE")
+        fieldsTable.Append()
+        fieldsTable.SetValue("FIELDNAME", "SO_NO")
+        fieldsTable.Append()
+        fieldsTable.SetValue("FIELDNAME", "SO_ITEM_NO")
+        fieldsTable.Append()
+        fieldsTable.SetValue("FIELDNAME", "INVOICE_NO")
+        fieldsTable.Append()
+        fieldsTable.SetValue("FIELDNAME", "INVOICE_DATE")
+        fieldsTable.Append()
+        fieldsTable.SetValue("FIELDNAME", "INVOICE_QTY")
+        fieldsTable.Append()
+        fieldsTable.SetValue("FIELDNAME", "UOM")
+        fieldsTable.Append()
+        fieldsTable.SetValue("FIELDNAME", "INVOICE_AMT")
+        fieldsTable.Append()
+        fieldsTable.SetValue("FIELDNAME", "INVOICE_CURRENCY")
+        fieldsTable.Append()
+        fieldsTable.SetValue("FIELDNAME", "INVOICE_AMT_HKD")
+        fieldsTable.Append()
+        fieldsTable.SetValue("FIELDNAME", "AMOUNT_FI")
+        fieldsTable.Append()
+        fieldsTable.SetValue("FIELDNAME", "AMOUNT_LOCAL")
+        fieldsTable.Append()
+        fieldsTable.SetValue("FIELDNAME", "FI_DOC")
+        fieldsTable.Append()
+        fieldsTable.SetValue("FIELDNAME", "ZGAMT")
+
+        _rfcReadTable.Invoke(_destination)
+
+        Dim dataTable As IRfcTable = _rfcReadTable.GetTable("DATA")
+
+        Dim _paraArray(13) As SqlParameter
+        Dim Data As String
+
+        For Each _dataRow As IRfcStructure In dataTable
+            With _dataRow
+                Try
+                    Data = _dataRow.GetString("WA")
+                    Dim columns() As String = Split(Data, "|")
+                    _paraArray(0) = New SqlParameter("CO_Code", columns(0))
+                    _paraArray(1) = New SqlParameter("SO_No", columns(1))
+                    _paraArray(2) = New SqlParameter("SO_Item_No", Format(CInt(columns(2))))
+                    _paraArray(3) = New SqlParameter("Invoice_No", columns(3))
+                    _paraArray(4) = New SqlParameter("Invoice_Date", columns(4))
+                    _paraArray(5) = New SqlParameter("Invoice_Qty", Format(CDbl(columns(5)), "0.000"))
+                    _paraArray(6) = New SqlParameter("UOM", columns(6))
+                    _paraArray(7) = New SqlParameter("Invoice_AMT", Format(CDbl(columns(7)), "0.00"))
+                    _paraArray(8) = New SqlParameter("Invoice_Currency", columns(8))
+                    _paraArray(9) = New SqlParameter("Invoice_AMT_HKD", Format(CDbl(columns(9)), "0.00"))
+                    _paraArray(10) = New SqlParameter("Amount_FI", Format(CDbl(columns(10)), "0.00"))
+                    _paraArray(11) = New SqlParameter("Amount_Local", Format(CDbl(columns(11)), "0.00"))
+                    _paraArray(12) = New SqlParameter("FI_Doc", columns(12))
+                    _paraArray(13) = New SqlParameter("GrossAmount", Format(CDbl(columns(13)), "0.00"))
+                Catch ex As Exception
+                    Console.WriteLine(ex.ToString())
+                End Try
+            End With
+
+            Call InsertTmpTable("p_Ins_SD_Ship_Tmp", _paraArray)
+        Next
+
+        Dts.Variables("invoice_dateF").Value = CDate(_dateFromStr2.Substring(0, 4) + "-" + _dateFromStr2.Substring(4, 2) + "-" + _dateFromStr2.Substring(6, 2))
+        Dts.Variables("invoice_dateT").Value = CDate(_dateToStr2.Substring(0, 4) + "-" + _dateToStr2.Substring(4, 2) + "-" + _dateToStr2.Substring(6, 2))
+        Dts.TaskResult = ScriptResults.Success
+    End Sub
+
+    Private Function InsertTmpTable(ByVal p_SPName As String, ByVal p_ParaArray() As SqlParameter) As Boolean
+        Dim _result As Boolean = False
+
+        Try
+
+            Dim connStr As String = Dts.Variables("$Project::Sql_Connection").Value.ToString()
+
+            Using _connection As New SqlConnection(connStr)
+
+                _connection.Open()
+
+                Using _command As New SqlCommand(p_SPName, _connection)
+
+                    _command.CommandType = CommandType.StoredProcedure
+
+                    For Each _para As SqlParameter In p_ParaArray
+                        _command.Parameters.Add(_para)
+                    Next
+
+                    _command.ExecuteNonQuery()
+
+                End Using
+
+            End Using
+            _result = True
+        Catch ex As Exception
+            _result = False
+            Throw
+        End Try
+
+        Return _result
+    End Function
+
+End Class]]></ProjectItem>
+          <ProjectItem
+            Name="ScriptTask_59cf687362864a96b8708de4737ceb91.vbproj"
+            Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="utf-16"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D709562C-E853-4F8A-B7CA-48D4427EFE2B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>My Project</AppDesignerFolder>
+    <RootNamespace>ScriptTask_59cf687362864a96b8708de4737ceb91</RootNamespace>
+    <AssemblyName>ScriptTask_59cf687362864a96b8708de4737ceb91</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionStrict>On</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="sapnco, Version=3.0.0.42, Culture=neutral, PublicKeyToken=50436dca5c7f7d23, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_64\sapnco\v4.0_3.0.0.42__50436dca5c7f7d23\sapnco.dll</HintPath>
+    </Reference>
+    <Reference Include="sapnco_utils, Version=3.0.0.42, Culture=neutral, PublicKeyToken=50436dca5c7f7d23, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_64\sapnco_utils\v4.0_3.0.0.42__50436dca5c7f7d23\sapnco_utils.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.SqlServer.ManagedDTS, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.ScriptTask, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="System">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="My Project\" />
+  </ItemGroup>
+  <!-- Include the build rules for a VB project.-->
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
+        <ProjectProperties HostName="VSTAHostName" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="vb" TemplatesPath="" />
+        <Host Name="ScriptTask" />
+        <ProjectClient>
+          <HostIdentifier>SSIS_ST130</HostIdentifier>
+        </ProjectClient>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <ItemGroup>
+    <Compile Include="ScriptMain.vb" />
+  </ItemGroup>
+</Project>]]></ProjectItem>
+          <ProjectItem
+            Name="Project"
+            Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
+	<msb:PropertyGroup>
+		<msb:Language>msBuild</msb:Language>
+		<msb:CodeName>ScriptTask_59cf687362864a96b8708de4737ceb91</msb:CodeName>
+		<msb:DisplayName>ScriptTask_59cf687362864a96b8708de4737ceb91</msb:DisplayName>
+		<msb:ProjectId>{7354F752-9481-440A-BE2D-C4CCEDDAC151}</msb:ProjectId>
+	</msb:PropertyGroup>
+	<msb:ItemGroup>
+		<msb:Project Include="ScriptTask_59cf687362864a96b8708de4737ceb91.vbproj"/>
+		<msb:File Include="ScriptMain.vb"/>
+	</msb:ItemGroup>
+</c:Project>]]></ProjectItem>
+          <BinaryItem
+            Name="ScriptTask_59cf687362864a96b8708de4737ceb91.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAHFW2VsAAAAAAAAAAOAAIiALAVAAACYAAAAGAAAAAAAA5kUA
+AAAgAAAAYAAAAAAAEAAgAAAAAgAABAAAAAAAAAAEAAAAAAAAAACgAAAAAgAAAAAAAAMAQIUAABAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAJRFAABPAAAAAGAAADADAAAAAAAAAAAAAAAAAAAA
+AAAAAIAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAA7CUAAAAgAAAAJgAAAAIA
+AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAADADAAAAYAAAAAQAAAAoAAAAAAAAAAAAAAAAAABAAABA
+LnJlbG9jAAAMAAAAAIAAAAACAAAALAAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAADI
+RQAAAAAAAEgAAAACAAUAtCkAAOAbAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4CKA8AAAoqHgIoEAAACiqmcxEAAAqAAQAABHMSAAAKgAIA
+AARzEwAACoADAAAEcxQAAAqABAAABCoufgEAAARvFQAACioufgIAAARvFgAACioufgMAAARvFwAA
+CioufgQAAARvGAAACioeAigZAAAKKgAAGzAHAB4HAAABAAARcxoAAAolcgEAAHACKBsAAApvHAAA
+CnILAABwbx0AAApvHgAACm8fAAAKbyAAAAolcjEAAHACKBsAAApvHAAACnI7AABwbx0AAApvHgAA
+Cm8fAAAKbyAAAAolcmEAAHACKBsAAApvHAAACnJvAABwbx0AAApvIQAACm8fAAAKbyAAAAolcp0A
+AHACKBsAAApvHAAACnKrAABwbx0AAApvHgAACm8fAAAKbyAAAAolctUAAHBy3wAAcG8gAAAKJXLl
+AABwAigbAAAKbxwAAApy8wAAcG8dAAAKbx4AAApvHwAACm8gAAAKJXIZAQBwAigbAAAKbxwAAApy
+JQEAcG8dAAAKbx4AAApvHwAACm8gAAAKKCIAAAoKBm8jAAAKKCQAAAoLKCQAAAoTCxILFSglAAAK
+DAcoJgAACgcoJwAACigoAAAKEwwSDCgpAAAKJnJPAQBwCIwaAAABKCoAAAoWGm8rAAAKcmkBAHAo
+LAAACg1yTwEAcAeMGgAAASgqAAAKFhpvKwAACnJzAQBwKCwAAAoTBCgkAAAKEwsSCygtAAAKEwwS
+DCgpAAAKKC4AAAojAAAAAAAA8D9ZKC8AAApyfQEAcCgsAAAKEwUoJAAAChMLEgsoLQAAChMMEgwo
+KQAACiguAAAKKC8AAApyiwEAcCgsAAAKEwYlAigbAAAKbxwAAApymQEAcG8dAAAKbx4AAApvHwAA
+Cm8wAAAKEwdyqwEAcG8wAAAKEwgRB3LJAQBwAigbAAAKbxwAAApy3QEAcG8dAAAKbx4AAApvHwAA
+Cm8xAAAKEQdy8QEAcAIoGwAACm8cAAAKcv0BAHBvHQAACm8eAAAKbx8AAApvMQAAChEHcgMCAHAR
+BSgyAAAKjBoAAAFvMwAAChEHcicCAHARBigyAAAKjBoAAAFvMwAAChEHBm80AAAK3golKDUAAAoT
+Df4aEQhyRwIAcHJfAgBwbzEAAAoRCHJ7AgBwco8CAHBvMQAAChEIcpMCAHBvNgAACiVvNwAACiVy
+oQIAcHK1AgBwbzEAAAolbzcAAAolcqECAHBy8QEAcG8xAAAKJW83AAAKJXKhAgBwcs8CAHBvMQAA
+CiVvNwAACiVyoQIAcHLlAgBwbzEAAAolbzcAAAolcqECAHBy+wIAcG8xAAAKJW83AAAKJXKhAgBw
+chUDAHBvMQAACiVvNwAACiVyoQIAcHItAwBwbzEAAAolbzcAAAolcqECAHByNQMAcG8xAAAKJW83
+AAAKJXKhAgBwck0DAHBvMQAACiVvNwAACiVyoQIAcHJvAwBwbzEAAAolbzcAAAolcqECAHByjwMA
+cG8xAAAKJW83AAAKJXKhAgBwcqMDAHBvMQAACiVvNwAACiVyoQIAcHK9AwBwbzEAAAolbzcAAApy
+oQIAcHLLAwBwbzEAAAoRCAZvNAAAChEIctcDAHBvNgAAChMJHw6NHQAAARMKEQlvOAAAChMOOOIB
+AAARDm85AAAKEw8RD3LhAwBwbzoAAApyjwIAcBUWKDsAAAoTEBEKFnLnAwBwERAWmnM8AAAKohEK
+F3L3AwBwERAXmnM8AAAKohEKGHIDBABwERAYmig9AAAKjCwAAAFyGQQAcCg+AAAKczwAAAqiEQoZ
+chsEAHAREBmaczwAAAqiEQoacjEEAHAREBqaczwAAAqiEQobcksEAHAREBuaKC4AAAqMNQAAAXJj
+BABwKD4AAApzPAAACqIRChxyLQMAcBEQHJpzPAAACqIRCh1ybwQAcBEQHZooLgAACow1AAABcocE
+AHAoPgAACnM8AAAKohEKHnKRBABwERAemnM8AAAKohEKHwlyswQAcBEQHwmaKC4AAAqMNQAAAXKH
+BABwKD4AAApzPAAACqIRCh8KctMEAHAREB8KmiguAAAKjDUAAAFyhwQAcCg+AAAKczwAAAqiEQof
+C3LnBABwERAfC5ooLgAACow1AAABcocEAHAoPgAACnM8AAAKohEKHwxyAQUAcBEQHwyaczwAAAqi
+EQofDXIPBQBwERAfDZooLgAACow1AAABcocEAHAoPgAACnM8AAAKot4bJSg1AAAKExEREW8/AAAK
+KEAAAAooQQAACt4AFCYCcicFAHARCigKAAAGJhEOb0IAAAo6Ev7//94MEQ4sBxEOb0MAAArcAigb
+AAAKbxwAAApySwUAcG8dAAAKG40tAAABJRYJFhpvKwAACqIlF3JnBQBwoiUYCRoYbysAAAqiJRly
+ZwUAcKIlGgkcGG8rAAAKoihEAAAKKEUAAAqMGgAAAW9GAAAKAigbAAAKbxwAAApyawUAcG8dAAAK
+G40tAAABJRYRBBYabysAAAqiJRdyZwUAcKIlGBEEGhhvKwAACqIlGXJnBQBwoiUaEQQcGG8rAAAK
+oihEAAAKKEUAAAqMGgAAAW9GAAAKAigbAAAKFm9HAAAKKgAAQUwAAAAAAACwAgAACgAAALoCAAAK
+AAAAHgAAAQAAAABbBAAArgEAAAkGAAAbAAAAHgAAAQIAAABEBAAA/gEAAEIGAAAMAAAAAAAAABsw
+AgCaAAAAAgAAERYKAigbAAAKbxwAAApyhwUAcG8dAAAKbx4AAApvHwAACgsHc0gAAAoMCG9JAAAK
+AwhzSgAACg0JGm9LAAAKBBMEFhMFKxsRBBEFmhMGCW9MAAAKEQZvTQAACiYRBRfWEwURBREEjmky
+3QlvTgAACibeCgksBglvQwAACtzeCggsBghvQwAACtwXCt4MJSg1AAAKEwcWCv4aBioAAAEoAAAC
+ADcAO3IACgAAAAACACkAVX4ACgAAAAAAAAIAiowADB4AAAE2AgMoTwAACihQAAAKKh4CKFEAAAoq
+LtAGAAACKFIAAAoqHgIoHwAACioAABMwAQAUAAAAAwAAEQKMCAAAGy0IKAEAACsKKwICCgYqIgP+
+FQgAABsqHgIoVAAACioAAAATMAIAKAAAAAQAABECe1UAAApvVgAACgoGjAsAABstEigCAAArCgJ7
+VQAACgZvVwAACgYqSgIoVAAACgJzWAAACn1VAAAKKgBCU0pCAQABAAAAAAAMAAAAdjQuMC4zMDMx
+OQAAAAAFAGwAAADwBwAAI34AAFwIAAD4CQAAI1N0cmluZ3MAAAAAVBIAALwFAAAjVVMAEBgAABAA
+AAAjR1VJRAAAACAYAADAAwAAI0Jsb2IAAAAAAAAAAgAAAVcdogkJDgAAAPoBMwAWAAABAAAAPQAA
+AAgAAAAIAAAAEwAAAAUAAABYAAAAAgAAACoAAAAEAAAAAgAAAAUAAAAFAAAACwAAAAEAAAAHAAAA
+AwAAAAMAAAACAAAAAABDBQEAAAAAAAYArQNPCAYABQRPCAYA8AKQBw8AbwgAAAYAYQNhBAoA2QLM
+BgoArwItBQoABAMtBQ4AkALfBw4AGwejBwYAegOQBw4AMQMoCA4ASQMbAQYAIQl8BQ4A+gbfBw4A
+kgMbAQYAWQJ8BQYAHQMJCA4AOwDxBAoAxAKNBRIA4wPIBAYAzQN8BRIAdALIBAYAmAR8BRYA0wV3
+BwYAEwJ8BRYAFgZ3BxYAkAF3BxoA/wZHCQYAMgZ8BQYAZQAAARYAZgJ3BxoACAZHCRoANQFHCQYA
+gwV8BRYA4Qh3BxIAGwXIBB4AgggcAh4AsgEcAgYAeQAAARYArAZ3BxYA6Al3Bw4ABQIbAQYAcwB8
+BQYAhwR8BQ4AmwgoCBYA5AZ3BwYAaQl8BQ4A6wAoCAYALQAAAQ4AjAgbAQ4ARwEbAQYAyQF8BQYA
+9AF8BQYARgenCAYAuwF8BRoASgLfABoA8QVHCQYAwwhPCAYA0AF8BQYAYAd8BQAAAACGAAAAAAAB
+AAEAAAAAAMUFhAklAAEAAQAAAAAAGQeECSkAAQACAAABEAAoCYQJOQABAAMAAQAAAKoFAQBdAAUA
+CAAFAQAA0QcAADkABQALAAUBAABKAAAAOQAFABIAAgEAAAUJAACNAAYAFAAxAHUGBAIxAEwGDAIx
+AGAGFAIxAI4GHAIhAHoJuQEGBtcAJAJWgPUIJwJWgF4CJwJQIAAAAAAGGGoHBgABAFggAAAAAAYY
+agcGAAEAYCAAAAAAERhwB0YBAQCKIAAAAAATCAwHKwIBAJYgAAAAABMItQUwAgEAoiAAAAAAEwj2
+BjUCAQCuIAAAAAATCMEHOgIBALogAAAAAAYYagcGAAEAxCAAAAAABgCwBQYAAQA8KAAAAAABAJoB
+PwIBAAwpAAAAAMYClAiNAQMAGikAAAAAxgJ9AdoABAAiKQAAAACDAFYCRwIEAC4pAAAAAMYCewSP
+AAQAOCkAAAAAEQDEAEwCBABYKQAAAAABALAAVAIFAGEpAAAAAAYYagcGAAYAbCkAAAAAAwhkAUoA
+BgCgKQAAAAAGGGoHBgAGAAAAAQD8AQAAAgC9CQAAAQBBBgAAAQB0AQAAAQB0AQkAagcBABEAagcG
+ABkAagcKACkAagcQADEAagcVAEEAagcbAFkAagcGAGEAagcGAGkAagcGAIEAagchAJEAagcpAKEA
+agcQAKkAagcGALEAagcpAEkAagcGAFEAagcGAAwAagcGABQAagcGABwAagcGACQAagcGAAwAZAFK
+ABQAZAFKABwAZAFKACQAZAFKALkAagcGACEBagcGALkA/Qh4ACkBfgh+ADEBcwWEADkBIwSLAHEA
+ewSPACwAMQGbADkBNwSLAEkB4gWjAMkA2QmrANEAswmxANEAugi2AFkBRwa8AFkBowS8ANEAnQTC
+AGEBewSPAGkBGgnIAGkBjgTOAGkBEwnUANEAQwbaAHEBxwHeAHEBewTjAFEBIwboAHkBWAQVAIEB
+EQLuAHkBWAT0ANkAiQH6AIkBNgcAAXkBqQEGAeEAQAEGADQAUgcVATwAXQlKAHkBhAQmAZkBMgkr
+AekAagf0AHEBwgY2AZkBGgk7AfEAewSPALEBPAJBAYkBJAdGAbkBcQlKAcEBoAIGAGkBEwlOAXEB
+qALuADkBLQRUASkBOAkBAAkBagcQAAkBiAUGABEBagdsAREBRgJ0AREB0gh7AdEBMQGBAREByQna
+ANkBSQSIAXEAlAiNAXEAfQHaAIkA4gGSAekBVQGiAXEAagcGAEwAegm5AVQAIwRKAFQALQTQAVQA
+agcGAAgAHAD6AQgAIAD/ASkAYwB4Ay4ACwB1Ai4AEwB+Ai4AGwCdAi4AIwCmAkAAOwD/AUAAMwDu
+AkMAKwD3AkMAMwDuAkkAYwCJA2MAKwD3AmMAMwDuAmkAYwCdA4AAOwD/AYMAQwD/AYMASwD/AYMA
+KwD3AokAYwCqA6AAOwD/AaMAawD/AaMAcwAQA8AAOwD/AcMAMwDuAsMAUwAWA+AAOwD/AeMAMwDu
+AuMAWwAQA2ABMwDuAmABOwD/AYABMwDuAoABOwD/AaABMwDuAqABOwD/AcABMwDuAsABOwD/AeAB
+OwD/AQACOwD/ASACOwD/ASACMwDuAkACOwD/AWACOwD/AWACMwDuAk8AWQGaAa0BBAABAAcABQAA
+ABsHXAIAAMcFYQIAAPoGZgIAANMHawIAAGgBcAICAAQAAwACAAUABQACAAYABwACAAcACQACABIA
+CwAuADUAPABDAJMADAEeAZ8BsgHBAcgBBIAAAAAAAAAAAAAAAAAAAAAAAQAAAAQAAAAAAAAAAAAA
+ANYB9wAAAAAABAAAAAAAAAAAAAAA1gF8BQAAAAAKAAAAAAAAAAAAAADfARsBAAAAAA0AAAAAAAAA
+AAAAAOgBqQQAAAAAAwAAAAAAKgAAAAAA8QE8BgAAAAAEAAAAAAAAAAAAAADWAd8AAAAAAA0AAAAA
+AAAAAAAAAOgBjwAAAAAABgAEAAcABAAIAAUAAAAQAA4ArgAAABAAHwCuAAAAAAAhAK4ApwCoAacA
+ywEAAAAAAFNjcmlwdFRhc2tfNTljZjY4NzM2Mjg2NGE5NmI4NzA4ZGU0NzM3Y2ViOTEASUVudW1l
+cmFibGVgMQBDb250ZXh0VmFsdWVgMQBUaHJlYWRTYWZlT2JqZWN0UHJvdmlkZXJgMQBJRW51bWVy
+YXRvcmAxAEludDMyAERpY3Rpb25hcnlgMgA8TW9kdWxlPgBNaWNyb3NvZnQuU3FsU2VydmVyLk1h
+bmFnZWREVFMAVABEaXNwb3NlX19JbnN0YW5jZV9fAENyZWF0ZV9fSW5zdGFuY2VfXwB2YWx1ZV9f
+AFN5c3RlbS5EYXRhAFByb2plY3REYXRhAG1zY29ybGliAFN5c3RlbS5Db2xsZWN0aW9ucy5HZW5l
+cmljAE1pY3Jvc29mdC5WaXN1YWxCYXNpYwBBZGQAU3FsQ29tbWFuZABBcHBlbmQAQ29tcGFyZU1l
+dGhvZABDcmVhdGVJbnN0YW5jZQBnZXRfR2V0SW5zdGFuY2UAaW5zdGFuY2UAR2V0SGFzaENvZGUA
+SW52b2tlAElSZmNUYWJsZQBJbnNlcnRUbXBUYWJsZQBHZXRUYWJsZQBWYXJpYWJsZQBJRGlzcG9z
+YWJsZQBUb0RvdWJsZQBSdW50aW1lVHlwZUhhbmRsZQBHZXRUeXBlRnJvbUhhbmRsZQBDb25zb2xl
+AHBfU1BOYW1lAERhdGVBbmRUaW1lAFRvRGF0ZVRpbWUATWljcm9zb2Z0LlNxbFNlcnZlci5EdHMu
+UnVudGltZQBXcml0ZUxpbmUAc2V0X0NvbW1hbmRUeXBlAEdldFR5cGUARmFpbHVyZQBJUmZjU3Ry
+dWN0dXJlAFZTVEFSVFNjcmlwdE9iamVjdE1vZGVsQmFzZQBBcHBsaWNhdGlvbkJhc2UARGlzcG9z
+ZQBUb0RhdGUARWRpdG9yQnJvd3NhYmxlU3RhdGUASGVscEtleXdvcmRBdHRyaWJ1dGUAR2VuZXJh
+dGVkQ29kZUF0dHJpYnV0ZQBEZWJ1Z2dhYmxlQXR0cmlidXRlAEVkaXRvckJyb3dzYWJsZUF0dHJp
+YnV0ZQBDb21WaXNpYmxlQXR0cmlidXRlAFN0YW5kYXJkTW9kdWxlQXR0cmlidXRlAEhpZGVNb2R1
+bGVOYW1lQXR0cmlidXRlAFRhcmdldEZyYW1ld29ya0F0dHJpYnV0ZQBEZWJ1Z2dlckhpZGRlbkF0
+dHJpYnV0ZQBNeUdyb3VwQ29sbGVjdGlvbkF0dHJpYnV0ZQBDb21waWxhdGlvblJlbGF4YXRpb25z
+QXR0cmlidXRlAENMU0NvbXBsaWFudEF0dHJpYnV0ZQBTU0lTU2NyaXB0VGFza0VudHJ5UG9pbnRB
+dHRyaWJ1dGUAUnVudGltZUNvbXBhdGliaWxpdHlBdHRyaWJ1dGUAZ2V0X1ZhbHVlAHNldF9WYWx1
+ZQBHZXRTZW5zaXRpdmVWYWx1ZQBHZXRPYmplY3RWYWx1ZQBTZXRWYWx1ZQBTeXN0ZW0uUnVudGlt
+ZS5WZXJzaW9uaW5nAFRvU3RyaW5nAEdldFN0cmluZwBTdWJzdHJpbmcATWF0aABEYXlzSW5Nb250
+aABNaWNyb3NvZnQuU3FsU2VydmVyLlNjcmlwdFRhc2sATWljcm9zb2Z0LlNxbFNlcnZlci5EdHMu
+VGFza3MuU2NyaXB0VGFzawBNaWNyb3NvZnQuVmlzdWFsQmFzaWMuTXlTZXJ2aWNlcy5JbnRlcm5h
+bABTY3JpcHRPYmplY3RNb2RlbABTeXN0ZW0uQ29tcG9uZW50TW9kZWwAU2NyaXB0VGFza181OWNm
+Njg3MzYyODY0YTk2Yjg3MDhkZTQ3MzdjZWI5MS5kbGwAZ2V0X0l0ZW0AU3lzdGVtAEVudW0AT3Bl
+bgBTeXN0ZW0uQ29tcG9uZW50TW9kZWwuRGVzaWduAFNjcmlwdE1haW4AZ2V0X0FwcGxpY2F0aW9u
+AE15QXBwbGljYXRpb24AUmZjRGVzdGluYXRpb24AR2V0RGVzdGluYXRpb24AU3FsUGFyYW1ldGVy
+Q29sbGVjdGlvbgBTcWxDb25uZWN0aW9uAElSZmNGdW5jdGlvbgBDcmVhdGVGdW5jdGlvbgBFeGNl
+cHRpb24Ac2FwbmNvAGdldF9ZZWFyAG1fQXBwT2JqZWN0UHJvdmlkZXIAbV9Vc2VyT2JqZWN0UHJv
+dmlkZXIAbV9Db21wdXRlck9iamVjdFByb3ZpZGVyAG1fTXlXZWJTZXJ2aWNlc09iamVjdFByb3Zp
+ZGVyAFJmY0Rlc3RpbmF0aW9uTWFuYWdlcgBUb0ludGVnZXIAU3lzdGVtLkNvZGVEb20uQ29tcGls
+ZXIASVJmY0RhdGFDb250YWluZXIAZ2V0X1VzZXIAU3FsUGFyYW1ldGVyAGdldF9Db21wdXRlcgBN
+eUNvbXB1dGVyAENsZWFyUHJvamVjdEVycm9yAFNldFByb2plY3RFcnJvcgBJRW51bWVyYXRvcgBH
+ZXRFbnVtZXJhdG9yAEFjdGl2YXRvcgAuY3RvcgAuY2N0b3IAU0FQLk1pZGRsZXdhcmUuQ29ubmVj
+dG9yAFN5c3RlbS5EaWFnbm9zdGljcwBNaWNyb3NvZnQuVmlzdWFsQmFzaWMuRGV2aWNlcwBnZXRf
+V2ViU2VydmljZXMATXlXZWJTZXJ2aWNlcwBNaWNyb3NvZnQuVmlzdWFsQmFzaWMuQXBwbGljYXRp
+b25TZXJ2aWNlcwBTeXN0ZW0uUnVudGltZS5JbnRlcm9wU2VydmljZXMATWljcm9zb2Z0LlZpc3Vh
+bEJhc2ljLkNvbXBpbGVyU2VydmljZXMAU3lzdGVtLlJ1bnRpbWUuQ29tcGlsZXJTZXJ2aWNlcwBE
+ZWJ1Z2dpbmdNb2RlcwBnZXRfVmFyaWFibGVzAFN0cmluZ3MARXF1YWxzAENvbnZlcnNpb25zAFN5
+c3RlbS5Db2xsZWN0aW9ucwBBZGRZZWFycwBSdW50aW1lSGVscGVycwBnZXRfUGFyYW1ldGVycwBS
+ZmNDb25maWdQYXJhbWV0ZXJzAFN1Y2Nlc3MAZ2V0X0R0cwBTY3JpcHRSZXN1bHRzAENvbmNhdABG
+b3JtYXQAT2JqZWN0AE15UHJvamVjdABTcGxpdABzZXRfVGFza1Jlc3VsdABTeXN0ZW0uRGF0YS5T
+cWxDbGllbnQAZ2V0X0N1cnJlbnQAQ29udmVydABNb3ZlTmV4dABtX0NvbnRleHQAU2NyaXB0VGFz
+a181OWNmNjg3MzYyODY0YTk2Yjg3MDhkZTQ3MzdjZWI5MS5NeQBnZXRfVG9kYXkAcF9QYXJhQXJy
+YXkARXhlY3V0ZU5vblF1ZXJ5AGdldF9SZXBvc2l0b3J5AFJmY1JlcG9zaXRvcnkAAAAACU4AQQBN
+AEUAACUkAFAAcgBvAGoAZQBjAHQAOgA6AFMAQQBQAF8ATgBhAG0AZQAACVUAUwBFAFIAACUkAFAA
+cgBvAGoAZQBjAHQAOgA6AFMAQQBQAF8AVQBzAGUAcgAADVAAQQBTAFMAVwBEAAAtJABQAHIAbwBq
+AGUAYwB0ADoAOgBTAEEAUABfAFAAYQBzAHMAdwBvAHIAZAAADUMATABJAEUATgBUAAApJABQAHIA
+bwBqAGUAYwB0ADoAOgBTAEEAUABfAEMAbABpAGUAbgB0AAAJTABBAE4ARwAABUUATgAADUEAUwBI
+AE8AUwBUAAAlJABQAHIAbwBqAGUAYwB0ADoAOgBTAEEAUABfAEgAbwBzAHQAAAtTAFkAUwBOAFIA
+ACkkAFAAcgBvAGoAZQBjAHQAOgA6AFMAQQBQAF8AUwB5AHMATgB1AG0AABl7ADAAOgB5AHkAeQB5
+AE0ATQBkAGQAfQAACTAAMQAwADEAAAkxADIAMwAxAAANLgAwADEALgAwADEAAA0uADEAMgAuADMA
+MQAAEVIARgBDAF8ATgBBAE0ARQAAHVIARgBDAF8AUgBFAEEARABfAFQAQQBCAEwARQAAE1MAQQBM
+AEUAUwBfAE8AUgBHAAATUwBhAGwAZQBzAF8ATwByAGcAAAtTAE8AXwBOAE8AAAVTAE8AACNJAE4A
+VgBPAEkAQwBFAF8ARABBAFQARQBfAEYAUgBPAE0AAB9JAE4AVgBPAEkAQwBFAF8ARABBAFQARQBf
+AFQATwAAF1EAVQBFAFIAWQBfAFQAQQBCAEwARQAAG1oAUwBEAF8AUwBIAEkAUABfAEQAQQBUAEEA
+ABNEAEUATABJAE0ASQBUAEUAUgAAA3wAAA1GAEkARQBMAEQAUwAAE0YASQBFAEwARABOAEEATQBF
+AAAZQwBPAE0AUABBAE4AWQBfAEMATwBEAEUAABVTAE8AXwBJAFQARQBNAF8ATgBPAAAVSQBOAFYA
+TwBJAEMARQBfAE4ATwAAGUkATgBWAE8ASQBDAEUAXwBEAEEAVABFAAAXSQBOAFYATwBJAEMARQBf
+AFEAVABZAAAHVQBPAE0AABdJAE4AVgBPAEkAQwBFAF8AQQBNAFQAACFJAE4AVgBPAEkAQwBFAF8A
+QwBVAFIAUgBFAE4AQwBZAAAfSQBOAFYATwBJAEMARQBfAEEATQBUAF8ASABLAEQAABNBAE0ATwBV
+AE4AVABfAEYASQAAGUEATQBPAFUATgBUAF8ATABPAEMAQQBMAAANRgBJAF8ARABPAEMAAAtaAEcA
+QQBNAFQAAAlEAEEAVABBAAAFVwBBAAAPQwBPAF8AQwBvAGQAZQAAC1MATwBfAE4AbwAAFVMATwBf
+AEkAdABlAG0AXwBOAG8AAAEAFUkAbgB2AG8AaQBjAGUAXwBOAG8AABlJAG4AdgBvAGkAYwBlAF8A
+RABhAHQAZQAAF0kAbgB2AG8AaQBjAGUAXwBRAHQAeQAACzAALgAwADAAMAAAF0kAbgB2AG8AaQBj
+AGUAXwBBAE0AVAAACTAALgAwADAAACFJAG4AdgBvAGkAYwBlAF8AQwB1AHIAcgBlAG4AYwB5AAAf
+SQBuAHYAbwBpAGMAZQBfAEEATQBUAF8ASABLAEQAABNBAG0AbwB1AG4AdABfAEYASQAAGUEAbQBv
+AHUAbgB0AF8ATABvAGMAYQBsAAANRgBJAF8ARABvAGMAABdHAHIAbwBzAHMAQQBtAG8AdQBuAHQA
+ACNwAF8ASQBuAHMAXwBTAEQAXwBTAGgAaQBwAF8AVABtAHAAABtpAG4AdgBvAGkAYwBlAF8AZABh
+AHQAZQBGAAADLQABG2kAbgB2AG8AaQBjAGUAXwBkAGEAdABlAFQAADEkAFAAcgBvAGoAZQBjAHQA
+OgA6AFMAcQBsAF8AQwBvAG4AbgBlAGMAdABpAG8AbgAAAAAAe+Ixcw9Z1kmAXtF4gB7peQAEIAEB
+CAMgAAEFIAEBEREEIAEBDgUgAgEODgUgAQERHQcgBAEODg4OBCABAQIGFRIcARIMBhUSHAESCAYV
+EhwBEj0GFRIcARIYBCAAEwAoBxISZRFpEWkODg4OEm0SbRJxHRJ1EWkIEnkVEn0BEoCBEoCBHQ4S
+eQUgABKAlQUgABKAmQYgARKAnRwDIAAcAyAADgcVEoChAg4OByACARMAEwEHAAESZRKAkQUgABKA
+qQQAABFpBSABEWkIBQABCBFpBQACCAgIBQACDg4cBSACDggIBQACDg4OAyAACAQAAQ0OBAABDg0F
+IAESbQ4FAAERaQ4FIAIBDhwFIAEBEmUFAAEBEnkFIAEScQ4IFRKAyQESgIEIIAAVEn0BEwAHFRJ9
+ARKAgQQgAQ4OCgAEHQ4ODggRgNEEAAEIDgUAAg4cDgQAAQEOAwAAAQMgAAIFAAEOHQ4EIAEBHBIH
+CAIOEoCFEoCJHRJ1CBJ1EnkHIAIBDhKAhQYgAQERgOUFIAASgOkGIAESdRJ1BAABHBwEIAECHAcA
+ARJFEYDxBAcBHgACHgAFEAEAHgAECgEeAAQHARMABhUSHAETAAcGFRJNARMABhUSTQETAAITAAQK
+ARMABSABARMACLd6XFYZNOCJCLA/X38R1Qo6CImEXc2AgMyRCFBDbcpcf30jBAAAAAAEAQAAAAcG
+FRIcARIMBwYVEhwBEggHBhUSHAESPQcGFRIcARIYAgYIAwYRIAQAABIMBAAAEggEAAASPQQAABIY
+ByACAg4dEnUEIAASRQcQAQEeAB4ABzABAQEQHgAECAASDAQIABIIBAgAEj0ECAASGAQoABMACAEA
+CAAAAAAAHgEAAQBUAhZXcmFwTm9uRXhjZXB0aW9uVGhyb3dzAQgBAAIAAAAAAEcBABouTkVURnJh
+bWV3b3JrLFZlcnNpb249djQuMAEAVA4URnJhbWV3b3JrRGlzcGxheU5hbWUQLk5FVCBGcmFtZXdv
+cmsgNAgBAAEAAAAAABgBAApNeVRlbXBsYXRlCDExLjAuMC4wAAAFAQAAAABhAQA0U3lzdGVtLldl
+Yi5TZXJ2aWNlcy5Qcm90b2NvbHMuU29hcEh0dHBDbGllbnRQcm90b2NvbBJDcmVhdGVfX0luc3Rh
+bmNlX18TRGlzcG9zZV9fSW5zdGFuY2VfXwAAABABAAtNeS5Db21wdXRlcgAAEwEADk15LkFwcGxp
+Y2F0aW9uAAAMAQAHTXkuVXNlcgAAEwEADk15LldlYlNlcnZpY2VzAAAAALxFAAAAAAAAAAAAANZF
+AAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAADIRQAAAAAAAAAAAAAAAF9Db3JEbGxNYWluAG1zY29y
+ZWUuZGxsAAAAAAD/JQAgABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAQAAAA
+GAAAgAAAAAAAAAAAAAAAAAAAAQABAAAAMAAAgAAAAAAAAAAAAAAAAAAAAQAAAAAASAAAAFhgAADU
+AgAAAAAAAAAAAADUAjQAAABWAFMAXwBWAEUAUgBTAEkATwBOAF8ASQBOAEYATwAAAAAAvQTv/gAA
+AQAAAAAAAAAAAAAAAAAAAAAAPwAAAAAAAAAEAAAAAgAAAAAAAAAAAAAAAAAAAEQAAAABAFYAYQBy
+AEYAaQBsAGUASQBuAGYAbwAAAAAAJAAEAAAAVAByAGEAbgBzAGwAYQB0AGkAbwBuAAAAAAAAALAE
+NAIAAAEAUwB0AHIAaQBuAGcARgBpAGwAZQBJAG4AZgBvAAAAEAIAAAEAMAAwADAAMAAwADQAYgAw
+AAAALAACAAEARgBpAGwAZQBEAGUAcwBjAHIAaQBwAHQAaQBvAG4AAAAAACAAAAAwAAgAAQBGAGkA
+bABlAFYAZQByAHMAaQBvAG4AAAAAADAALgAwAC4AMAAuADAAAACAADAAAQBJAG4AdABlAHIAbgBh
+AGwATgBhAG0AZQAAAFMAYwByAGkAcAB0AFQAYQBzAGsAXwA1ADkAYwBmADYAOAA3ADMANgAyADgA
+NgA0AGEAOQA2AGIAOAA3ADAAOABkAGUANAA3ADMANwBjAGUAYgA5ADEALgBkAGwAbAAAACgAAgAB
+AEwAZQBnAGEAbABDAG8AcAB5AHIAaQBnAGgAdAAAACAAAACIADAAAQBPAHIAaQBnAGkAbgBhAGwA
+RgBpAGwAZQBuAGEAbQBlAAAAUwBjAHIAaQBwAHQAVABhAHMAawBfADUAOQBjAGYANgA4ADcAMwA2
+ADIAOAA2ADQAYQA5ADYAYgA4ADcAMAA4AGQAZQA0ADcAMwA3AGMAZQBiADkAMQAuAGQAbABsAAAA
+NAAIAAEAUAByAG8AZAB1AGMAdABWAGUAcgBzAGkAbwBuAAAAMAAuADAALgAwAC4AMAAAADgACAAB
+AEEAcwBzAGUAbQBiAGwAeQAgAFYAZQByAHMAaQBvAG4AAAAwAC4AMAAuADAALgAwAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAADAAAAOg1AAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
+        </ScriptProject>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\TRUNCATE TABLE SD_Ship"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{459174AC-A8C2-4974-B13F-B963D93D0CA8}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="TRUNCATE TABLE SD_Ship"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{C7661CCC-4C9F-462A-B619-B86290205E40}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE SD_Ship" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::invoice_dateF"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="7"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::invoice_dateT"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="7"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate Table SD_Ship_Tmp"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{EEAB1244-3303-4BC8-BC93-F426F078C0B9}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate Table SD_Ship_Tmp"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{C7661CCC-4C9F-462A-B619-B86290205E40}"
+          SQLTask:SqlStatementSource="Truncate Table SD_Ship_Tmp" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{50164192-C35B-405A-B34C-7A771ADBCA19}"
+      DTS:From="Package\Truncate Table SD_Ship_Tmp"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Exec ZSD_SHIP_DOWNLOAD" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{07821A34-F650-4162-B7F1-CF86385DF4B3}"
+      DTS:From="Package\Exec ZSD_SHIP_DOWNLOAD"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\COPY TO SD_SHIP_HIST" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{77F6CB7C-C61F-44E6-8B36-480DEA679F31}"
+      DTS:From="Package\COPY TO SD_SHIP_HIST"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\TRUNCATE TABLE SD_Ship" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{4056C19E-BE0E-49AF-8138-CC9694A73736}"
+      DTS:From="Package\TRUNCATE TABLE SD_Ship"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\COPY TO SD_SHIP" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="180,44"
+          Id="Package\COPY TO SD_SHIP"
+          TopLeft="45.5,407.462264150943" />
+        <NodeLayout
+          Size="197,42"
+          Id="Package\COPY TO SD_SHIP_HIST"
+          TopLeft="27.5,178.481132075472" />
+        <NodeLayout
+          Size="212,44"
+          Id="Package\Exec ZSD_SHIP_DOWNLOAD"
+          TopLeft="16.5,87.1603773584906" />
+        <NodeLayout
+          Size="216,44"
+          Id="Package\TRUNCATE TABLE SD_Ship"
+          TopLeft="21.5,293.801886792453" />
+        <NodeLayout
+          Size="210,44"
+          Id="Package\Truncate Table SD_Ship_Tmp"
+          TopLeft="16.5,5.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="122,49.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37.6603773584906"
+              Start="0,0"
+              End="0,30.1603773584906">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.1603773584906" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="124.25,131.160377358491">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47.3207547169814"
+              Start="0,0"
+              End="0,39.8207547169814">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.8207547169814" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="127.75,220.481132075472">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,73.320754716981"
+              Start="0,0"
+              End="0,65.820754716981">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,65.820754716981" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="132.5,337.801886792453">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,69.6603773584899"
+              Start="0,0"
+              End="0,62.1603773584899">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,62.1603773584899" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\COPY TO SD_SHIP">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="186,42"
+          Id="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP"
+          TopLeft="5.50000000000001,5.5" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\COPY TO SD_SHIP\COPY TO SD_SHIP 1"
+          TopLeft="10,107.5" />
+        <EdgeLayout
+          Id="Package\COPY TO SD_SHIP.Paths[OLE DB Source Output]"
+          TopLeft="98.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\COPY TO SD_SHIP\COPY TO SD_SHIP 1">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\COPY TO SD_SHIP\SELECT SD_SHIP_TMP">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\COPY TO SD_SHIP_HIST">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="154,42"
+          Id="Package\COPY TO SD_SHIP_HIST\Derived Column"
+          TopLeft="34.5,107.5" />
+        <NodeLayout
+          Size="197,42"
+          Id="Package\COPY TO SD_SHIP_HIST\COPY TO SD_SHIP_HIST"
+          TopLeft="13,209.5" />
+        <NodeLayout
+          Size="212,42"
+          Id="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP"
+          TopLeft="5.50000000000001,5.5" />
+        <EdgeLayout
+          Id="Package\COPY TO SD_SHIP_HIST.Paths[OLE DB Source Output]"
+          TopLeft="111.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\COPY TO SD_SHIP_HIST.Paths[Derived Column Output]"
+          TopLeft="111.5,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\COPY TO SD_SHIP_HIST\COPY TO SD_SHIP_HIST">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\COPY TO SD_SHIP_HIST\Select TABLE SD_SHIP_TMP">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
