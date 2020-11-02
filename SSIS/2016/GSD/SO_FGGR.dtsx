@@ -12,8 +12,8 @@
   DTS:ObjectName="SO_FGGR"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="20130778"
-  DTS:VersionGUID="{ABF1A7BE-866D-4873-A6FB-39C5B0A72B31}">
+  DTS:VersionBuild="20130782"
+  DTS:VersionGUID="{B38B1000-371D-4107-8602-EEF0CA702744}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -24,15 +24,15 @@
       DTS:ObjectName="GSDDB">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=hkgqas14;User ID=cbif_etl;Initial Catalog=GSDDB;Provider=SQLOLEDB.1;Persist Security Info=True;Application Name=SSIS-SO_FGGR-{D744C378-AA80-4B86-9185-DF2A3B6468A9}GSDDB;">
+          DTS:ConnectionString="Data Source=tstdev13;User ID=cbif_etl;Initial Catalog=GSDDB;Provider=SQLOLEDB.1;Persist Security Info=True;Application Name=SSIS-SO_FGGR-{D744C378-AA80-4B86-9185-DF2A3B6468A9}GSDDB;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="oV8O5chpbQ=="
-            IV="h9WEBh9xK1s=" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="2PUiCMWlWA=="
+            IV="oP/22wNW7Qg=" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#tripledes-cbc" />
             <CipherData>
-              <CipherValue>h9WEBh9xK1t5L3GeD0a0SXePtQA2Z61Fl8iBTS5p7yH9214hvQ9iiPaaNehsKtSPxj+sUc2UsKtnBxqKmsaCEsb4MG/owEAfBXwKVhHftkmtnw+G7MNTopfr9OJMbsrUMbRuANMNU43FGgPgdC0G+l6+m4J+9usgrcPusD8ZzXg=</CipherValue>
+              <CipherValue>oP/22wNW7Qg70BKT41tduK4TdxmN7A3k0nsvXbO6vdWrJ8N4t5ByRaWnQrG2CKLduXLSUfcAaL7GsvuU1T+IH7YDWhRO5akjFhMyAUiMKxwbBJc6NU/DMT/b4uJH5rFamsujxZsYQ3nxjF+smNVuPQvo7zcld7wRrVJDUrnZlak=</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -45,15 +45,15 @@
       DTS:ObjectName="GSDDB_Hist">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=hkgqas14;User ID=cbif_etl;Initial Catalog=GSDDB;Provider=SQLOLEDB.1;Persist Security Info=True;Application Name=SSIS-SO_FGGR-{da3d3297-9e6b-4565-86fb-6e1cfb666230}GSDDB_Hist;">
+          DTS:ConnectionString="Data Source=tstdev13;User ID=cbif_etl;Initial Catalog=GSDDB;Provider=SQLOLEDB.1;Persist Security Info=True;Application Name=SSIS-SO_FGGR-{da3d3297-9e6b-4565-86fb-6e1cfb666230}GSDDB_Hist;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="6MRnNO3JZg=="
-            IV="9MRCfeqgdHg=" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="DVwFkJmc/A=="
+            IV="93xhYd+4K2o=" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#tripledes-cbc" />
             <CipherData>
-              <CipherValue>9MRCfeqgdHhiN2FVDh0xWSMjpKmNBvSAWedPwx+SqAvoHunwCOyFIiTSP21qjFKvkL0Fggi9zRUbb4OfAH2arYslYDPDN/hcNr2AqDuUreVb3dp6NZKojDkVrwbOqjsZgQosU99Ii6NmIGV7wFiA2jTG7y6h1wKsB6z7lV051lQ=</CipherValue>
+              <CipherValue>93xhYd+4K2oL3Ls28/gs0s2cM7EuPYfNU8o0/QZ0LHMUNfiTRRGkgpSFZ7O4sedkbPNsZl2AX6XkKM4TG6EI6cqxoB0UufjtQZmuPs9hqXfdQbjWdsMqLUOS/5YAQGEyEIswqwc/IRNpFffSCUdaDP7ejSWMX1LEckVSQt51iss=</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -246,6 +246,14 @@
                       cachedName="UOM"
                       externalMetadataColumnId="Package\Copy to SO_FGGR\Copy to SO_FGGR.Inputs[OLE DB Destination Input].ExternalColumns[UOM]"
                       lineageId="Package\Copy to SO_FGGR\Select SO_FGGR_Tmp.Outputs[OLE DB Source Output].Columns[UOM]" />
+                    <inputColumn
+                      refId="Package\Copy to SO_FGGR\Copy to SO_FGGR.Inputs[OLE DB Destination Input].Columns[FINAL_RECEIPT]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="FINAL_RECEIPT"
+                      externalMetadataColumnId="Package\Copy to SO_FGGR\Copy to SO_FGGR.Inputs[OLE DB Destination Input].ExternalColumns[FINAL_RECEIPT]"
+                      lineageId="Package\Copy to SO_FGGR\Select SO_FGGR_Tmp.Outputs[OLE DB Source Output].Columns[FINAL_RECEIPT]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -287,6 +295,12 @@
                       dataType="str"
                       length="3"
                       name="UOM" />
+                    <externalMetadataColumn
+                      refId="Package\Copy to SO_FGGR\Copy to SO_FGGR.Inputs[OLE DB Destination Input].ExternalColumns[FINAL_RECEIPT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="FINAL_RECEIPT" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -449,6 +463,17 @@
                       lineageId="Package\Copy to SO_FGGR\Select SO_FGGR_Tmp.Outputs[OLE DB Source Output].Columns[UOM]"
                       name="UOM"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy to SO_FGGR\Select SO_FGGR_Tmp.Outputs[OLE DB Source Output].Columns[FINAL_RECEIPT]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy to SO_FGGR\Select SO_FGGR_Tmp.Outputs[OLE DB Source Output].ExternalColumns[FINAL_RECEIPT]"
+                      length="1"
+                      lineageId="Package\Copy to SO_FGGR\Select SO_FGGR_Tmp.Outputs[OLE DB Source Output].Columns[FINAL_RECEIPT]"
+                      name="FINAL_RECEIPT"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -490,6 +515,12 @@
                       dataType="str"
                       length="3"
                       name="UOM" />
+                    <externalMetadataColumn
+                      refId="Package\Copy to SO_FGGR\Select SO_FGGR_Tmp.Outputs[OLE DB Source Output].ExternalColumns[FINAL_RECEIPT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="FINAL_RECEIPT" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -542,6 +573,13 @@
                       length="3"
                       lineageId="Package\Copy to SO_FGGR\Select SO_FGGR_Tmp.Outputs[OLE DB Source Error Output].Columns[UOM]"
                       name="UOM" />
+                    <outputColumn
+                      refId="Package\Copy to SO_FGGR\Select SO_FGGR_Tmp.Outputs[OLE DB Source Error Output].Columns[FINAL_RECEIPT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Copy to SO_FGGR\Select SO_FGGR_Tmp.Outputs[OLE DB Source Error Output].Columns[FINAL_RECEIPT]"
+                      name="FINAL_RECEIPT" />
                     <outputColumn
                       refId="Package\Copy to SO_FGGR\Select SO_FGGR_Tmp.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -717,6 +755,14 @@
                       cachedName="UOM"
                       externalMetadataColumnId="Package\Copy to SO_FGGR_Hist\Copy to SO_FGGR_Hist.Inputs[OLE DB Destination Input].ExternalColumns[UOM]"
                       lineageId="Package\Copy to SO_FGGR_Hist\Select SO_FGGR.Outputs[OLE DB Source Output].Columns[UOM]" />
+                    <inputColumn
+                      refId="Package\Copy to SO_FGGR_Hist\Copy to SO_FGGR_Hist.Inputs[OLE DB Destination Input].Columns[FINAL_RECEIPT]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="FINAL_RECEIPT"
+                      externalMetadataColumnId="Package\Copy to SO_FGGR_Hist\Copy to SO_FGGR_Hist.Inputs[OLE DB Destination Input].ExternalColumns[FINAL_RECEIPT]"
+                      lineageId="Package\Copy to SO_FGGR_Hist\Select SO_FGGR.Outputs[OLE DB Source Output].Columns[FINAL_RECEIPT]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -762,6 +808,12 @@
                       dataType="str"
                       length="3"
                       name="UOM" />
+                    <externalMetadataColumn
+                      refId="Package\Copy to SO_FGGR_Hist\Copy to SO_FGGR_Hist.Inputs[OLE DB Destination Input].ExternalColumns[FINAL_RECEIPT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="FINAL_RECEIPT" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -997,6 +1049,17 @@
                       lineageId="Package\Copy to SO_FGGR_Hist\Select SO_FGGR.Outputs[OLE DB Source Output].Columns[UOM]"
                       name="UOM"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy to SO_FGGR_Hist\Select SO_FGGR.Outputs[OLE DB Source Output].Columns[FINAL_RECEIPT]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy to SO_FGGR_Hist\Select SO_FGGR.Outputs[OLE DB Source Output].ExternalColumns[FINAL_RECEIPT]"
+                      length="1"
+                      lineageId="Package\Copy to SO_FGGR_Hist\Select SO_FGGR.Outputs[OLE DB Source Output].Columns[FINAL_RECEIPT]"
+                      name="FINAL_RECEIPT"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1038,6 +1101,12 @@
                       dataType="str"
                       length="3"
                       name="UOM" />
+                    <externalMetadataColumn
+                      refId="Package\Copy to SO_FGGR_Hist\Select SO_FGGR.Outputs[OLE DB Source Output].ExternalColumns[FINAL_RECEIPT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="FINAL_RECEIPT" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -1090,6 +1159,13 @@
                       length="3"
                       lineageId="Package\Copy to SO_FGGR_Hist\Select SO_FGGR.Outputs[OLE DB Source Error Output].Columns[UOM]"
                       name="UOM" />
+                    <outputColumn
+                      refId="Package\Copy to SO_FGGR_Hist\Select SO_FGGR.Outputs[OLE DB Source Error Output].Columns[FINAL_RECEIPT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Copy to SO_FGGR_Hist\Select SO_FGGR.Outputs[OLE DB Source Error Output].Columns[FINAL_RECEIPT]"
+                      name="FINAL_RECEIPT" />
                     <outputColumn
                       refId="Package\Copy to SO_FGGR_Hist\Select SO_FGGR.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -1182,6 +1258,98 @@
               Language="VisualBasic"
               ReadOnlyVariables="User::I_J_3ARQF,User::I_J_3ARQT,User::RFC_NAME,User::Sales_Org,User::Sales_Org_DS,$Project::SAP_Client,$Project::SAP_Host,$Project::SAP_Name,$Project::SAP_Password,$Project::SAP_SysNum,$Project::SAP_User,$Project::Sql_Connection">
               <ProjectItem
+                Name="ScriptTask_1100b341d4ec4ceba451d9e8284c095f.vbproj"
+                Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="utf-16"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0BBEBED2-BB05-4ABA-8C9B-A32F48559AA7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>My Project</AppDesignerFolder>
+    <RootNamespace>ScriptTask_1100b341d4ec4ceba451d9e8284c095f</RootNamespace>
+    <AssemblyName>ScriptTask_1100b341d4ec4ceba451d9e8284c095f</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionStrict>On</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.SqlServer.ManagedDTS, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.ScriptTask, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="System">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="sapnco, Version=3.0.0.42, Culture=neutral, PublicKeyToken=50436dca5c7f7d23, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_64\sapnco\v4.0_3.0.0.42__50436dca5c7f7d23\sapnco.dll</HintPath>
+    </Reference>
+    <Reference Include="sapnco_utils, Version=3.0.0.42, Culture=neutral, PublicKeyToken=50436dca5c7f7d23, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_64\sapnco_utils\v4.0_3.0.0.42__50436dca5c7f7d23\sapnco_utils.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="My Project\" />
+  </ItemGroup>
+  <!-- Include the build rules for a VB project.-->
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
+        <ProjectProperties HostName="VSTAHostName" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="vb" TemplatesPath="" />
+        <Host Name="ScriptTask" />
+        <ProjectClient>
+          <HostIdentifier>SSIS_ST130</HostIdentifier>
+        </ProjectClient>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <ItemGroup>
+    <Compile Include="ScriptMain.vb" />
+  </ItemGroup>
+</Project>]]></ProjectItem>
+              <ProjectItem
                 Name="ScriptMain.vb"
                 Encoding="UTF8"><![CDATA[' Microsoft SQL Server Integration Services Script Task
 ' Write scripts using Microsoft Visual Basic
@@ -1191,7 +1359,6 @@ Imports System
 Imports System.Data
 Imports System.Math
 Imports Microsoft.SqlServer.Dts.Runtime
-Imports Microsoft.Adapter.SAP
 Imports SAP.Middleware.Connector
 Imports System.Data.SqlClient
 
@@ -1218,7 +1385,8 @@ Partial Public Class ScriptMain
         '~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         '--------------------------------------------------------
         ' 04 Aug 2017      Harry       the first version
-        ' 
+        ' 05 Jun 2020      Harry       add column FINAL_RECEIPT
+        '
         '   the latest update:
         '~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         Dim _parameters As RfcConfigParameters = New RfcConfigParameters()
@@ -1257,7 +1425,7 @@ Partial Public Class ScriptMain
 
         Dim _resultTable As IRfcTable = _rfcFunction.GetTable("IT_FGGR_DATA")
 
-        Dim _paraArray(6) As SqlParameter
+        Dim _paraArray(7) As SqlParameter
         Dim a As String
         For Each _dataRow As IRfcStructure In _resultTable
             With _dataRow
@@ -1274,6 +1442,7 @@ Partial Public Class ScriptMain
 
                     _paraArray(5) = New SqlParameter("FGGR_QTY", .GetDecimal("FGGR_QTY"))
                     _paraArray(6) = New SqlParameter("UOM", .GetString("UOM"))
+                    _paraArray(7) = New SqlParameter("FINAL_RECEIPT", .GetString("FINAL_RECEIPT"))
 
                 Catch ex As Exception
                     Console.WriteLine(ex.ToString())
@@ -1323,99 +1492,6 @@ Partial Public Class ScriptMain
 
 End Class]]></ProjectItem>
               <ProjectItem
-                Name="ScriptTask_1100b341d4ec4ceba451d9e8284c095f.vbproj"
-                Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="utf-16"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup>
-    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{0bbebed2-bb05-4aba-8c9b-a32f48559aa7}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>My Project</AppDesignerFolder>
-    <RootNamespace>ScriptTask_1100b341d4ec4ceba451d9e8284c095f</RootNamespace>
-    <AssemblyName>ScriptTask_1100b341d4ec4ceba451d9e8284c095f</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <OptionCompare>Binary</OptionCompare>
-    <OptionExplicit>On</OptionExplicit>
-    <OptionStrict>On</OptionStrict>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>.\bin\Debug\</OutputPath>
-    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
-    <DefineDebug>true</DefineDebug>
-    <DefineTrace>true</DefineTrace>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-    <DebugSymbols>false</DebugSymbols>
-    <Optimize>true</Optimize>
-    <OutputPath>.\bin\Release\</OutputPath>
-    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
-    <DefineDebug>false</DefineDebug>
-    <DefineTrace>true</DefineTrace>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
-    <Reference Include="Microsoft.SqlServer.ManagedDTS, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
-    <Reference Include="Microsoft.SqlServer.ScriptTask, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
-    <Reference Include="System">
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="System.Data">
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Microsoft.Adapter.SAP.SAPProvider">
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="sapnco_utils">
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="sapnco">
-      <Private>False</Private>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Import Include="Microsoft.VisualBasic" />
-    <Import Include="System" />
-    <Import Include="System.Collections" />
-    <Import Include="System.Data" />
-    <Import Include="System.Diagnostics" />
-    <Import Include="System.Windows.Forms" />
-  </ItemGroup>
-  <ItemGroup>
-    <AppDesigner Include="My Project\" />
-  </ItemGroup>
-  <!-- Include the build rules for a VB project.-->
-  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
-  <ProjectExtensions>
-    <VisualStudio>
-      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
-        <ProjectProperties HostName="ScriptTask" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="vb" TemplatesPath="" DebugInfoExeName="" DebugInfoCommandLine="" DebugInfoWorkingDir="" IconImageList="" />
-        <Host Name="ScriptTask" IconIndex=""></Host>
-        <ProjectClient>
-          <HostIdentifier>SSIS_ST130</HostIdentifier>
-        </ProjectClient>
-      </FlavorProperties>
-    </VisualStudio>
-  </ProjectExtensions>
-  <ItemGroup>
-    <Compile Include="ScriptMain.vb" />
-  </ItemGroup>
-</Project>]]></ProjectItem>
-              <ProjectItem
                 Name="Project"
                 Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
 <c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
@@ -1433,17 +1509,17 @@ End Class]]></ProjectItem>
               <BinaryItem
                 Name="ScriptTask_1100b341d4ec4ceba451d9e8284c095f.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDAHzZlVsAAAAAAAAAAOAAIiALAVAAACAAAAAGAAAAAAAA+j4A
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAC/72V4AAAAAAAAAAOAAIiALAVAAACAAAAAGAAAAAAAAMj8A
 AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAEAAAAAAAAAACAAAAAAgAAAAAAAAMAQIUAABAA
-ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAKg+AABPAAAAAEAAADADAAAAAAAAAAAAAAAAAAAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAOA+AABPAAAAAEAAADADAAAAAAAAAAAAAAAAAAAA
 AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAAAB8AAAAgAAAAIAAAAAIA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAAOB8AAAAgAAAAIAAAAAIA
 AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAADADAAAAQAAAAAQAAAAiAAAAAAAAAAAAAAAAAABAAABA
-LnJlbG9jAAAMAAAAAGAAAAACAAAAJgAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAADc
-PgAAAAAAAEgAAAACAAUANCYAAHQYAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+LnJlbG9jAAAMAAAAAGAAAAACAAAAJgAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAAAU
+PwAAAAAAAEgAAAACAAUAUCYAAJAYAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4CKA8AAAoqHgIoEAAACiqmcxEAAAqAAQAABHMSAAAKgAIA
 AARzEwAACoADAAAEcxQAAAqABAAABCoufgEAAARvFQAACioufgIAAARvFgAACioufgMAAARvFwAA
-CioufgQAAARvGAAACioeAigZAAAKKgAAGzAFAIcDAAABAAARcxoAAAolcgEAAHACKBsAAApvHAAA
+CioufgQAAARvGAAACioeAigZAAAKKgAAGzAFAKEDAAABAAARcxoAAAolcgEAAHACKBsAAApvHAAA
 CnILAABwbx0AAApvHgAACm8fAAAKbyAAAAolcjEAAHACKBsAAApvHAAACnI7AABwbx0AAApvHgAA
 Cm8fAAAKbyAAAAolcmEAAHACKBsAAApvHAAACnJvAABwbx0AAApvIQAACm8fAAAKbyAAAAolcp0A
 AHACKBsAAApvHAAACnKrAABwbx0AAApvHgAACm8fAAAKbyAAAAolctUAAHBy3wAAcG8gAAAKJXLl
@@ -1453,134 +1529,134 @@ bx4AAApvHwAACm8kAAAKCyglAAAKEwYSBigmAAAKEwcSBygnAAAKKCgAAAojAAAAAAAA8D9ZKCkA
 AApyYQEAcCgqAAAKDCglAAAKEwYSBigmAAAKEwcSBygnAAAKKCgAAAojAAAAAAAA8D9YKCkAAApy
 bwEAcCgqAAAKDQdyfQEAcAIoGwAACm8cAAAKcpEBAHBvHQAACm8eAAAKbx8AAApvKwAACgdypQEA
 cAgoLAAACowdAAABby0AAAoHcr8BAHAJKCwAAAqMHQAAAW8tAAAKBwZvLgAACt4KJSgvAAAKEwj+
-Ggdy1QEAcG8wAAAKEwQdjRwAAAETBREEbzEAAAoTCTgmAQAAEQlvMgAAChMKEQUWcu8BAHARCnIJ
+Ggdy1QEAcG8wAAAKEwQejRwAAAETBREEbzEAAAoTCThAAQAAEQlvMgAAChMKEQUWcu8BAHARCnIJ
 AgBwbzMAAApzNAAACqIRBRdyIwIAcBEKci8CAHBvMwAACnM0AAAKohEFGHI7AgBwEQpyTwIAcG8z
 AAAKczQAAAqiEQUZcmUCAHARCnJlAgBwbzMAAApzNAAACqIRBRpycQIAcBEKcocCAHBvMwAACigs
 AAAKEwYSBnKbAgBwKDUAAApzNAAACqLeHygvAAAKEQUacnECAHB+NgAACnM0AAAKoig3AAAK3gAR
-BRtysQIAcBEKcrECAHBvOAAACowzAAABczQAAAqiEQUccsMCAHARCnLDAgBwbzMAAApzNAAACqLe
-GyUoLwAAChMLEQtvOQAACig6AAAKKDcAAAreABQTCgJyywIAcBEFKAoAAAYmEQlvOwAACjrO/v//
-3gwRCSwHEQlvPAAACtwCKBsAAAoWbz0AAAoqAEFkAAAAAAAABAIAAAkAAAANAgAACgAAAB4AAAEA
-AAAAqwIAAC8AAADaAgAAHwAAAB4AAAEAAAAAQwIAAPEAAAA0AwAAGwAAAB4AAAECAAAALAIAAEIB
-AABuAwAADAAAAAAAAAAbMAIAmgAAAAIAABEWCgIoGwAACm8cAAAKcvUCAHBvHQAACm8eAAAKbx8A
-AAoLB3M+AAAKDAhvPwAACgMIc0AAAAoNCRpvQQAACgQTBBYTBSsbEQQRBZoTBglvQgAAChEGb0MA
-AAomEQUX1hMFEQURBI5pMt0Jb0QAAAom3goJLAYJbzwAAArc3goILAYIbzwAAArcFwreDCUoLwAA
-ChMHFgr+GgYqAAABKAAAAgA3ADtyAAoAAAAAAgApAFV+AAoAAAAAAAACAIqMAAweAAABNgIDKEUA
-AAooRgAACioeAihHAAAKKi7QBgAAAihIAAAKKh4CKB8AAAoqAAATMAEAFAAAAAMAABECjAgAABst
-CCgBAAArCisCAgoGKiID/hUIAAAbKh4CKEoAAAoqAAAAEzACACgAAAAEAAARAntLAAAKb0wAAAoK
-BowLAAAbLRIoAgAAKwoCe0sAAAoGb00AAAoGKkoCKEoAAAoCc04AAAp9SwAACioAQlNKQgEAAQAA
-AAAADAAAAHY0LjAuMzAzMTkAAAAABQBsAAAAqAcAACN+AAAUCAAApAkAACNTdHJpbmdzAAAAALgR
-AAAoAwAAI1VTAOAUAAAQAAAAI0dVSUQAAADwFAAAhAMAACNCbG9iAAAAAAAAAAIAAAFXHaIJCQ4A
-AAD6ATMAFgAAAQAAADsAAAAIAAAACAAAABMAAAAFAAAATgAAAAIAAAAqAAAABAAAAAIAAAAFAAAA
-BQAAAAsAAAABAAAABwAAAAMAAAADAAAAAgAAAAAAEAUBAAAAAAAGAFkDGQgGALEDGQgGAJwCWgcP
-ADkIAAAGAA0DOQQKAIUClgYKAFsC+gQKALAC+gQOAEMCqQcOAOUGbQcGACYDWgcOAN0C8gcOAPUC
-7wAGANMIUAUOAMQGqQcOAD4D7wAGAAwCUAUGAMkC0wcOAA8AvgQKAHACYQUSAI8DigQGAHkDUAUS
-ACcCigQGAGYEUAUWAKcFQQcWAOoFQQcWAE8BQQcaAMkG8wgGAMYBUAUGAAYGUAUGADkA1AAWABkC
-QQcaANwF8wgaAAkB8wgGAFcFUAUWAJoIQQcSAOgEigQeAEwIzwEeAHEBzwEGAE0A1AAWAIAGQQcW
-AJQJQQcGAEcAUAUOAF0I8gcGAF8EUAUWAK4GQQcGABUJUAUOAL8A8gcGAAEA1AAGAEAFUAUGALYE
-UAUGALMBUAUGABAHaQgGAHoBUAUaAP0BswAaAMUF8wgGAHwIGQgGAI8BUAUGACoHUAUAAAAAWgAA
-AAAAAQABAAAAAACZBTAJJQABAAEAAAAAAOMGMAkpAAEAAgAAARAA2ggwCTkAAQADAAEAAAB+BQ0E
-XQAFAAgABQEAAJsHAAA5AAUACwAFAQAAHgAAADkABQASAAIBAAC+CAAAjQAGABQAMQBJBscBMQAg
-Bs8BMQA0BtcBMQBiBt8BIQAmCXwBBgarAOcBVoCuCOoBVoARAuoBUCAAAAAABhg0BwYAAQBYIAAA
-AAAGGDQHBgABAGAgAAAAABEYOgcIAQEAiiAAAAAAEwjWBu4BAQCWIAAAAAATCIkF8wEBAKIgAAAA
-ABMIwAb4AQEAriAAAAAAEwiLB/0BAQC6IAAAAAAGGDQHBgABAMQgAAAAAAYAhAUGAAEAvCQAAAAA
-AQBZAQICAQCMJQAAAADGAlYIUAEDAJolAAAAAMYCPAGyAAQAoiUAAAAAgwAJAgoCBACuJQAAAADG
-AlMEhQAEALglAAAAABEAmAAPAgQA2CUAAAAAAQCEABcCBQDhJQAAAAAGGDQHBgAGAOwlAAAAAAMI
-IwFKAAYAICYAAAAABhg0BwYABgAAAAEAuwEAAAIAaQkAAAEAFQYAAAEAMwEAAAEAMwEJADQHAQAR
-ADQHBgAZADQHCgApADQHEAAxADQHFQBBADQHGwBZADQHBgBhADQHBgBpADQHBgCBADQHIQCRADQH
-KQChADQHEACpADQHBgCxADQHKQBJADQHBgBRADQHBgAMADQHBgAUADQHBgAcADQHBgAkADQHBgAM
-ACMBSgAUACMBSgAcACMBSgAkACMBSgC5ADQHBgAhATQHBgC5ALYIbgApAUgIdAAxAUcFegA5Ac8D
-gQBxAFMEhQAsAAUBkQA5AeMDgQBJAbYFmQDJAIUJoQBRAfcFpwDpAF8JrQDpABcGsgBZAVMEhQBh
-AYYBtgBhAVMEuwBpAcwIwABxAQQEFQB5AcQBxgBxAQQEzADRAEgB0gCBAQAH2ABxAWgB3gA0ABwH
-7QA8AAkJSgBxAVwE/gDhADQHzADpAFME/gCRAQcEAwGBAe4GCAFxAbMEDAHxAFMEhQChAe8BEwGp
-AR0JGAGxAVMCBgApAeQIAQAJATQHEAAJAVwFBgARATQHLwERAfkBNwERAYsIPgHBAQUBRAERAXUJ
-sgDJAfUDSwFxAFYIUAFxADwBsgCJAKEBVQHZARQBZQFxADQHBgBMACYJfAFUAM8DSgBUANkDkwFU
-ADQHBgAIABwAvQEIACAAwgEpAGMAOwMuAAsAOAIuABMAQQIuABsAYAIuACMAaQJAADsAwgFAADMA
-sQJDACsAugJDADMAsQJJAGMATANjACsAugJjADMAsQJpAGMAYAOAADsAwgGDAEMAwgGDAEsAwgGD
-ACsAugKJAGMAbQOgADsAwgGjAGsAwgGjAHMA0wLAADsAwgHDADMAsQLDAFMA2QLgADsAwgHjADMA
-sQLjAFsA0wJgATMAsQJgATsAwgGAATMAsQKAATsAwgGgATMAsQKgATsAwgHAATMAsQLAATsAwgHg
-ATsAwgEAAjsAwgEgAjsAwgEgAjMAsQJAAjsAwgFgAjsAwgFgAjMAsQJPABwBXQFwAQQAAQAHAAUA
-AADlBh8CAACbBSQCAADEBikCAACdBy4CAAAnATMCAgAEAAMAAgAFAAUAAgAGAAcAAgAHAAkAAgAS
-AAsALgA1ADwAQwCJAOQA9gBiAXUBhAGLAQSAAAAAAAAAAAAAAAAAAAAAAA0EAAAEAAAAAAAAAAAA
-AACZAcsAAAAAAAQAAAAAAAAAAAAAAJkBUAUAAAAACgAAAAAAAAAAAAAAogHvAAAAAAANAAAAAAAA
-AAAAAACrAWsEAAAAAAMAAAAAACoAAAAAALQBEAYAAAAABAAAAAAAAAAAAAAAmQGzAAAAAAANAAAA
-AAAAAAAAAACrAWMAAAAAAAYABAAHAAQACAAFAAAAEAAOAIIAAAAQAB8AggAAAAAAIQCCAJMAawGT
-AI4BAAAAAABJRW51bWVyYWJsZWAxAENvbnRleHRWYWx1ZWAxAFRocmVhZFNhZmVPYmplY3RQcm92
-aWRlcmAxAElFbnVtZXJhdG9yYDEASW50MzIARGljdGlvbmFyeWAyADxNb2R1bGU+AE1pY3Jvc29m
-dC5TcWxTZXJ2ZXIuTWFuYWdlZERUUwBUAERpc3Bvc2VfX0luc3RhbmNlX18AQ3JlYXRlX19JbnN0
-YW5jZV9fAHZhbHVlX18AU3lzdGVtLkRhdGEAUHJvamVjdERhdGEAbXNjb3JsaWIAU3lzdGVtLkNv
-bGxlY3Rpb25zLkdlbmVyaWMATWljcm9zb2Z0LlZpc3VhbEJhc2ljAEFkZABTcWxDb21tYW5kAENy
-ZWF0ZUluc3RhbmNlAGdldF9HZXRJbnN0YW5jZQBpbnN0YW5jZQBHZXRIYXNoQ29kZQBJbnZva2UA
-SVJmY1RhYmxlAEluc2VydFRtcFRhYmxlAEdldFRhYmxlAFZhcmlhYmxlAElEaXNwb3NhYmxlAFRv
-RG91YmxlAFJ1bnRpbWVUeXBlSGFuZGxlAEdldFR5cGVGcm9tSGFuZGxlAENvbnNvbGUAcF9TUE5h
-bWUAVG9EYXRlVGltZQBNaWNyb3NvZnQuU3FsU2VydmVyLkR0cy5SdW50aW1lAFdyaXRlTGluZQBz
-ZXRfQ29tbWFuZFR5cGUAR2V0VHlwZQBGYWlsdXJlAElSZmNTdHJ1Y3R1cmUAVlNUQVJUU2NyaXB0
-T2JqZWN0TW9kZWxCYXNlAEFwcGxpY2F0aW9uQmFzZQBEaXNwb3NlAEVkaXRvckJyb3dzYWJsZVN0
-YXRlAEhlbHBLZXl3b3JkQXR0cmlidXRlAEdlbmVyYXRlZENvZGVBdHRyaWJ1dGUARGVidWdnYWJs
-ZUF0dHJpYnV0ZQBFZGl0b3JCcm93c2FibGVBdHRyaWJ1dGUAQ29tVmlzaWJsZUF0dHJpYnV0ZQBT
-dGFuZGFyZE1vZHVsZUF0dHJpYnV0ZQBIaWRlTW9kdWxlTmFtZUF0dHJpYnV0ZQBUYXJnZXRGcmFt
-ZXdvcmtBdHRyaWJ1dGUARGVidWdnZXJIaWRkZW5BdHRyaWJ1dGUATXlHcm91cENvbGxlY3Rpb25B
-dHRyaWJ1dGUAQ29tcGlsYXRpb25SZWxheGF0aW9uc0F0dHJpYnV0ZQBDTFNDb21wbGlhbnRBdHRy
-aWJ1dGUAU1NJU1NjcmlwdFRhc2tFbnRyeVBvaW50QXR0cmlidXRlAFJ1bnRpbWVDb21wYXRpYmls
-aXR5QXR0cmlidXRlAGdldF9WYWx1ZQBzZXRfVmFsdWUAR2V0U2Vuc2l0aXZlVmFsdWUAR2V0T2Jq
-ZWN0VmFsdWUAU2V0VmFsdWUAU2NyaXB0VGFza18xMTAwYjM0MWQ0ZWM0Y2ViYTQ1MWQ5ZTgyODRj
-MDk1ZgBTeXN0ZW0uUnVudGltZS5WZXJzaW9uaW5nAFRvU3RyaW5nAEdldFN0cmluZwBNYXRoAE1p
-Y3Jvc29mdC5TcWxTZXJ2ZXIuU2NyaXB0VGFzawBNaWNyb3NvZnQuU3FsU2VydmVyLkR0cy5UYXNr
-cy5TY3JpcHRUYXNrAEdldERlY2ltYWwATWljcm9zb2Z0LlZpc3VhbEJhc2ljLk15U2VydmljZXMu
-SW50ZXJuYWwAU2NyaXB0T2JqZWN0TW9kZWwAU3lzdGVtLkNvbXBvbmVudE1vZGVsAFNjcmlwdFRh
-c2tfMTEwMGIzNDFkNGVjNGNlYmE0NTFkOWU4Mjg0YzA5NWYuZGxsAERCTnVsbABnZXRfSXRlbQBT
-eXN0ZW0ARW51bQBPcGVuAFN5c3RlbS5Db21wb25lbnRNb2RlbC5EZXNpZ24AU2NyaXB0TWFpbgBn
-ZXRfQXBwbGljYXRpb24ATXlBcHBsaWNhdGlvbgBSZmNEZXN0aW5hdGlvbgBHZXREZXN0aW5hdGlv
-bgBTcWxQYXJhbWV0ZXJDb2xsZWN0aW9uAFNxbENvbm5lY3Rpb24ASVJmY0Z1bmN0aW9uAENyZWF0
-ZUZ1bmN0aW9uAEV4Y2VwdGlvbgBzYXBuY28AZ2V0X1llYXIAbV9BcHBPYmplY3RQcm92aWRlcgBt
-X1VzZXJPYmplY3RQcm92aWRlcgBtX0NvbXB1dGVyT2JqZWN0UHJvdmlkZXIAbV9NeVdlYlNlcnZp
-Y2VzT2JqZWN0UHJvdmlkZXIAUmZjRGVzdGluYXRpb25NYW5hZ2VyAFN5c3RlbS5Db2RlRG9tLkNv
-bXBpbGVyAElSZmNEYXRhQ29udGFpbmVyAGdldF9Vc2VyAFNxbFBhcmFtZXRlcgBnZXRfQ29tcHV0
-ZXIATXlDb21wdXRlcgBDbGVhclByb2plY3RFcnJvcgBTZXRQcm9qZWN0RXJyb3IASUVudW1lcmF0
-b3IAR2V0RW51bWVyYXRvcgBBY3RpdmF0b3IALmN0b3IALmNjdG9yAFNBUC5NaWRkbGV3YXJlLkNv
-bm5lY3RvcgBTeXN0ZW0uRGlhZ25vc3RpY3MATWljcm9zb2Z0LlZpc3VhbEJhc2ljLkRldmljZXMA
-Z2V0X1dlYlNlcnZpY2VzAE15V2ViU2VydmljZXMATWljcm9zb2Z0LlZpc3VhbEJhc2ljLkFwcGxp
-Y2F0aW9uU2VydmljZXMAU3lzdGVtLlJ1bnRpbWUuSW50ZXJvcFNlcnZpY2VzAE1pY3Jvc29mdC5W
-aXN1YWxCYXNpYy5Db21waWxlclNlcnZpY2VzAFN5c3RlbS5SdW50aW1lLkNvbXBpbGVyU2Vydmlj
-ZXMARGVidWdnaW5nTW9kZXMAZ2V0X1ZhcmlhYmxlcwBFcXVhbHMAQ29udmVyc2lvbnMAU3lzdGVt
-LkNvbGxlY3Rpb25zAFJ1bnRpbWVIZWxwZXJzAGdldF9QYXJhbWV0ZXJzAFJmY0NvbmZpZ1BhcmFt
-ZXRlcnMAU3VjY2VzcwBnZXRfRHRzAFNjcmlwdFJlc3VsdHMAQ29uY2F0AE9iamVjdABNeVByb2pl
-Y3QAc2V0X1Rhc2tSZXN1bHQAU3lzdGVtLkRhdGEuU3FsQ2xpZW50AGdldF9DdXJyZW50AENvbnZl
-cnQATW92ZU5leHQAbV9Db250ZXh0AFNjcmlwdFRhc2tfMTEwMGIzNDFkNGVjNGNlYmE0NTFkOWU4
-Mjg0YzA5NWYuTXkAZ2V0X1RvZGF5AHBfUGFyYUFycmF5AEV4ZWN1dGVOb25RdWVyeQBnZXRfUmVw
-b3NpdG9yeQBSZmNSZXBvc2l0b3J5AAAAAAlOAEEATQBFAAAlJABQAHIAbwBqAGUAYwB0ADoAOgBT
-AEEAUABfAE4AYQBtAGUAAAlVAFMARQBSAAAlJABQAHIAbwBqAGUAYwB0ADoAOgBTAEEAUABfAFUA
-cwBlAHIAAA1QAEEAUwBTAFcARAAALSQAUAByAG8AagBlAGMAdAA6ADoAUwBBAFAAXwBQAGEAcwBz
-AHcAbwByAGQAAA1DAEwASQBFAE4AVAAAKSQAUAByAG8AagBlAGMAdAA6ADoAUwBBAFAAXwBDAGwA
-aQBlAG4AdAAACUwAQQBOAEcAAAVFAE4AAA1BAFMASABPAFMAVAAAJSQAUAByAG8AagBlAGMAdAA6
-ADoAUwBBAFAAXwBIAG8AcwB0AAALUwBZAFMATgBSAAApJABQAHIAbwBqAGUAYwB0ADoAOgBTAEEA
-UABfAFMAeQBzAE4AdQBtAAARUgBGAEMAXwBOAEEATQBFAAANLgAwADEALgAwADEAAA0uADEAMgAu
-ADMAMQAAE1MAQQBMAEUAUwBfAE8AUgBHAAATUwBhAGwAZQBzAF8ATwByAGcAABlSAFEAXwBEAEEA
-VABFAF8ARgBSAE8ATQAAFVIAUQBfAEQAQQBUAEUAXwBUAE8AABlJAFQAXwBGAEcARwBSAF8ARABB
-AFQAQQAAGUMAbwBtAHAAYQBuAHkAXwBDAG8AZABlAAAZQwBPAE0AUABBAE4AWQBfAEMATwBEAEUA
-AAtTAE8AXwBOAG8AAAtTAE8AXwBOAE8AABNTAE8AXwBJAHQAZQBtAE4AbwAAFVMATwBfAEkAVABF
-AE0AXwBOAE8AAAtGAEcAXwBQAE8AABVDAHIAZQBhAHQAZQBEAGEAdABlAAATQwBSAEUAQQBUAEUA
-XwBPAE4AABV5AHkAeQB5AC4ATQBNAC4AZABkAAARRgBHAEcAUgBfAFEAVABZAAAHVQBPAE0AAClw
-AF8ASQBuAHMAZQByAHQAUwBvAF8ARgBHAEcAUgBfAFQAZQBtAHAAADEkAFAAcgBvAGoAZQBjAHQA
-OgA6AFMAcQBsAF8AQwBvAG4AbgBlAGMAdABpAG8AbgAAAF9bAVyOLoFMpXrn2fSRABMABCABAQgD
-IAABBSABARERBCABAQ4FIAIBDg4FIAEBER0HIAQBDg4ODgQgAQECBhUSHAESDAYVEhwBEggGFRIc
-ARI9BhUSHAESGAQgABMAHgcMEmUSaQ4OEm0dEnERdQgSeRUSfQESgIESgIESeQUgABKAlQUgABKA
-mQYgARKAnRwDIAAcAyAADgcVEoChAg4OByACARMAEwEHAAESZRKAkQUgABKAqQUgARJpDgQAABF1
-AyAACAQAAQ0OBAABDg0FAAIODg4FAAERdQ4FIAIBDhwFIAEBEmUFAAEBEnkFIAESbQ4IFRKAxQES
-gIEIIAAVEn0BEwAHFRJ9ARKAgQQgAQ4OBAYSgMkDAAABBiABEYDNDgQAAQEOAyAAAhIHCAIOEoCF
-EoCJHRJxCBJxEnkHIAIBDhKAhQYgAQERgN0FIAASgOEGIAEScRJxBAABHBwEIAECHAcAARJFEYDp
-BAcBHgACHgAFEAEAHgAECgEeAAQHARMABhUSHAETAAcGFRJNARMABhUSTQETAAITAAQKARMABSAB
-ARMACLd6XFYZNOCJCLA/X38R1Qo6CImEXc2AgMyRCFBDbcpcf30jBAAAAAAEAQAAAAcGFRIcARIM
-BwYVEhwBEggHBhUSHAESPQcGFRIcARIYAgYIAwYRIAQAABIMBAAAEggEAAASPQQAABIYByACAg4d
-EnEEIAASRQcQAQEeAB4ABzABAQEQHgAECAASDAQIABIIBAgAEj0ECAASGAQoABMACAEACAAAAAAA
-HgEAAQBUAhZXcmFwTm9uRXhjZXB0aW9uVGhyb3dzAQgBAAIAAAAAAEcBABouTkVURnJhbWV3b3Jr
-LFZlcnNpb249djQuMAEAVA4URnJhbWV3b3JrRGlzcGxheU5hbWUQLk5FVCBGcmFtZXdvcmsgNAgB
-AAEAAAAAABgBAApNeVRlbXBsYXRlCDExLjAuMC4wAAAFAQAAAABhAQA0U3lzdGVtLldlYi5TZXJ2
-aWNlcy5Qcm90b2NvbHMuU29hcEh0dHBDbGllbnRQcm90b2NvbBJDcmVhdGVfX0luc3RhbmNlX18T
-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
+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
+AjwBsgAEAL4lAAAAAIMACQIKAgQAyiUAAAAAxgJTBIUABADUJQAAAAARAJgADwIEAPQlAAAAAAEA
+hAAXAgUA/SUAAAAABhg0BwYABgAIJgAAAAADCCMBSgAGADwmAAAAAAYYNAcGAAYAAAABALsBAAAC
+AGkJAAABABUGAAABADMBAAABADMBCQA0BwEAEQA0BwYAGQA0BwoAKQA0BxAAMQA0BxUAQQA0BxsA
+WQA0BwYAYQA0BwYAaQA0BwYAgQA0ByEAkQA0BykAoQA0BxAAqQA0BwYAsQA0BykASQA0BwYAUQA0
+BwYADAA0BwYAFAA0BwYAHAA0BwYAJAA0BwYADAAjAUoAFAAjAUoAHAAjAUoAJAAjAUoAuQA0BwYA
+IQE0BwYAuQC2CG4AKQFICHQAMQFHBXoAOQHPA4EAcQBTBIUALAAFAZEAOQHjA4EASQG2BZkAyQCF
+CaEAUQH3BacA6QBfCa0A6QAXBrIAWQFTBIUAYQGGAbYAYQFTBLsAaQHMCMAAcQEEBBUAeQHEAcYA
+cQEEBMwA0QBIAdIAgQEAB9gAcQFoAd4ANAAcB+0APAAJCUoAcQFcBP4A4QA0B8wA6QBTBP4AkQEH
+BAMBgQHuBggBcQGzBAwB8QBTBIUAoQHvARMBqQEdCRgBsQFTAgYAKQHkCAEACQE0BxAACQFcBQYA
+EQE0By8BEQH5ATcBEQGLCD4BwQEFAUQBEQF1CbIAyQH1A0sBcQBWCFABcQA8AbIAiQChAVUB2QEU
+AWUBcQA0BwYATAAmCXwBVADPA0oAVADZA5MBVAA0BwYACAAcAL0BCAAgAMIBKQBjADsDLgALADgC
+LgATAEECLgAbAGACLgAjAGkCQAA7AMIBQAAzALECQwArALoCQwAzALECSQBjAEwDYwArALoCYwAz
+ALECaQBjAGADgAA7AMIBgwBDAMIBgwBLAMIBgwArALoCiQBjAG0DoAA7AMIBowBrAMIBowBzANMC
+wAA7AMIBwwAzALECwwBTANkC4AA7AMIB4wAzALEC4wBbANMCYAEzALECYAE7AMIBgAEzALECgAE7
+AMIBoAEzALECoAE7AMIBwAEzALECwAE7AMIB4AE7AMIBAAI7AMIBIAI7AMIBIAIzALECQAI7AMIB
+YAI7AMIBYAIzALECTwAcAV0BcAEEAAEABwAFAAAA5QYfAgAAmwUkAgAAxAYpAgAAnQcuAgAAJwEz
+AgIABAADAAIABQAFAAIABgAHAAIABwAJAAIAEgALAC4ANQA8AEMAiQDkAPYAYgF1AYQBiwEEgAAA
+AAAAAAAAAAAAAAAAAAANBAAABAAAAAAAAAAAAAAAmQHLAAAAAAAEAAAAAAAAAAAAAACZAVAFAAAA
+AAoAAAAAAAAAAAAAAKIB7wAAAAAADQAAAAAAAAAAAAAAqwFrBAAAAAADAAAAAAAqAAAAAAC0ARAG
+AAAAAAQAAAAAAAAAAAAAAJkBswAAAAAADQAAAAAAAAAAAAAAqwFjAAAAAAAGAAQABwAEAAgABQAA
+ABAADgCCAAAAEAAfAIIAAAAAACEAggCTAGsBkwCOAQAAAAAASUVudW1lcmFibGVgMQBDb250ZXh0
+VmFsdWVgMQBUaHJlYWRTYWZlT2JqZWN0UHJvdmlkZXJgMQBJRW51bWVyYXRvcmAxAEludDMyAERp
+Y3Rpb25hcnlgMgA8TW9kdWxlPgBNaWNyb3NvZnQuU3FsU2VydmVyLk1hbmFnZWREVFMAVABEaXNw
+b3NlX19JbnN0YW5jZV9fAENyZWF0ZV9fSW5zdGFuY2VfXwB2YWx1ZV9fAFN5c3RlbS5EYXRhAFBy
+b2plY3REYXRhAG1zY29ybGliAFN5c3RlbS5Db2xsZWN0aW9ucy5HZW5lcmljAE1pY3Jvc29mdC5W
+aXN1YWxCYXNpYwBBZGQAU3FsQ29tbWFuZABDcmVhdGVJbnN0YW5jZQBnZXRfR2V0SW5zdGFuY2UA
+aW5zdGFuY2UAR2V0SGFzaENvZGUASW52b2tlAElSZmNUYWJsZQBJbnNlcnRUbXBUYWJsZQBHZXRU
+YWJsZQBWYXJpYWJsZQBJRGlzcG9zYWJsZQBUb0RvdWJsZQBSdW50aW1lVHlwZUhhbmRsZQBHZXRU
+eXBlRnJvbUhhbmRsZQBDb25zb2xlAHBfU1BOYW1lAFRvRGF0ZVRpbWUATWljcm9zb2Z0LlNxbFNl
+cnZlci5EdHMuUnVudGltZQBXcml0ZUxpbmUAc2V0X0NvbW1hbmRUeXBlAEdldFR5cGUARmFpbHVy
+ZQBJUmZjU3RydWN0dXJlAFZTVEFSVFNjcmlwdE9iamVjdE1vZGVsQmFzZQBBcHBsaWNhdGlvbkJh
+c2UARGlzcG9zZQBFZGl0b3JCcm93c2FibGVTdGF0ZQBIZWxwS2V5d29yZEF0dHJpYnV0ZQBHZW5l
+cmF0ZWRDb2RlQXR0cmlidXRlAERlYnVnZ2FibGVBdHRyaWJ1dGUARWRpdG9yQnJvd3NhYmxlQXR0
+cmlidXRlAENvbVZpc2libGVBdHRyaWJ1dGUAU3RhbmRhcmRNb2R1bGVBdHRyaWJ1dGUASGlkZU1v
+ZHVsZU5hbWVBdHRyaWJ1dGUAVGFyZ2V0RnJhbWV3b3JrQXR0cmlidXRlAERlYnVnZ2VySGlkZGVu
+QXR0cmlidXRlAE15R3JvdXBDb2xsZWN0aW9uQXR0cmlidXRlAENvbXBpbGF0aW9uUmVsYXhhdGlv
+bnNBdHRyaWJ1dGUAQ0xTQ29tcGxpYW50QXR0cmlidXRlAFNTSVNTY3JpcHRUYXNrRW50cnlQb2lu
+dEF0dHJpYnV0ZQBSdW50aW1lQ29tcGF0aWJpbGl0eUF0dHJpYnV0ZQBnZXRfVmFsdWUAc2V0X1Zh
+bHVlAEdldFNlbnNpdGl2ZVZhbHVlAEdldE9iamVjdFZhbHVlAFNldFZhbHVlAFNjcmlwdFRhc2tf
+MTEwMGIzNDFkNGVjNGNlYmE0NTFkOWU4Mjg0YzA5NWYAU3lzdGVtLlJ1bnRpbWUuVmVyc2lvbmlu
+ZwBUb1N0cmluZwBHZXRTdHJpbmcATWF0aABNaWNyb3NvZnQuU3FsU2VydmVyLlNjcmlwdFRhc2sA
+TWljcm9zb2Z0LlNxbFNlcnZlci5EdHMuVGFza3MuU2NyaXB0VGFzawBHZXREZWNpbWFsAE1pY3Jv
+c29mdC5WaXN1YWxCYXNpYy5NeVNlcnZpY2VzLkludGVybmFsAFNjcmlwdE9iamVjdE1vZGVsAFN5
+c3RlbS5Db21wb25lbnRNb2RlbABTY3JpcHRUYXNrXzExMDBiMzQxZDRlYzRjZWJhNDUxZDllODI4
+NGMwOTVmLmRsbABEQk51bGwAZ2V0X0l0ZW0AU3lzdGVtAEVudW0AT3BlbgBTeXN0ZW0uQ29tcG9u
+ZW50TW9kZWwuRGVzaWduAFNjcmlwdE1haW4AZ2V0X0FwcGxpY2F0aW9uAE15QXBwbGljYXRpb24A
+UmZjRGVzdGluYXRpb24AR2V0RGVzdGluYXRpb24AU3FsUGFyYW1ldGVyQ29sbGVjdGlvbgBTcWxD
+b25uZWN0aW9uAElSZmNGdW5jdGlvbgBDcmVhdGVGdW5jdGlvbgBFeGNlcHRpb24Ac2FwbmNvAGdl
+dF9ZZWFyAG1fQXBwT2JqZWN0UHJvdmlkZXIAbV9Vc2VyT2JqZWN0UHJvdmlkZXIAbV9Db21wdXRl
+ck9iamVjdFByb3ZpZGVyAG1fTXlXZWJTZXJ2aWNlc09iamVjdFByb3ZpZGVyAFJmY0Rlc3RpbmF0
+aW9uTWFuYWdlcgBTeXN0ZW0uQ29kZURvbS5Db21waWxlcgBJUmZjRGF0YUNvbnRhaW5lcgBnZXRf
+VXNlcgBTcWxQYXJhbWV0ZXIAZ2V0X0NvbXB1dGVyAE15Q29tcHV0ZXIAQ2xlYXJQcm9qZWN0RXJy
+b3IAU2V0UHJvamVjdEVycm9yAElFbnVtZXJhdG9yAEdldEVudW1lcmF0b3IAQWN0aXZhdG9yAC5j
+dG9yAC5jY3RvcgBTQVAuTWlkZGxld2FyZS5Db25uZWN0b3IAU3lzdGVtLkRpYWdub3N0aWNzAE1p
+Y3Jvc29mdC5WaXN1YWxCYXNpYy5EZXZpY2VzAGdldF9XZWJTZXJ2aWNlcwBNeVdlYlNlcnZpY2Vz
+AE1pY3Jvc29mdC5WaXN1YWxCYXNpYy5BcHBsaWNhdGlvblNlcnZpY2VzAFN5c3RlbS5SdW50aW1l
+LkludGVyb3BTZXJ2aWNlcwBNaWNyb3NvZnQuVmlzdWFsQmFzaWMuQ29tcGlsZXJTZXJ2aWNlcwBT
+eXN0ZW0uUnVudGltZS5Db21waWxlclNlcnZpY2VzAERlYnVnZ2luZ01vZGVzAGdldF9WYXJpYWJs
+ZXMARXF1YWxzAENvbnZlcnNpb25zAFN5c3RlbS5Db2xsZWN0aW9ucwBSdW50aW1lSGVscGVycwBn
+ZXRfUGFyYW1ldGVycwBSZmNDb25maWdQYXJhbWV0ZXJzAFN1Y2Nlc3MAZ2V0X0R0cwBTY3JpcHRS
+ZXN1bHRzAENvbmNhdABPYmplY3QATXlQcm9qZWN0AHNldF9UYXNrUmVzdWx0AFN5c3RlbS5EYXRh
+LlNxbENsaWVudABnZXRfQ3VycmVudABDb252ZXJ0AE1vdmVOZXh0AG1fQ29udGV4dABTY3JpcHRU
+YXNrXzExMDBiMzQxZDRlYzRjZWJhNDUxZDllODI4NGMwOTVmLk15AGdldF9Ub2RheQBwX1BhcmFB
+cnJheQBFeGVjdXRlTm9uUXVlcnkAZ2V0X1JlcG9zaXRvcnkAUmZjUmVwb3NpdG9yeQAAAAAJTgBB
+AE0ARQAAJSQAUAByAG8AagBlAGMAdAA6ADoAUwBBAFAAXwBOAGEAbQBlAAAJVQBTAEUAUgAAJSQA
+UAByAG8AagBlAGMAdAA6ADoAUwBBAFAAXwBVAHMAZQByAAANUABBAFMAUwBXAEQAAC0kAFAAcgBv
+AGoAZQBjAHQAOgA6AFMAQQBQAF8AUABhAHMAcwB3AG8AcgBkAAANQwBMAEkARQBOAFQAACkkAFAA
+cgBvAGoAZQBjAHQAOgA6AFMAQQBQAF8AQwBsAGkAZQBuAHQAAAlMAEEATgBHAAAFRQBOAAANQQBT
+AEgATwBTAFQAACUkAFAAcgBvAGoAZQBjAHQAOgA6AFMAQQBQAF8ASABvAHMAdAAAC1MAWQBTAE4A
+UgAAKSQAUAByAG8AagBlAGMAdAA6ADoAUwBBAFAAXwBTAHkAcwBOAHUAbQAAEVIARgBDAF8ATgBB
+AE0ARQAADS4AMAAxAC4AMAAxAAANLgAxADIALgAzADEAABNTAEEATABFAFMAXwBPAFIARwAAE1MA
+YQBsAGUAcwBfAE8AcgBnAAAZUgBRAF8ARABBAFQARQBfAEYAUgBPAE0AABVSAFEAXwBEAEEAVABF
+AF8AVABPAAAZSQBUAF8ARgBHAEcAUgBfAEQAQQBUAEEAABlDAG8AbQBwAGEAbgB5AF8AQwBvAGQA
+ZQAAGUMATwBNAFAAQQBOAFkAXwBDAE8ARABFAAALUwBPAF8ATgBvAAALUwBPAF8ATgBPAAATUwBP
+AF8ASQB0AGUAbQBOAG8AABVTAE8AXwBJAFQARQBNAF8ATgBPAAALRgBHAF8AUABPAAAVQwByAGUA
+YQB0AGUARABhAHQAZQAAE0MAUgBFAEEAVABFAF8ATwBOAAAVeQB5AHkAeQAuAE0ATQAuAGQAZAAA
+EUYARwBHAFIAXwBRAFQAWQAAB1UATwBNAAAbRgBJAE4AQQBMAF8AUgBFAEMARQBJAFAAVAAAKXAA
+XwBJAG4AcwBlAHIAdABTAG8AXwBGAEcARwBSAF8AVABlAG0AcAAAMSQAUAByAG8AagBlAGMAdAA6
+ADoAUwBxAGwAXwBDAG8AbgBuAGUAYwB0AGkAbwBuAAAAwV2d/gdeN0igjgUbRylDmAAEIAEBCAMg
+AAEFIAEBEREEIAEBDgUgAgEODgUgAQERHQcgBAEODg4OBCABAQIGFRIcARIMBhUSHAESCAYVEhwB
+Ej0GFRIcARIYBCAAEwAeBwwSZRJpDg4SbR0ScRF1CBJ5FRJ9ARKAgRKAgRJ5BSAAEoCVBSAAEoCZ
+BiABEoCdHAMgABwDIAAOBxUSgKECDg4HIAIBEwATAQcAARJlEoCRBSAAEoCpBSABEmkOBAAAEXUD
+IAAIBAABDQ4EAAEODQUAAg4ODgUAARF1DgUgAgEOHAUgAQESZQUAAQESeQUgARJtDggVEoDFARKA
+gQggABUSfQETAAcVEn0BEoCBBCABDg4EBhKAyQMAAAEGIAERgM0OBAABAQ4DIAACEgcIAg4SgIUS
+gIkdEnEIEnESeQcgAgEOEoCFBiABARGA3QUgABKA4QYgARJxEnEEAAEcHAQgAQIcBwABEkURgOkE
+BwEeAAIeAAUQAQAeAAQKAR4ABAcBEwAGFRIcARMABwYVEk0BEwAGFRJNARMAAhMABAoBEwAFIAEB
+EwAIt3pcVhk04IkIsD9ffxHVCjoIiYRdzYCAzJEIUENtylx/fSMEAAAAAAQBAAAABwYVEhwBEgwH
+BhUSHAESCAcGFRIcARI9BwYVEhwBEhgCBggDBhEgBAAAEgwEAAASCAQAABI9BAAAEhgHIAICDh0S
+cQQgABJFBxABAR4AHgAHMAEBARAeAAQIABIMBAgAEggECAASPQQIABIYBCgAEwAIAQAIAAAAAAAe
+AQABAFQCFldyYXBOb25FeGNlcHRpb25UaHJvd3MBCAEAAgAAAAAARwEAGi5ORVRGcmFtZXdvcmss
+VmVyc2lvbj12NC4wAQBUDhRGcmFtZXdvcmtEaXNwbGF5TmFtZRAuTkVUIEZyYW1ld29yayA0CAEA
+AQAAAAAAGAEACk15VGVtcGxhdGUIMTEuMC4wLjAAAAUBAAAAAGEBADRTeXN0ZW0uV2ViLlNlcnZp
+Y2VzLlByb3RvY29scy5Tb2FwSHR0cENsaWVudFByb3RvY29sEkNyZWF0ZV9fSW5zdGFuY2VfXxNE
+aXNwb3NlX19JbnN0YW5jZV9fAAAAEAEAC015LkNvbXB1dGVyAAATAQAOTXkuQXBwbGljYXRpb24A
+AAwBAAdNeS5Vc2VyAAATAQAOTXkuV2ViU2VydmljZXMAAAAAAAg/AAAAAAAAAAAAACI/AAAAIAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAUPwAAAAAAAAAAAAAAAF9Db3JEbGxNYWluAG1zY29yZWUuZGxs
+AAAAAAD/JQAgABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAQ
@@ -1601,7 +1677,7 @@ CAABAEEAcwBzAGUAbQBiAGwAeQAgAFYAZQByAHMAaQBvAG4AAAAwAC4AMAAuADAALgAwAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAADAAAAPw+AAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAADAAAADQ/AAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -1919,7 +1995,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
     design-time-name="Package\Copy to SO_FGGR">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="183,42"
           Id="Package\Copy to SO_FGGR\Select SO_FGGR_Tmp"
@@ -1947,19 +2023,43 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Copy to SO_FGGR\Copy to SO_FGGR">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Copy to SO_FGGR\Select SO_FGGR_Tmp">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Copy to SO_FGGR_Hist">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="156,42"
           Id="Package\Copy to SO_FGGR_Hist\Select SO_FGGR"
@@ -1991,9 +2091,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2015,14 +2113,25 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Copy to SO_FGGR_Hist\Select SO_FGGR">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Copy to SO_FGGR_Hist\Copy to SO_FGGR_Hist">
     <Properties>
